@@ -38,7 +38,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -58,9 +58,9 @@
       --glass: rgba(255,255,255,0.03);
       --glass-border: rgba(168,85,247,0.15);
       --text: #ece0f8;
-      --text-dim: #b89cd6;
-      --text-muted: #8b6fa8;
-      --text-bright: #f8f3ff;
+      --text-dim: #c9b3e0;
+      --text-muted: #9c80bc;
+      --text-bright: #faf6ff;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -69,13 +69,15 @@
 
     body {
       background: var(--void);
-      color: var(--text);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 20px;
+      color: var(--text-bright);
+      font-family: 'Lora', Georgia, serif;
+      font-size: 18px;
       font-weight: 500;
       line-height: 1.75;
       overflow-x: hidden;
       cursor: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     /* ── Custom cursor ── */
@@ -393,10 +395,10 @@
     }
     h2.section-title .gold { color: var(--gold-bright); }
     .section-desc {
-      font-size: 1.2rem;
-      color: var(--text-dim);
+      font-size: 1.15rem;
+      color: var(--text-bright);
       max-width: 640px;
-      line-height: 1.85;
+      line-height: 1.75;
     }
     .divider {
       width: 60px;
@@ -471,9 +473,8 @@
     }
     .step-text {
       font-size: 1.05rem;
-      color: var(--text);
-      line-height: 1.85;
-      font-style: italic;
+      color: var(--text-bright);
+      line-height: 1.75;
     }
 
     /* ── Tarot Preview ── */
@@ -711,9 +712,8 @@
     }
     .reading-section-text {
       font-size: 1.1rem;
-      font-style: italic;
       color: var(--text-bright);
-      line-height: 1.85;
+      line-height: 1.75;
     }
     .warning-section { border-color: rgba(239,68,68,0.3); }
     .warning-section .reading-section-label { color: #f87171; }
@@ -756,7 +756,7 @@
       font-style: italic;
       font-size: 1.05rem;
       color: var(--text-bright);
-      line-height: 1.85;
+      line-height: 1.7;
       margin-bottom: 1.5rem;
     }
     .testimonial-author {
@@ -1005,13 +1005,12 @@
       overflow: hidden;
       transition: max-height 0.4s ease, padding 0.4s ease;
     }
-    .faq-item.open .faq-answer { max-height: 400px; }
+    .faq-item.open .faq-answer { max-height: 500px; }
     .faq-answer p {
       padding-bottom: 1.5rem;
       font-size: 1.05rem;
-      font-style: italic;
-      color: var(--text);
-      line-height: 1.9;
+      color: var(--text-bright);
+      line-height: 1.75;
     }
 
     /* ── Blog teaser ── */

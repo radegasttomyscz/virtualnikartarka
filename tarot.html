@@ -7,7 +7,7 @@
   <meta name="description" content="Zahajte svůj personalizovaný AI tarotový výklad. Vyberte kategorii, zamíchejte karty a nechte AI odhalit vaši budoucnost." />
   <link rel="canonical" href="https://virtualnikartarka.cz/tarot.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -27,21 +27,23 @@
       --glass: rgba(255,255,255,0.03);
       --glass-border: rgba(168,85,247,0.15);
       --text: #ece0f8;
-      --text-dim: #b89cd6;
-      --text-muted: #8b6fa8;
-      --text-bright: #f8f3ff;
+      --text-dim: #c9b3e0;
+      --text-muted: #9c80bc;
+      --text-bright: #faf6ff;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
       background: var(--void);
-      color: var(--text);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 20px;
+      color: var(--text-bright);
+      font-family: 'Lora', Georgia, serif;
+      font-size: 18px;
       font-weight: 500;
       line-height: 1.75;
       overflow-x: hidden;
       min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
     canvas#bg { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
 
@@ -124,7 +126,7 @@
       border: 1px solid var(--glass-border);
       border-radius: 2px;
       color: var(--text-bright);
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Lora', Georgia, serif;
       font-size: 1.1rem;
       padding: 0.8rem 1.2rem;
       outline: none;
@@ -188,7 +190,7 @@
       border: 1px solid var(--glass-border);
       border-radius: 2px;
       color: var(--text-bright);
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Lora', Georgia, serif;
       font-style: italic; font-size: 1.1rem;
       padding: 1rem 1.4rem;
       outline: none;
@@ -399,7 +401,7 @@
       color: var(--gold); text-align: center; text-transform: uppercase;
     }
     .flip-card-sub {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Lora', Georgia, serif;
       font-size: 0.7rem; color: var(--mist);
       text-align: center; font-style: italic; line-height: 1.4;
     }
@@ -545,7 +547,7 @@
       color: var(--gold-dim); display: block;
     }
     .src-quote {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Lora', Georgia, serif;
       font-style: italic; font-size: 0.85rem;
       color: var(--mist); line-height: 1.6; margin: 1rem 0;
     }
