@@ -26,9 +26,10 @@
       --purple-glow: rgba(168,85,247,0.3);
       --glass: rgba(255,255,255,0.03);
       --glass-border: rgba(168,85,247,0.15);
-      --text: #e2d0f5;
-      --text-dim: #8b6fa8;
-      --text-bright: #f5eeff;
+      --text: #ece0f8;
+      --text-dim: #b89cd6;
+      --text-muted: #8b6fa8;
+      --text-bright: #f8f3ff;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -36,8 +37,9 @@
       background: var(--void);
       color: var(--text);
       font-family: 'Cormorant Garamond', serif;
-      font-size: 18px;
-      line-height: 1.7;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.75;
       overflow-x: hidden;
       min-height: 100vh;
     }
@@ -631,6 +633,14 @@
       .flip-card { width: 100px; height: 170px; }
     }
   </style>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D1CFYHSG59"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-D1CFYHSG59');
+  </script>
 </head>
 <body>
 
