@@ -3,9 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mystický blog – Virtuální kartářka</title>
-  <meta name="description" content="Tarotové tipy, astrologie a mystika. AI-generované články pro hledající duše. Každý týden nový obsah." />
+  <title>Magazín – Píšeme pro vás | Virtuální kartářka</title>
+  <meta name="description" content="Tarot, astrologie, runy, mystika a sebepoznání — články o tom, co tě zajímá. Praktické rady i hlubší vhled. Aktualizujeme pravidelně." />
+  <meta name="keywords" content="tarot, výklad karet, astrologie, horoskopy, věštírna, ezoterika, runy, mystika, kartářky" />
   <link rel="canonical" href="https://virtualnikartarka.cz/blog.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://virtualnikartarka.cz/blog.html" />
+  <meta property="og:title" content="Magazín – Píšeme pro vás | Virtuální kartářka" />
+  <meta property="og:description" content="Tarot, astrologie, runy, mystika — články o tom, co tě zajímá." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet" />
 
@@ -19,22 +27,22 @@
       --purple-glow:rgba(168,85,247,0.25);
       --glass:rgba(255,255,255,0.03);
       --glass-border:rgba(168,85,247,0.15);
-      --text:#e2d0f5; --text-dim:#8b6fa8; --text-bright:#f5eeff;
+      --text:#ece0f8; --text-dim:#b89cd6; --text-muted:#8b6fa8; --text-bright:#f8f3ff;
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
     body{
       background:var(--void); color:var(--text);
-      font-family:'Cormorant Garamond',serif; font-size:18px;
-      line-height:1.7; overflow-x:hidden;
+      font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:500;
+      line-height:1.75; overflow-x:hidden;
     }
     canvas#stars{position:fixed;inset:0;z-index:0;pointer-events:none;}
 
     nav{
-      position:fixed;top:0;left:0;right:0;z-index:50;
+      position:fixed;top:0;left:0;right:0;z-index:200;
       display:flex;justify-content:space-between;align-items:center;
       padding:1rem 3rem;
-      background:rgba(4,2,10,0.85);
+      background:rgba(4,2,10,0.92);
       backdrop-filter:blur(20px);
       border-bottom:1px solid var(--glass-border);
     }
@@ -144,8 +152,8 @@
       margin-bottom:1rem; line-height:1.3;
     }
     .fc-excerpt{
-      font-size:1.05rem; color:var(--text-dim);
-      font-style:italic; line-height:1.9; margin-bottom:2rem;
+      font-size:1.15rem; color:var(--text);
+      font-style:italic; line-height:1.85; margin-bottom:2rem;
       max-width:700px;
     }
     .fc-content{
@@ -200,17 +208,17 @@
     }
     .ac-icon{font-size:1.8rem; margin-bottom:1rem; display:block;}
     .ac-cat{
-      font-family:'Cinzel',serif; font-size:0.55rem;
+      font-family:'Cinzel',serif; font-size:0.6rem;
       letter-spacing:0.2em; text-transform:uppercase;
       color:var(--gold); margin-bottom:0.5rem;
     }
     .ac-title{
-      font-family:'Cinzel',serif; font-size:1rem;
+      font-family:'Cinzel',serif; font-size:1.05rem;
       letter-spacing:0.03em; color:var(--text-bright);
       margin-bottom:0.8rem; line-height:1.4;
     }
     .ac-excerpt{
-      font-size:0.9rem; color:var(--text-dim);
+      font-size:1rem; color:var(--text);
       font-style:italic; line-height:1.7;
       margin-bottom:1rem;
     }
@@ -218,31 +226,36 @@
       display:flex; justify-content:space-between;
       align-items:center;
     }
-    .ac-date{font-size:0.75rem; color:var(--text-dim); font-style:italic;}
+    .ac-date{font-size:0.85rem; color:var(--text-dim); font-style:italic;}
     .ac-read{
-      font-family:'Cinzel',serif; font-size:0.6rem;
+      font-family:'Cinzel',serif; font-size:0.65rem;
       letter-spacing:0.15em; color:var(--gold);
       text-transform:uppercase;
     }
 
     /* Article modal */
     .article-modal{
-      display:none; position:fixed; inset:0; z-index:100;
+      display:none; position:fixed; top:64px; left:0; right:0; bottom:0; z-index:100;
       background:rgba(4,2,10,0.95); backdrop-filter:blur(30px);
       overflow-y:auto; padding:2rem;
     }
     .article-modal.open{display:block;}
     .am-inner{
-      max-width:700px; margin:4rem auto;
+      max-width:760px; margin:2rem auto;
       background:var(--glass); border:1px solid var(--glass-border);
       border-radius:8px; padding:3rem; backdrop-filter:blur(20px);
       position:relative;
     }
     .am-close{
-      position:fixed; top:1.5rem; right:2rem;
-      font-size:1.5rem; color:var(--gold); cursor:pointer;
-      background:none; border:none; z-index:101;
+      position:fixed; top:5rem; right:2rem;
+      font-size:1.6rem; color:var(--gold); cursor:pointer;
+      background:rgba(4,2,10,0.85); border:1px solid var(--glass-border);
+      border-radius:50%; width:42px; height:42px;
+      display:flex; align-items:center; justify-content:center;
+      z-index:101;
+      transition: border-color 0.3s, color 0.3s;
     }
+    .am-close:hover{ color:var(--gold-bright); border-color: var(--gold); }
     .am-cat{
       font-family:'Cinzel',serif; font-size:0.6rem;
       letter-spacing:0.3em; text-transform:uppercase;
@@ -271,19 +284,22 @@
     @keyframes orbPulse{0%,100%{transform:scale(1);opacity:0.6}50%{transform:scale(1.3);opacity:1}}
     .am-content{display:none;}
     .am-content p{
-      font-size:1.05rem; color:var(--text); line-height:1.9; margin-bottom:1.2rem;
+      font-size:1.15rem; color:var(--text-bright); line-height:1.9; margin-bottom:1.3rem;
     }
     .am-content h3{
-      font-family:'Cinzel',serif; font-size:1rem;
+      font-family:'Cinzel',serif; font-size:1.15rem;
       letter-spacing:0.05em; color:var(--gold-bright);
-      margin:2rem 0 0.8rem;
+      margin:2.2rem 0 1rem;
+    }
+    .am-content strong{
+      color: var(--gold-bright); font-weight: 600;
     }
     .am-cta{
       margin-top:3rem; text-align:center;
       padding-top:2rem; border-top:1px solid var(--glass-border);
     }
     .am-cta p{
-      font-style:italic; color:var(--text-dim); margin-bottom:1rem;
+      font-style:italic; color:var(--text); margin-bottom:1rem; font-size: 1.05rem;
     }
 
     /* Buttons */
@@ -350,6 +366,14 @@
       .am-close{position:absolute;top:1rem;right:1rem;}
     }
   </style>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D1CFYHSG59"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-D1CFYHSG59');
+  </script>
 </head>
 <body>
 
@@ -373,7 +397,7 @@
     <div class="am-meta" id="amMeta"></div>
     <div class="am-loading" id="amLoading">
       <div class="am-loading-orb"></div>
-      <p style="font-family:'IM Fell English',serif;font-style:italic;color:var(--mist);">AI píše článek...</p>
+      <p style="font-family:'IM Fell English',serif;font-style:italic;color:var(--mist);">Načítáme článek...</p>
     </div>
     <div class="am-content" id="amContent"></div>
     <div class="am-cta">
@@ -386,9 +410,9 @@
 <main>
   <!-- Header -->
   <div class="blog-header">
-    <span class="blog-eyebrow">✦ Mystický blog</span>
-    <h1 class="blog-title">Šeptání z temnoty</h1>
-    <p class="blog-sub">AI-psané články o tarotech, astrologii a mystice</p>
+    <span class="blog-eyebrow">✦ Magazín</span>
+    <h1 class="blog-title">Píšeme pro vás</h1>
+    <p class="blog-sub">Tarot, astrologie, runy a mystika — praktické články pro každého, kdo hledá hlubší smysl.</p>
   </div>
 
   <!-- Topic filter -->
@@ -567,7 +591,7 @@ async function openArticle(id){
 
   document.getElementById('amCat').textContent=`${art.icon} ${art.cat}`;
   document.getElementById('amTitle').textContent=art.title;
-  document.getElementById('amMeta').textContent=`${art.date} · ${art.read} · Generováno AI`;
+  document.getElementById('amMeta').textContent=`${art.date} · ${art.read}`;
   document.getElementById('amLoading').style.display='block';
   document.getElementById('amContent').style.display='none';
   document.getElementById('amContent').innerHTML='';
