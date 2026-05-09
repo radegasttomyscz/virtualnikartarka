@@ -57,9 +57,10 @@
       --purple-glow: rgba(168,85,247,0.3);
       --glass: rgba(255,255,255,0.03);
       --glass-border: rgba(168,85,247,0.15);
-      --text: #e2d0f5;
-      --text-dim: #8b6fa8;
-      --text-bright: #f5eeff;
+      --text: #ece0f8;
+      --text-dim: #b89cd6;
+      --text-muted: #8b6fa8;
+      --text-bright: #f8f3ff;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -70,8 +71,9 @@
       background: var(--void);
       color: var(--text);
       font-family: 'Cormorant Garamond', serif;
-      font-size: 18px;
-      line-height: 1.7;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.75;
       overflow-x: hidden;
       cursor: none;
     }
@@ -391,10 +393,10 @@
     }
     h2.section-title .gold { color: var(--gold-bright); }
     .section-desc {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       color: var(--text-dim);
-      max-width: 600px;
-      line-height: 1.9;
+      max-width: 640px;
+      line-height: 1.85;
     }
     .divider {
       width: 60px;
@@ -468,9 +470,9 @@
       margin-bottom: 0.8rem;
     }
     .step-text {
-      font-size: 1rem;
-      color: var(--text-dim);
-      line-height: 1.8;
+      font-size: 1.05rem;
+      color: var(--text);
+      line-height: 1.85;
       font-style: italic;
     }
 
@@ -708,10 +710,10 @@
       flex-shrink: 0;
     }
     .reading-section-text {
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-style: italic;
-      color: var(--text);
-      line-height: 1.8;
+      color: var(--text-bright);
+      line-height: 1.85;
     }
     .warning-section { border-color: rgba(239,68,68,0.3); }
     .warning-section .reading-section-label { color: #f87171; }
@@ -752,9 +754,9 @@
     }
     .testimonial-text {
       font-style: italic;
-      font-size: 1rem;
-      color: var(--text);
-      line-height: 1.8;
+      font-size: 1.05rem;
+      color: var(--text-bright);
+      line-height: 1.85;
       margin-bottom: 1.5rem;
     }
     .testimonial-author {
@@ -776,6 +778,10 @@
       margin-top: 4rem;
       align-items: start;
     }
+    .pricing-single {
+      max-width: 460px;
+      margin: 4rem auto 0;
+    }
     .pricing-card {
       background: var(--glass);
       border: 1px solid var(--glass-border);
@@ -790,7 +796,10 @@
       border-color: rgba(201,148,58,0.5);
       box-shadow: 0 0 40px rgba(201,148,58,0.15);
     }
-    .pricing-card.featured::before {
+    .pricing-single .pricing-card.featured::before {
+      display: none;
+    }
+    .pricing-grid .pricing-card.featured::before {
       content: 'NEJOBLÍBENĚJŠÍ';
       position: absolute;
       top: 1rem; right: -2rem;
@@ -996,12 +1005,12 @@
       overflow: hidden;
       transition: max-height 0.4s ease, padding 0.4s ease;
     }
-    .faq-item.open .faq-answer { max-height: 300px; }
+    .faq-item.open .faq-answer { max-height: 400px; }
     .faq-answer p {
       padding-bottom: 1.5rem;
-      font-size: 1rem;
+      font-size: 1.05rem;
       font-style: italic;
-      color: var(--text-dim);
+      color: var(--text);
       line-height: 1.9;
     }
 
@@ -1201,7 +1210,14 @@
       .footer-top { grid-template-columns: 1fr; gap: 2rem; }
       .footer-bottom { flex-direction: column; text-align: center; }
     }
-  </style>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D1CFYHSG59"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-D1CFYHSG59');
+  </script>
 </head>
 <body>
 
@@ -1218,7 +1234,7 @@
   <ul class="nav-links">
     <li><a href="#jak-to-funguje">Jak to funguje</a></li>
     <li><a href="#cenik">Ceník</a></li>
-    <li><a href="blog.html">Blog</a></li>
+    <li><a href="blog.html">Magazín</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="tarot.html" class="nav-cta">Zahájit výklad</a></li>
   </ul>
@@ -1233,7 +1249,7 @@
   <a href="#jak-to-funguje" class="mobile-link">Jak to funguje</a>
   <a href="#tarot-preview" class="mobile-link">Vyzkoušet</a>
   <a href="#cenik" class="mobile-link">Ceník</a>
-  <a href="blog.html" class="mobile-link">Blog</a>
+  <a href="blog.html" class="mobile-link">Magazín</a>
   <a href="#faq" class="mobile-link">FAQ</a>
   <a href="tarot.html" class="btn-primary">Zahájit výklad</a>
 </div>
@@ -1383,7 +1399,7 @@
     <div class="shuffle-btn-wrap reveal">
       <button class="btn-primary" id="shuffleBtn" onclick="shuffleCards()">🃏 &nbsp; Zamíchat karty</button>
     </div>
-    <p class="shuffle-hint reveal">Pro kompletní AI výklad klikni na kartu nebo zahaj plný rituál →</p>
+    <p class="shuffle-hint reveal">Klikni na další karty a otoč je. Pro plný AI výklad pokračuj dál →</p>
 
     <div style="margin-top: 2rem;" class="reveal">
       <a href="tarot.html" class="btn-ghost">✦ &nbsp; Zahájit plný výklad s AI &nbsp; →</a>
@@ -1467,7 +1483,7 @@
       </div>
       <div class="testimonial-card reveal reveal-delay-3">
         <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">„Zkoušela jsem různé online taroty, ale tohle je jiná liga. Výklad byl osobní, poetický a trochu děsivě přesný. Přihlásila jsem si Premium hned."</p>
+        <p class="testimonial-text">„Zkoušela jsem různé online taroty, ale tohle je jiná liga. Výklad byl osobní, poetický a trochu děsivě přesný. Hned jsem si dala další."</p>
         <div class="testimonial-author">Lenka M. &nbsp;·&nbsp; Ostrava</div>
       </div>
     </div>
@@ -1477,67 +1493,28 @@
 <!-- ══════════════ CENÍK ══════════════ -->
 <section id="cenik">
   <div class="section-inner">
-    <span class="section-label reveal">✦ Ceník</span>
-    <h2 class="section-title reveal reveal-delay-1">Vyber svou <span class="gold">cestu</span></h2>
+    <span class="section-label reveal">✦ Cena výkladu</span>
+    <h2 class="section-title reveal reveal-delay-1">Jeden výklad, <span class="gold">jedna cena</span></h2>
     <p class="section-desc reveal reveal-delay-2" style="margin: 0 auto 0">
-      Začni zdarma. Odemkni plnou sílu osudu s Premium.
+      Žádné předplatné. Žádné skryté poplatky. Platíš jen za to, co skutečně chceš poznat.
     </p>
 
-    <div class="pricing-grid">
-      <!-- FREE -->
-      <div class="pricing-card reveal reveal-delay-1">
-        <div class="pricing-tier">Poutník</div>
-        <span class="pricing-icon">🌙</span>
-        <div class="pricing-price">0 Kč</div>
-        <div class="pricing-period">navždy zdarma</div>
+    <div class="pricing-single">
+      <div class="pricing-card featured reveal reveal-delay-1">
+        <div class="pricing-tier">Plný výklad</div>
+        <span class="pricing-icon">🔮</span>
+        <div class="pricing-price">49 Kč</div>
+        <div class="pricing-period">za jeden výklad</div>
         <ul class="pricing-features">
-          <li>1 výklad denně</li>
-          <li>3 tarotové karty</li>
-          <li>Základní výklad (3 sekce)</li>
-          <li>Sdílení na sociální sítě</li>
-          <li class="striked">Hlubší výklad (5 sekcí)</li>
-          <li class="striked">Uložení výkladů</li>
-          <li class="striked">Týdenní horoskop</li>
+          <li>3 tarotové karty z 22 velkých arkán</li>
+          <li>Personalizovaný AI výklad podle tvé otázky</li>
+          <li>Minulost · Přítomnost · Budoucnost</li>
+          <li>Varování a skrytý význam</li>
+          <li>Sdílení na Instagram, TikTok i Facebook</li>
+          <li>Bez registrace, bez předplatného</li>
         </ul>
-        <a href="tarot.html" class="btn-ghost" style="width:100%; text-align:center; display:block;">Začít zdarma</a>
-      </div>
-
-      <!-- PREMIUM -->
-      <div class="pricing-card featured reveal reveal-delay-2">
-        <div class="pricing-tier">Mystik</div>
-        <span class="pricing-icon">⚡</span>
-        <div class="pricing-price">99 Kč</div>
-        <div class="pricing-period">/ měsíc</div>
-        <ul class="pricing-features">
-          <li>5 výkladů denně</li>
-          <li>5 tarotových karet</li>
-          <li>Hluboký výklad (5 sekcí)</li>
-          <li>Sdílení na sociální sítě</li>
-          <li>Uložení výkladů (30 dní)</li>
-          <li>Týdenní horoskop</li>
-          <li class="striked">Personalizovaný denní výklad</li>
-        </ul>
-        <a href="tarot.html" class="btn-primary" style="width:100%; text-align:center; display:block;">Odemknout Mystika</a>
-        <p class="pricing-note">✦ Nejoblíbenější volba</p>
-      </div>
-
-      <!-- VIP -->
-      <div class="pricing-card reveal reveal-delay-3">
-        <div class="pricing-tier">Orákulum</div>
-        <span class="pricing-icon">👁</span>
-        <div class="pricing-price">249 Kč</div>
-        <div class="pricing-period">/ měsíc</div>
-        <ul class="pricing-features">
-          <li>Neomezené výklady</li>
-          <li>10 tarotových karet</li>
-          <li>Nejhlubší výklad (7 sekcí)</li>
-          <li>Sdílení na sociální sítě</li>
-          <li>Uložení výkladů (neomezeně)</li>
-          <li>Denní personalizovaný výklad</li>
-          <li>Prioritní přístup k novinkám</li>
-        </ul>
-        <a href="tarot.html" class="btn-ghost" style="width:100%; text-align:center; display:block;">Stát se Orákulem</a>
-        <p class="pricing-note">✦ Pro skutečné hledající</p>
+        <a href="tarot.html" class="btn-primary" style="width:100%; text-align:center; display:block;">✦ Odhal svůj osud</a>
+        <p class="pricing-note">✦ Jednorázová platba</p>
       </div>
     </div>
   </div>
@@ -1570,22 +1547,6 @@
       <button class="share-btn share-btn-ig">📸 &nbsp; Instagram Stories</button>
       <button class="share-btn share-btn-tt">♪ &nbsp; TikTok</button>
       <button class="share-btn share-btn-fb">f &nbsp; Facebook</button>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════ BLOG TEASER ══════════════ -->
-<section id="blog-teaser">
-  <div class="section-inner">
-    <span class="section-label reveal">✦ Mystický blog</span>
-    <h2 class="section-title reveal reveal-delay-1">Poznání pro <span class="gold">hledající duše</span></h2>
-
-    <div class="blog-coming reveal">
-      <span class="blog-coming-icon">📜</span>
-      <h3>AI blog přichází do tmy</h3>
-      <p>Brzy zde najdeš AI-generované články o tarotových kartách, astrologii, symbolismu a mystice. Každý týden nový obsah, který prohloubí tvé pochopení skrytých sil.</p>
-      <br>
-      <a href="blog.html" class="btn-ghost">Navštívit blog →</a>
     </div>
   </div>
 </section>
@@ -1626,11 +1587,11 @@
       </div>
       <div class="faq-item">
         <button class="faq-question">
-          Jak se liší výklady ve Free a Premium verzi?
+          Kolik výklad stojí a jak platím?
           <span class="faq-toggle">+</span>
         </button>
         <div class="faq-answer">
-          <p>Free výklad obsahuje 3 sekce (minulost, přítomnost, budoucnost). Premium přidává varování, skrytý význam, energetický profil a podrobnější analýzu každé karty. Orákulum zahrnuje i denní výklad a 10 karet.</p>
+          <p>Jeden plný výklad stojí 49 Kč. Žádné předplatné, žádné skryté poplatky. Platíš jednorázově za výklad, který právě teď chceš dostat. Platba je bezpečná, anonymní a probíhá online.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -1673,7 +1634,7 @@
           <li><a href="#jak-to-funguje">Jak to funguje</a></li>
           <li><a href="tarot.html">Zahájit výklad</a></li>
           <li><a href="#cenik">Ceník</a></li>
-          <li><a href="blog.html">Blog</a></li>
+          <li><a href="blog.html">Magazín</a></li>
         </ul>
       </div>
       <div>
@@ -1921,30 +1882,47 @@ function shuffleCards() {
   if (isShuffling) return;
   isShuffling = true;
   const stage = document.getElementById('cardsStage');
+  const cards = document.querySelectorAll('.tarot-card');
   cardFlipped = [false, false, false];
 
-  // Reset flips
-  document.querySelectorAll('.tarot-card').forEach(c => c.classList.remove('flipped'));
+  // Reset flips first (cards back to face-down)
+  cards.forEach(c => c.classList.remove('flipped'));
 
-  // Shuffle animation
-  stage.style.filter = 'blur(2px)';
-  stage.style.transform = 'scale(0.95)';
+  // Set transition BEFORE applying transform — otherwise no animation visible
+  stage.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+
+  // Visible shuffle animation: each card wobbles + lifts
+  cards.forEach((c, i) => {
+    c.style.transition = 'transform 0.45s cubic-bezier(0.4, 0, 0.2, 1)';
+    const tilt = (i - 1) * 8; // -8°, 0°, +8°
+    c.style.transform = `translateY(-20px) rotateZ(${tilt}deg)`;
+  });
+  stage.style.filter = 'blur(3px)';
+
+  // Phase 2: assign new cards while still blurred
   setTimeout(() => {
-    stage.style.filter = 'none';
-    stage.style.transform = 'none';
     assignedCards = getRandomCards(3);
-    for (let i = 0; i < 3; i++) {
+    cards.forEach((el, i) => {
       const card = assignedCards[i];
-      const el = document.getElementById('card' + i);
       el.querySelector('.card-face .card-num').textContent = card.num;
       el.querySelector('.card-face .card-symbol').textContent = card.symbol;
       el.querySelector('.card-face .card-name').textContent = card.name;
       el.querySelector('.card-face .card-meaning').textContent = card.meaning;
-    }
-    isShuffling = false;
-  }, 400);
+    });
+  }, 250);
 
-  stage.style.transition = 'all 0.4s cubic-bezier(0.175,0.885,0.32,1.275)';
+  // Phase 3: cards land back, blur clears
+  setTimeout(() => {
+    stage.style.filter = 'none';
+    cards.forEach(c => { c.style.transform = ''; });
+  }, 500);
+
+  // Phase 4: auto-flip middle card to give clear visual feedback
+  setTimeout(() => {
+    cards[1].classList.add('flipped');
+    cardFlipped[1] = true;
+    isShuffling = false;
+  }, 950);
 }
 
 document.querySelectorAll('.tarot-card').forEach((card, i) => {
