@@ -37,7 +37,7 @@
       background: var(--void);
       color: var(--text-bright);
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 19px;
+      font-size: 20px;
       font-weight: 600;
       line-height: 1.7;
       overflow-x: hidden;
@@ -45,6 +45,7 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
+    @media (max-width: 768px) { body { font-size: 18px; } }
     canvas#bg { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
 
     /* ── Top bar ── */
@@ -653,22 +654,8 @@
   <a href="/" class="topbar-logo">✦ Virtuální kartářka</a>
   <div class="topbar-right">
     <a href="/">← Zpět</a>
-    <span class="settings-icon" id="settingsBtn" title="Nastavení API klíče">⚙</span>
   </div>
 </header>
-
-<!-- Settings Modal -->
-<div class="modal-overlay" id="settingsModal">
-  <div class="modal">
-    <button class="modal-close" id="modalClose">✕</button>
-    <h2>⚙ Nastavení</h2>
-    <p>Pro generování AI výkladů je potřeba Anthropic API klíč. Klíč je uložen pouze ve vašem prohlížeči (localStorage) a nikam se neodesílá.</p>
-    <label>Anthropic API klíč</label>
-    <input type="password" id="apiKeyInput" placeholder="sk-ant-api03-..." />
-    <small>Klíč získáš na <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a>. Nebo požádej správce stránek.</small>
-    <button class="btn-primary" onclick="saveApiKey()">Uložit klíč</button>
-  </div>
-</div>
 
 <main>
   <!-- Progress dots -->
@@ -878,20 +865,6 @@ const DECK = [
 
 function shuffle(arr){ return arr.slice().sort(()=>Math.random()-0.5); }
 function getCards(n){ return shuffle(DECK).slice(0,n); }
-
-// ═══ Settings / API Key ═══
-document.getElementById('settingsBtn').addEventListener('click',()=>{
-  document.getElementById('settingsModal').classList.add('open');
-  document.getElementById('apiKeyInput').value = localStorage.getItem('vk_api_key')||'';
-});
-document.getElementById('modalClose').addEventListener('click',()=>{
-  document.getElementById('settingsModal').classList.remove('open');
-});
-function saveApiKey(){
-  const key = document.getElementById('apiKeyInput').value.trim();
-  if(key) { localStorage.setItem('vk_api_key', key); alert('✦ API klíč uložen. Nyní můžeš provádět AI výklady.'); }
-  document.getElementById('settingsModal').classList.remove('open');
-}
 
 // ═══ Phase navigation ═══
 function setPhase(n){
@@ -1115,7 +1088,11 @@ function goToReading(){
 }
 
 async function fetchReading(cards){
-  const apiKey = localStorage.getItem('vk_api_key');
+  // ⚠ AI generování bude probíhat přes Cloudflare Worker proxy po napojení Simpleshop platby.
+  // URL workeru: nastavit po deploymentu (např. https://vk-api.YOUR-USER.workers.dev)
+  // Worker drží Anthropic API klíč jako secret a volá ho jen po ověření platby.
+  const PROXY_URL = ''; // ← prázdné = používá se ukázkový (fallback) výklad
+
   const cardDesc = cards.map((c,i)=>`${POSITIONS[i]}: ${c.name} (${c.num}) — ${c.sub}`).join('\n');
   const prompt = `Jsi mystická AI tarotová kartářka. Vytvoř hluboký, poetický a mírně dramatický výklad tarotových karet v češtině.
 
@@ -1139,16 +1116,11 @@ Vytvoř výklad ve formátu JSON s těmito klíči:
 Tón: mystický, poetický, emocionální, lehce dramatický. Piš v 2. osobě (ty/tě/tvůj). Odpověz POUZE JSON objektem, bez dalšího textu.`;
 
   try {
-    if(!apiKey) throw new Error('NO_KEY');
+    if(!PROXY_URL) throw new Error('NO_PROXY');
 
-    const res = await fetch('https://api.anthropic.com/v1/messages',{
+    const res = await fetch(PROXY_URL,{
       method:'POST',
-      headers:{
-        'Content-Type':'application/json',
-        'x-api-key': apiKey,
-        'anthropic-version':'2023-06-01',
-        'anthropic-dangerous-direct-browser-access': 'true'
-      },
+      headers: { 'Content-Type':'application/json' },
       body: JSON.stringify({
         model:'claude-sonnet-4-20250514',
         max_tokens:1000,
@@ -1163,11 +1135,7 @@ Tón: mystický, poetický, emocionální, lehce dramatický. Piš v 2. osobě (
     const reading = JSON.parse(clean);
     showReading(reading, cards);
   } catch(err) {
-    if(err.message==='NO_KEY'){
-      showFallbackReading(cards);
-    } else {
-      showFallbackReading(cards);
-    }
+    showFallbackReading(cards);
   }
 }
 

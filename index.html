@@ -71,13 +71,17 @@
       background: var(--void);
       color: var(--text-bright);
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 19px;
+      font-size: 20px;
       font-weight: 600;
       line-height: 1.7;
       overflow-x: hidden;
       cursor: none;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+    }
+    @media (max-width: 768px) {
+      body { font-size: 18px; cursor: auto; }
+      #cursor, #cursor-trail { display: none; }
     }
 
     /* ── Custom cursor ── */
@@ -425,7 +429,7 @@
 
     /* ── Jak to funguje ── */
     #jak-to-funguje {
-      background: linear-gradient(180deg, transparent 0%, rgba(29,16,56,0.3) 50%, transparent 100%);
+      background: linear-gradient(180deg, transparent 0%, rgba(29,16,56,0.4) 50%, transparent 100%);
     }
     .steps-grid {
       display: grid;
@@ -434,46 +438,70 @@
       margin-top: 4rem;
     }
     .step-card {
-      background: var(--glass);
-      border: 1px solid var(--glass-border);
-      border-radius: 4px;
-      padding: 2.5rem;
+      background: linear-gradient(180deg, rgba(45,24,84,0.25) 0%, rgba(11,6,24,0.4) 100%);
+      border: 1px solid rgba(168,85,247,0.2);
+      border-radius: 6px;
+      padding: 3rem 2.2rem 2.5rem;
       backdrop-filter: blur(20px);
       position: relative;
       overflow: hidden;
-      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+      transition: border-color 0.4s, box-shadow 0.4s, transform 0.3s;
+      text-align: center;
     }
+    /* Top gold gradient strip */
     .step-card::before {
       content: '';
       position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), var(--gold-bright), var(--gold), transparent);
+      opacity: 0.7;
+    }
+    /* Decorative corner ornaments */
+    .step-card::after {
+      content: '';
+      position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 50% 0%, rgba(168,85,247,0.08) 0%, transparent 60%);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(201,148,58,0.12) 0%, transparent 50%),
+        radial-gradient(circle at 50% 100%, rgba(168,85,247,0.1) 0%, transparent 60%);
       pointer-events: none;
+      opacity: 0.7;
     }
     .step-card:hover {
-      border-color: rgba(168,85,247,0.4);
-      box-shadow: 0 0 40px rgba(107,33,168,0.2);
-      transform: translateY(-4px);
+      border-color: rgba(201,148,58,0.5);
+      box-shadow: 0 12px 50px rgba(107,33,168,0.25), 0 0 60px rgba(201,148,58,0.15);
+      transform: translateY(-6px);
     }
+    .step-card > * { position: relative; z-index: 1; }
     .step-num {
       font-family: 'Cinzel Decorative', serif;
-      font-size: 3.5rem;
-      color: rgba(201,148,58,0.15);
+      font-size: 3rem;
+      color: var(--gold-bright);
+      opacity: 0.25;
       line-height: 1;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
+      filter: drop-shadow(0 0 20px var(--gold-glow));
     }
     .step-icon {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      display: block;
-      filter: drop-shadow(0 0 10px var(--gold-glow));
+      font-size: 2.6rem;
+      margin: 0.5rem auto 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,148,58,0.18), transparent 70%);
+      border: 1px solid rgba(201,148,58,0.3);
+      filter: drop-shadow(0 0 15px var(--gold-glow));
     }
     .step-title {
       font-family: 'Cinzel', serif;
-      font-size: 1rem;
-      letter-spacing: 0.1em;
+      font-size: 1.05rem;
+      letter-spacing: 0.12em;
       color: var(--gold-bright);
-      margin-bottom: 0.8rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 15px var(--gold-glow);
     }
     .step-text {
       font-size: 1.05rem;
@@ -494,23 +522,32 @@
     }
     .cat-btn {
       font-family: 'Cinzel', serif;
-      font-size: 0.7rem;
+      font-size: 0.78rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      padding: 0.7rem 1.4rem;
-      border: 1px solid var(--glass-border);
-      background: var(--glass);
+      padding: 0.95rem 1.6rem;
+      border: 1px solid rgba(168,85,247,0.25);
+      background: rgba(45,24,84,0.25);
       color: var(--mist);
       cursor: pointer;
-      border-radius: 2px;
+      border-radius: 4px;
       backdrop-filter: blur(10px);
       transition: all 0.3s;
+      font-weight: 500;
     }
-    .cat-btn:hover, .cat-btn.active {
-      border-color: var(--gold);
+    .cat-btn:hover {
+      border-color: rgba(201,148,58,0.5);
       color: var(--gold-bright);
+      background: rgba(201,148,58,0.08);
       box-shadow: 0 0 20px var(--gold-glow);
-      background: rgba(201,148,58,0.05);
+      transform: translateY(-1px);
+    }
+    .cat-btn.active {
+      border-color: var(--gold);
+      color: var(--void);
+      background: linear-gradient(135deg, var(--gold), var(--gold-bright));
+      box-shadow: 0 0 25px var(--gold-glow);
+      font-weight: 700;
     }
     .cards-stage {
       display: flex;
@@ -767,42 +804,75 @@
       margin-top: 4rem;
     }
     .testimonial-card {
-      background: var(--glass);
-      border: 1px solid var(--glass-border);
-      border-radius: 4px;
-      padding: 2rem;
+      background: linear-gradient(165deg, rgba(45,24,84,0.3) 0%, rgba(11,6,24,0.5) 100%);
+      border: 1px solid rgba(168,85,247,0.2);
+      border-radius: 6px;
+      padding: 2.6rem 2.2rem 2rem;
       backdrop-filter: blur(15px);
       text-align: left;
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: -1rem; left: 1rem;
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 6rem;
+      color: var(--gold);
+      opacity: 0.18;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .testimonial-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0.6;
     }
     .testimonial-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 40px rgba(107,33,168,0.2);
+      transform: translateY(-5px);
+      border-color: rgba(201,148,58,0.4);
+      box-shadow: 0 14px 50px rgba(107,33,168,0.25), 0 0 40px rgba(201,148,58,0.1);
     }
     .testimonial-stars {
       color: var(--gold-bright);
-      font-size: 0.85rem;
-      letter-spacing: 0.1em;
-      margin-bottom: 1rem;
-      text-shadow: 0 0 10px var(--gold-glow);
+      font-size: 0.95rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 1.2rem;
+      text-shadow: 0 0 12px var(--gold-glow);
+      position: relative;
+      z-index: 1;
     }
     .testimonial-text {
       font-style: italic;
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       color: var(--text-bright);
       line-height: 1.7;
       margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
     }
     .testimonial-author {
       font-family: 'Cinzel', serif;
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      color: var(--gold-dim);
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
     }
 
     /* ── Ceník ── */
     #cenik {
       background: linear-gradient(180deg, transparent, rgba(29,16,56,0.3), transparent);
+      text-align: center;
+    }
+    #cenik {
+      background: linear-gradient(180deg, transparent, rgba(29,16,56,0.4), transparent);
       text-align: center;
     }
     .pricing-grid {
@@ -813,25 +883,41 @@
       align-items: start;
     }
     .pricing-single {
-      max-width: 460px;
+      max-width: 520px;
       margin: 4rem auto 0;
     }
     .pricing-card {
-      background: var(--glass);
-      border: 1px solid var(--glass-border);
-      border-radius: 4px;
-      padding: 2.5rem 2rem;
+      background: linear-gradient(165deg, rgba(45,24,84,0.4) 0%, rgba(11,6,24,0.6) 100%);
+      border: 1px solid rgba(168,85,247,0.2);
+      border-radius: 8px;
+      padding: 3rem 2.5rem;
       backdrop-filter: blur(20px);
       transition: transform 0.3s, box-shadow 0.3s;
       position: relative;
       overflow: hidden;
     }
     .pricing-card.featured {
-      border-color: rgba(201,148,58,0.5);
-      box-shadow: 0 0 40px rgba(201,148,58,0.15);
+      border-color: rgba(201,148,58,0.55);
+      box-shadow: 0 0 60px rgba(201,148,58,0.18), 0 20px 50px rgba(0,0,0,0.5);
+    }
+    .pricing-single .pricing-card.featured {
+      padding: 3.5rem 2.8rem 2.8rem;
     }
     .pricing-single .pricing-card.featured::before {
-      display: none;
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), var(--gold-bright), var(--gold), transparent);
+    }
+    /* Decorative corner ornaments on featured single */
+    .pricing-single .pricing-card.featured::after {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border: 1px solid rgba(201,148,58,0.15);
+      border-radius: 6px;
+      pointer-events: none;
     }
     .pricing-grid .pricing-card.featured::before {
       content: 'NEJOBLÍBENĚJŠÍ';
@@ -847,33 +933,39 @@
     }
     .pricing-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      box-shadow: 0 25px 70px rgba(0,0,0,0.6), 0 0 80px rgba(201,148,58,0.25);
     }
+    .pricing-card > * { position: relative; z-index: 1; }
     .pricing-tier {
       font-family: 'Cinzel', serif;
       font-size: 0.75rem;
-      letter-spacing: 0.3em;
+      letter-spacing: 0.35em;
       text-transform: uppercase;
-      color: var(--text-dim);
+      color: var(--gold);
       margin-bottom: 1rem;
     }
     .pricing-icon {
-      font-size: 2rem;
+      font-size: 2.6rem;
       display: block;
-      margin-bottom: 1rem;
-      filter: drop-shadow(0 0 10px var(--gold-glow));
+      margin-bottom: 0.8rem;
+      filter: drop-shadow(0 0 18px var(--gold-glow));
     }
     .pricing-price {
       font-family: 'Cinzel Decorative', serif;
-      font-size: 2.5rem;
-      color: var(--gold-bright);
-      text-shadow: 0 0 20px var(--gold-glow);
+      font-size: 3.4rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-bright) 50%, #ffe08a 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 25px var(--gold-glow));
       line-height: 1;
     }
     .pricing-period {
-      font-size: 0.85rem;
-      color: var(--text-dim);
-      margin-bottom: 2rem;
+      font-size: 0.95rem;
+      color: var(--mist);
+      margin: 0.6rem 0 2rem;
+      letter-spacing: 0.05em;
     }
     .pricing-features {
       list-style: none;
@@ -881,32 +973,42 @@
       margin-bottom: 2rem;
       display: flex;
       flex-direction: column;
-      gap: 0.7rem;
+      gap: 0.85rem;
     }
     .pricing-features li {
-      font-size: 0.95rem;
-      color: var(--text);
+      font-size: 1.05rem;
+      color: var(--text-bright);
       display: flex;
       align-items: flex-start;
-      gap: 0.7rem;
+      gap: 0.8rem;
+      line-height: 1.5;
     }
     .pricing-features li::before {
       content: '✦';
-      color: var(--gold);
-      font-size: 0.6rem;
+      color: var(--gold-bright);
+      font-size: 0.75rem;
       margin-top: 0.4rem;
       flex-shrink: 0;
+      filter: drop-shadow(0 0 8px var(--gold-glow));
     }
     .pricing-features li.striked {
       color: var(--text-dim);
       opacity: 0.5;
     }
     .pricing-features li.striked::before { content: '×'; color: var(--text-dim); }
+    .pricing-features strong {
+      color: var(--gold-bright);
+      font-weight: 700;
+    }
+    .pricing-card .btn-primary {
+      font-size: 0.85rem;
+      padding: 1.2rem 2rem;
+    }
     .pricing-note {
       margin-top: 1.5rem;
-      font-size: 0.8rem;
+      font-size: 0.95rem;
       font-style: italic;
-      color: var(--text-dim);
+      color: var(--mist);
     }
 
     /* ── Share sekce ── */
@@ -1267,17 +1369,42 @@
       .nav-links { display: none; }
       .hamburger { display: flex; }
       .footer-top { grid-template-columns: 1fr 1fr; }
+      section { padding: 6rem 1.5rem; }
+      h2.section-title { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+      .step-card { padding: 2.5rem 1.8rem 2rem; }
+      .pricing-card { padding: 2.5rem 1.8rem; }
+      .testimonial-card { padding: 2.4rem 1.8rem 1.8rem; }
+      .pricing-features li { font-size: 1rem; }
+      .reading-container { padding: 2rem 1.5rem; }
+      .faq-question { padding: 1.4rem 1.4rem; font-size: 0.85rem; }
+      .faq-answer p { padding: 0 1.4rem 1.5rem; font-size: 1.05rem; }
     }
     @media (max-width: 600px) {
-      section { padding: 5rem 1.2rem; }
-      .hero-stats { gap: 1.5rem; }
-      .cards-stage { gap: 0.8rem; }
-      .tarot-card { width: 100px; height: 175px; }
-      .reading-container { padding: 1.5rem; }
-      .reading-cards-display { flex-direction: column; align-items: center; }
+      section { padding: 4.5rem 1.2rem; }
+      .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+      .hero-stat-num { font-size: 1.5rem; }
+      .cards-stage { gap: 0.6rem; }
+      .tarot-card { width: 95px; height: 162px; }
+      .card-symbol { font-size: 2.2rem; }
+      .card-name, .card-num { font-size: 0.55rem; }
+      .card-meaning { font-size: 0.62rem; }
+      .reading-container { padding: 1.5rem 1rem; }
+      .reading-cards-display { flex-direction: column; align-items: center; gap: 0.5rem; }
       .reading-card-mini { max-width: 100%; }
       .footer-top { grid-template-columns: 1fr; gap: 2rem; }
       .footer-bottom { flex-direction: column; text-align: center; }
+      .pricing-price { font-size: 2.8rem; }
+      .pricing-card { padding: 2rem 1.4rem; }
+      .pricing-features li { font-size: 0.95rem; }
+      .testimonial-text { font-size: 1.05rem; }
+      .step-num { font-size: 2.5rem; }
+      .step-icon { width: 70px; height: 70px; font-size: 2.2rem; }
+      .btn-primary, .btn-ghost { padding: 1rem 1.8rem; font-size: 0.72rem; }
+      #shuffleBtn { padding: 1.1rem 2.4rem; font-size: 0.8rem; }
+      .cat-btn { padding: 0.8rem 1.2rem; font-size: 0.7rem; }
+      .shuffle-badges { font-size: 0.6rem; gap: 0.8rem; }
+      .hero-cta-wrap { flex-direction: column; align-items: stretch; }
+      .hero-cta-wrap .btn-primary, .hero-cta-wrap .btn-ghost { width: 100%; text-align: center; }
     }
   </style>
   <!-- Google Analytics 4 -->

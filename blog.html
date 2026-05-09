@@ -33,10 +33,11 @@
     html{scroll-behavior:smooth;}
     body{
       background:var(--void); color:var(--text-bright);
-      font-family:'Cormorant Garamond',Georgia,serif; font-size:19px; font-weight:600;
+      font-family:'Cormorant Garamond',Georgia,serif; font-size:20px; font-weight:600;
       line-height:1.7; overflow-x:hidden;
       -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
     }
+    @media (max-width: 768px) { body { font-size: 18px; } }
     canvas#stars{position:fixed;inset:0;z-index:0;pointer-events:none;}
 
     nav{
@@ -607,23 +608,18 @@ async function openArticle(id){
     return;
   }
 
-  // Generate with AI
-  const apiKey=localStorage.getItem('vk_api_key');
-  if(!apiKey){
-    // Demo content
+  // Generate with AI via Cloudflare Worker proxy (will be configured later).
+  // Until proxy is set, demo content is used.
+  const PROXY_URL = ''; // ← nastavit po deploymentu workeru (např. https://vk-api.YOUR-USER.workers.dev)
+  if(!PROXY_URL){
     renderArticle(getDemoContent(art));
     return;
   }
 
   try {
-    const res=await fetch('https://api.anthropic.com/v1/messages',{
+    const res=await fetch(PROXY_URL,{
       method:'POST',
-      headers:{
-        'Content-Type':'application/json',
-        'x-api-key':apiKey,
-        'anthropic-version':'2023-06-01',
-        'anthropic-dangerous-direct-browser-access':'true'
-      },
+      headers:{ 'Content-Type':'application/json' },
       body:JSON.stringify({
         model:'claude-sonnet-4-20250514',
         max_tokens:1500,
