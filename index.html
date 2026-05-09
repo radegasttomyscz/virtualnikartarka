@@ -38,7 +38,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -70,10 +70,10 @@
     body {
       background: var(--void);
       color: var(--text-bright);
-      font-family: 'Lora', Georgia, serif;
-      font-size: 18px;
-      font-weight: 500;
-      line-height: 1.75;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 19px;
+      font-weight: 600;
+      line-height: 1.7;
       overflow-x: hidden;
       cursor: none;
       -webkit-font-smoothing: antialiased;
@@ -117,10 +117,7 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.2rem 4rem;
+      padding: 1.2rem 2rem;
       background: linear-gradient(180deg, rgba(4,2,10,0.95) 0%, transparent 100%);
       transition: background 0.4s;
     }
@@ -128,6 +125,13 @@
       background: rgba(11,6,24,0.92);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--glass-border);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
     .nav-logo {
       font-family: 'Cinzel Decorative', serif;
@@ -604,12 +608,42 @@
       line-height: 1.4;
     }
 
-    .shuffle-btn-wrap { margin-top: 2rem; }
+    .shuffle-btn-wrap { margin-top: 2.5rem; }
+    #shuffleBtn {
+      font-size: 0.95rem;
+      padding: 1.3rem 3.2rem;
+      animation: shuffleBtnPulse 2.6s ease-in-out infinite;
+    }
+    @keyframes shuffleBtnPulse {
+      0%, 100% { box-shadow: 0 0 30px var(--gold-glow), 0 0 60px rgba(201,148,58,0.15); }
+      50% { box-shadow: 0 0 50px rgba(240,192,96,0.6), 0 0 100px rgba(201,148,58,0.25); }
+    }
     .shuffle-hint {
       margin-top: 1.5rem;
-      font-size: 0.85rem;
-      color: var(--text-dim);
+      font-size: 1rem;
+      color: var(--mist);
       font-style: italic;
+    }
+    .shuffle-badges {
+      display: flex;
+      gap: 1.2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+    }
+    .shuffle-badges span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .shuffle-badges span::before {
+      content: '✦';
+      color: var(--gold);
     }
 
     /* ── Ukázka výkladu ── */
@@ -960,25 +994,54 @@
 
     /* ── FAQ ── */
     #faq {
-      background: linear-gradient(180deg, transparent, rgba(19,13,38,0.3), transparent);
+      background: linear-gradient(180deg, transparent, rgba(19,13,38,0.4), transparent);
     }
     .faq-list {
-      max-width: 750px;
+      max-width: 800px;
       margin: 4rem auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
     .faq-item {
-      border-bottom: 1px solid var(--glass-border);
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 4px;
+      backdrop-filter: blur(15px);
+      transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+      overflow: hidden;
+      position: relative;
     }
+    .faq-item::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px; height: 100%;
+      background: linear-gradient(180deg, transparent, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .faq-item:hover {
+      border-color: rgba(201,148,58,0.3);
+      box-shadow: 0 4px 30px rgba(107,33,168,0.1);
+    }
+    .faq-item:hover::before { opacity: 1; }
+    .faq-item.open {
+      border-color: rgba(201,148,58,0.4);
+      background: rgba(29,16,56,0.3);
+      box-shadow: 0 4px 40px rgba(107,33,168,0.15);
+    }
+    .faq-item.open::before { opacity: 1; }
     .faq-question {
       width: 100%;
       background: none;
       border: none;
-      color: var(--text);
+      color: var(--text-bright);
       font-family: 'Cinzel', serif;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       letter-spacing: 0.05em;
       text-align: left;
-      padding: 1.5rem 0;
+      padding: 1.6rem 1.8rem;
       cursor: pointer;
       display: flex;
       justify-content: space-between;
@@ -987,28 +1050,35 @@
       transition: color 0.3s;
     }
     .faq-question:hover { color: var(--gold-bright); }
+    .faq-item.open .faq-question { color: var(--gold-bright); }
     .faq-toggle {
-      width: 20px; height: 20px;
-      border: 1px solid var(--glass-border);
+      width: 26px; height: 26px;
+      border: 1px solid rgba(201,148,58,0.4);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.8rem;
+      font-size: 0.95rem;
       color: var(--gold);
       flex-shrink: 0;
-      transition: transform 0.3s, border-color 0.3s;
+      transition: transform 0.3s, border-color 0.3s, background 0.3s;
+      font-weight: 300;
     }
-    .faq-item.open .faq-toggle { transform: rotate(45deg); border-color: var(--gold); }
+    .faq-item.open .faq-toggle {
+      transform: rotate(45deg);
+      border-color: var(--gold-bright);
+      background: rgba(201,148,58,0.15);
+      color: var(--gold-bright);
+    }
     .faq-answer {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.4s ease;
+      transition: max-height 0.45s ease;
     }
     .faq-item.open .faq-answer { max-height: 500px; }
     .faq-answer p {
-      padding-bottom: 1.5rem;
-      font-size: 1.05rem;
+      padding: 0 1.8rem 1.8rem;
+      font-size: 1.1rem;
       color: var(--text-bright);
       line-height: 1.75;
     }
@@ -1230,16 +1300,17 @@
 
 <!-- Navigation -->
 <nav id="mainNav">
-  <a href="/" class="nav-logo">✦ Virtuální <span>kartářka</span></a>
-  <ul class="nav-links">
-    <li><a href="#jak-to-funguje">Jak to funguje</a></li>
-    <li><a href="#cenik">Ceník</a></li>
-    <li><a href="blog.html">Magazín</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="tarot.html" class="nav-cta">Zahájit výklad</a></li>
-  </ul>
-  <div class="hamburger" id="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">✦ Virtuální <span>kartářka</span></a>
+    <ul class="nav-links">
+      <li><a href="#jak-to-funguje">Jak to funguje</a></li>
+      <li><a href="#cenik">Ceník</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="tarot.html" class="nav-cta">Zahájit výklad</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
   </div>
 </nav>
 
@@ -1249,7 +1320,6 @@
   <a href="#jak-to-funguje" class="mobile-link">Jak to funguje</a>
   <a href="#tarot-preview" class="mobile-link">Vyzkoušet</a>
   <a href="#cenik" class="mobile-link">Ceník</a>
-  <a href="blog.html" class="mobile-link">Magazín</a>
   <a href="#faq" class="mobile-link">FAQ</a>
   <a href="tarot.html" class="btn-primary">Zahájit výklad</a>
 </div>
@@ -1399,9 +1469,15 @@
     <div class="shuffle-btn-wrap reveal">
       <button class="btn-primary" id="shuffleBtn" onclick="shuffleCards()">🃏 &nbsp; Zamíchat karty</button>
     </div>
-    <p class="shuffle-hint reveal">Klikni na další karty a otoč je. Pro plný AI výklad pokračuj dál →</p>
+    <p class="shuffle-hint reveal">Vyzkoušej ukázku zdarma — zamíchej a otoč karty. Pro plný AI výklad pokračuj dál →</p>
 
-    <div style="margin-top: 2rem;" class="reveal">
+    <div class="shuffle-badges reveal">
+      <span>Bez registrace</span>
+      <span>Personalizovaný výklad</span>
+      <span>Výsledek na e-mail</span>
+    </div>
+
+    <div style="margin-top: 2.5rem;" class="reveal">
       <a href="tarot.html" class="btn-ghost">✦ &nbsp; Zahájit plný výklad s AI &nbsp; →</a>
     </div>
   </div>
@@ -1510,6 +1586,7 @@
           <li>Personalizovaný AI výklad podle tvé otázky</li>
           <li>Minulost · Přítomnost · Budoucnost</li>
           <li>Varování a skrytý význam</li>
+          <li>Výsledek pošleme na <strong>tvůj e-mail</strong></li>
           <li>Sdílení na Instagram, TikTok i Facebook</li>
           <li>Bez registrace, bez předplatného</li>
         </ul>
@@ -1634,7 +1711,7 @@
           <li><a href="#jak-to-funguje">Jak to funguje</a></li>
           <li><a href="tarot.html">Zahájit výklad</a></li>
           <li><a href="#cenik">Ceník</a></li>
-          <li><a href="blog.html">Magazín</a></li>
+          <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
       <div>
