@@ -1,0 +1,2006 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Virtuální kartářka – AI Tarotová Věštírna | virtualnikartarka.cz</title>
+  <meta name="description" content="Objevte svou budoucnost s naší AI tarotovou věštírnou. Personalizované výklady pro lásku, práci, peníze a budoucnost. Zamíchejte karty a odhalte svůj osud." />
+  <meta name="keywords" content="tarot, věštírna, výklad karet, AI věštění, tarotové karty, online tarot, budoucnost, láska horoskop" />
+  <meta name="author" content="Virtuální kartářka" />
+  <link rel="canonical" href="https://virtualnikartarka.cz/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://virtualnikartarka.cz/" />
+  <meta property="og:title" content="Virtuální kartářka – AI Tarotová Věštírna" />
+  <meta property="og:description" content="AI věštírna nové generace. Zamíchejte digitální karty a odhalte svůj osud." />
+  <meta property="og:image" content="https://virtualnikartarka.cz/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Virtuální kartářka – AI Tarotová Věštírna" />
+  <meta name="twitter:description" content="AI věštírna nové generace. Zamíchejte digitální karty a odhalte svůj osud." />
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Virtuální kartářka",
+    "url": "https://virtualnikartarka.cz",
+    "description": "AI tarotová věštírna nové generace",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://virtualnikartarka.cz/tarot.html"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --void: #04020a;
+      --abyss: #0b0618;
+      --shadow: #130d26;
+      --mystic: #1e1038;
+      --deep: #2d1854;
+      --amethyst: #6b21a8;
+      --lavender: #a855f7;
+      --mist: #c4a7e7;
+      --gold: #c9943a;
+      --gold-bright: #f0c060;
+      --gold-dim: #7a5820;
+      --gold-glow: rgba(201,148,58,0.4);
+      --purple-glow: rgba(168,85,247,0.3);
+      --glass: rgba(255,255,255,0.03);
+      --glass-border: rgba(168,85,247,0.15);
+      --text: #e2d0f5;
+      --text-dim: #8b6fa8;
+      --text-bright: #f5eeff;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--void);
+      color: var(--text);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      line-height: 1.7;
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    /* ── Custom cursor ── */
+    #cursor {
+      position: fixed;
+      width: 12px; height: 12px;
+      background: var(--gold-bright);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%,-50%);
+      transition: transform 0.1s, opacity 0.3s;
+      box-shadow: 0 0 20px var(--gold-glow), 0 0 40px var(--gold-glow);
+      mix-blend-mode: screen;
+    }
+    #cursor-trail {
+      position: fixed;
+      width: 36px; height: 36px;
+      border: 1px solid rgba(201,148,58,0.3);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%,-50%);
+      transition: left 0.15s ease, top 0.15s ease;
+    }
+
+    /* ── Canvas star background ── */
+    #starCanvas {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* ── Navigation ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 4rem;
+      background: linear-gradient(180deg, rgba(4,2,10,0.95) 0%, transparent 100%);
+      transition: background 0.4s;
+    }
+    nav.scrolled {
+      background: rgba(11,6,24,0.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .nav-logo {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.1rem;
+      color: var(--gold-bright);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-shadow: 0 0 20px var(--gold-glow);
+    }
+    .nav-logo span { color: var(--mist); }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mist);
+      text-decoration: none;
+      transition: color 0.3s, text-shadow 0.3s;
+    }
+    .nav-links a:hover {
+      color: var(--gold-bright);
+      text-shadow: 0 0 15px var(--gold-glow);
+    }
+    .nav-cta {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--void) !important;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-bright) 100%);
+      padding: 0.6rem 1.4rem;
+      border-radius: 2px;
+      text-decoration: none;
+      text-shadow: none !important;
+      transition: box-shadow 0.3s, transform 0.2s !important;
+    }
+    .nav-cta:hover {
+      box-shadow: 0 0 30px var(--gold-glow) !important;
+      transform: translateY(-1px) !important;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+    .hamburger span {
+      display: block; width: 24px; height: 1px;
+      background: var(--gold-bright);
+      transition: 0.3s;
+    }
+
+    /* ── Hero ── */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 2rem 4rem;
+      z-index: 1;
+      overflow: hidden;
+    }
+    .hero-mist {
+      position: absolute;
+      bottom: 0; left: -10%; right: -10%;
+      height: 300px;
+      background: radial-gradient(ellipse at 50% 100%, rgba(107,33,168,0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-sigil {
+      width: 120px; height: 120px;
+      margin: 0 auto 2rem;
+      opacity: 0;
+      animation: fadeInDown 1s ease 0.3s forwards;
+    }
+    .hero-sigil svg { width: 100%; height: 100%; }
+    .hero-eyebrow {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeInDown 1s ease 0.5s forwards;
+    }
+    h1.hero-title {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(2.8rem, 8vw, 6rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: 0.05em;
+      background: linear-gradient(135deg, var(--gold-dim) 0%, var(--gold-bright) 40%, var(--mist) 70%, var(--gold) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: none;
+      filter: drop-shadow(0 0 40px rgba(201,148,58,0.5));
+      opacity: 0;
+      animation: fadeInUp 1.2s ease 0.7s forwards;
+    }
+    .hero-sub {
+      font-family: 'IM Fell English', serif;
+      font-size: clamp(1.2rem, 3vw, 1.7rem);
+      font-style: italic;
+      color: var(--mist);
+      margin-top: 1rem;
+      letter-spacing: 0.05em;
+      opacity: 0;
+      animation: fadeInUp 1s ease 1s forwards;
+    }
+    .hero-whisper {
+      margin-top: 1.5rem;
+      font-size: 1rem;
+      color: var(--text-dim);
+      letter-spacing: 0.1em;
+      font-style: italic;
+      opacity: 0;
+      animation: fadeInUp 1s ease 1.2s forwards;
+    }
+    .hero-cta-wrap {
+      margin-top: 3rem;
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      opacity: 0;
+      animation: fadeInUp 1s ease 1.4s forwards;
+    }
+    .btn-primary {
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--void);
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-bright) 60%, #ffe08a 100%);
+      padding: 1.1rem 2.8rem;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 0 40px var(--gold-glow);
+    }
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.3) 50%, transparent 60%);
+      transform: translateX(-100%);
+      transition: transform 0.6s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 60px var(--gold-glow), 0 10px 40px rgba(0,0,0,0.5); }
+    .btn-primary:hover::before { transform: translateX(200%); }
+
+    .btn-ghost {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mist);
+      background: transparent;
+      padding: 1.1rem 2.4rem;
+      border: 1px solid var(--glass-border);
+      border-radius: 2px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      backdrop-filter: blur(10px);
+      transition: border-color 0.3s, color 0.3s, box-shadow 0.3s;
+    }
+    .btn-ghost:hover {
+      border-color: var(--lavender);
+      color: var(--lavender);
+      box-shadow: 0 0 30px var(--purple-glow);
+    }
+
+    .hero-stats {
+      margin-top: 4rem;
+      display: flex;
+      gap: 3rem;
+      justify-content: center;
+      opacity: 0;
+      animation: fadeInUp 1s ease 1.6s forwards;
+    }
+    .hero-stat {
+      text-align: center;
+    }
+    .hero-stat-num {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.8rem;
+      color: var(--gold-bright);
+      display: block;
+      text-shadow: 0 0 20px var(--gold-glow);
+    }
+    .hero-stat-label {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      letter-spacing: 0.1em;
+    }
+    .hero-scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0;
+      animation: fadeIn 1s ease 2.5s forwards;
+    }
+    .hero-scroll-indicator span {
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      color: var(--text-dim);
+      text-transform: uppercase;
+    }
+    .scroll-line {
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(180deg, var(--gold-dim), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    /* ── Section base ── */
+    section {
+      position: relative;
+      z-index: 1;
+      padding: 8rem 2rem;
+    }
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .section-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 1.5rem;
+    }
+    h2.section-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      line-height: 1.2;
+      color: var(--text-bright);
+      margin-bottom: 1.5rem;
+    }
+    h2.section-title .gold { color: var(--gold-bright); }
+    .section-desc {
+      font-size: 1.1rem;
+      color: var(--text-dim);
+      max-width: 600px;
+      line-height: 1.9;
+    }
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 2rem 0;
+    }
+
+    /* ── Reveal animations ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ── Jak to funguje ── */
+    #jak-to-funguje {
+      background: linear-gradient(180deg, transparent 0%, rgba(29,16,56,0.3) 50%, transparent 100%);
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+    .step-card {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 4px;
+      padding: 2.5rem;
+      backdrop-filter: blur(20px);
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    }
+    .step-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(168,85,247,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .step-card:hover {
+      border-color: rgba(168,85,247,0.4);
+      box-shadow: 0 0 40px rgba(107,33,168,0.2);
+      transform: translateY(-4px);
+    }
+    .step-num {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 3.5rem;
+      color: rgba(201,148,58,0.15);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .step-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      display: block;
+      filter: drop-shadow(0 0 10px var(--gold-glow));
+    }
+    .step-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      color: var(--gold-bright);
+      margin-bottom: 0.8rem;
+    }
+    .step-text {
+      font-size: 1rem;
+      color: var(--text-dim);
+      line-height: 1.8;
+      font-style: italic;
+    }
+
+    /* ── Tarot Preview ── */
+    #tarot-preview {
+      text-align: center;
+    }
+    .category-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      margin: 3rem 0;
+    }
+    .cat-btn {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.7rem 1.4rem;
+      border: 1px solid var(--glass-border);
+      background: var(--glass);
+      color: var(--mist);
+      cursor: pointer;
+      border-radius: 2px;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s;
+    }
+    .cat-btn:hover, .cat-btn.active {
+      border-color: var(--gold);
+      color: var(--gold-bright);
+      box-shadow: 0 0 20px var(--gold-glow);
+      background: rgba(201,148,58,0.05);
+    }
+    .cards-stage {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      margin: 3rem 0;
+      perspective: 1000px;
+    }
+    .tarot-card {
+      width: 140px;
+      height: 240px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      cursor: pointer;
+    }
+    .tarot-card.flipped { transform: rotateY(180deg); }
+    .tarot-card.hover-lift { transform: translateY(-8px) rotateZ(-1deg); }
+    .tarot-card.flipped.hover-lift { transform: rotateY(180deg) translateY(-8px); }
+    .card-face, .card-back {
+      position: absolute;
+      inset: 0;
+      border-radius: 8px;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    .card-back {
+      background: linear-gradient(145deg, #1a0a2e 0%, #0d0818 60%, #1e1038 100%);
+      border: 1px solid rgba(168,85,247,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.7), inset 0 1px 0 rgba(168,85,247,0.1);
+    }
+    .card-back-pattern {
+      width: 80%;
+      height: 80%;
+      border: 1px solid rgba(201,148,58,0.2);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .card-back-symbol {
+      font-size: 2.5rem;
+      color: rgba(201,148,58,0.4);
+      filter: drop-shadow(0 0 10px var(--gold-glow));
+    }
+    .card-back-corner {
+      position: absolute;
+      font-size: 0.6rem;
+      color: rgba(201,148,58,0.3);
+      font-family: 'Cinzel', serif;
+    }
+    .card-back-corner.tl { top: 6px; left: 6px; }
+    .card-back-corner.br { bottom: 6px; right: 6px; transform: rotate(180deg); }
+
+    .card-face {
+      transform: rotateY(180deg);
+      background: linear-gradient(145deg, #1a0f30 0%, #0f0a1e 100%);
+      border: 1px solid rgba(201,148,58,0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0.8rem;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.8), 0 0 30px rgba(107,33,168,0.2), inset 0 1px 0 rgba(201,148,58,0.1);
+    }
+    .card-num {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: var(--gold-dim);
+    }
+    .card-symbol {
+      font-size: 3rem;
+      filter: drop-shadow(0 0 15px var(--gold-glow));
+      animation: cardGlow 3s ease-in-out infinite;
+    }
+    .card-name {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .card-meaning {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.7rem;
+      color: var(--mist);
+      text-align: center;
+      font-style: italic;
+      line-height: 1.4;
+    }
+
+    .shuffle-btn-wrap { margin-top: 2rem; }
+    .shuffle-hint {
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      font-style: italic;
+    }
+
+    /* ── Ukázka výkladu ── */
+    #ukazka {
+      background: linear-gradient(180deg, transparent 0%, rgba(19,13,38,0.4) 50%, transparent 100%);
+    }
+    .reading-container {
+      max-width: 800px;
+      margin: 4rem auto 0;
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 8px;
+      padding: 3rem;
+      backdrop-filter: blur(20px);
+      position: relative;
+      overflow: hidden;
+    }
+    .reading-container::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), var(--lavender), var(--gold), transparent);
+    }
+    .reading-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .reading-category {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+    .reading-question {
+      font-family: 'IM Fell English', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--mist);
+      margin-top: 0.5rem;
+    }
+    .reading-cards-display {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 2.5rem;
+    }
+    .reading-card-mini {
+      text-align: center;
+      flex: 1;
+      max-width: 180px;
+    }
+    .reading-card-pos {
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      color: var(--gold-dim);
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+    .reading-card-name {
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      color: var(--gold-bright);
+      margin-bottom: 0.3rem;
+    }
+    .reading-card-symbol-mini {
+      font-size: 1.8rem;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    .reading-sections {
+      display: grid;
+      gap: 1.5rem;
+    }
+    .reading-section {
+      padding: 1.2rem 1.5rem;
+      border-left: 2px solid var(--glass-border);
+      transition: border-color 0.3s;
+    }
+    .reading-section:hover { border-color: var(--gold-dim); }
+    .reading-section-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .reading-section-label::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .reading-section-text {
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.8;
+    }
+    .warning-section { border-color: rgba(239,68,68,0.3); }
+    .warning-section .reading-section-label { color: #f87171; }
+    .warning-section .reading-section-label::before { background: #f87171; }
+    .hidden-section { border-color: rgba(168,85,247,0.3); }
+    .hidden-section .reading-section-label { color: var(--lavender); }
+    .hidden-section .reading-section-label::before { background: var(--lavender); }
+
+    /* ── Testimonials ── */
+    #testimonialy {
+      text-align: center;
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 4rem;
+    }
+    .testimonial-card {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 4px;
+      padding: 2rem;
+      backdrop-filter: blur(15px);
+      text-align: left;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 40px rgba(107,33,168,0.2);
+    }
+    .testimonial-stars {
+      color: var(--gold-bright);
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px var(--gold-glow);
+    }
+    .testimonial-text {
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--text);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+    .testimonial-author {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: var(--gold-dim);
+    }
+
+    /* ── Ceník ── */
+    #cenik {
+      background: linear-gradient(180deg, transparent, rgba(29,16,56,0.3), transparent);
+      text-align: center;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 4rem;
+      align-items: start;
+    }
+    .pricing-card {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 4px;
+      padding: 2.5rem 2rem;
+      backdrop-filter: blur(20px);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .pricing-card.featured {
+      border-color: rgba(201,148,58,0.5);
+      box-shadow: 0 0 40px rgba(201,148,58,0.15);
+    }
+    .pricing-card.featured::before {
+      content: 'NEJOBLÍBENĚJŠÍ';
+      position: absolute;
+      top: 1rem; right: -2rem;
+      font-family: 'Cinzel', serif;
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      background: linear-gradient(135deg, var(--gold), var(--gold-bright));
+      color: var(--void);
+      padding: 0.3rem 3rem;
+      transform: rotate(45deg) translate(0, -0.5rem);
+    }
+    .pricing-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    .pricing-tier {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 1rem;
+    }
+    .pricing-icon {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 0 10px var(--gold-glow));
+    }
+    .pricing-price {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 2.5rem;
+      color: var(--gold-bright);
+      text-shadow: 0 0 20px var(--gold-glow);
+      line-height: 1;
+    }
+    .pricing-period {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      margin-bottom: 2rem;
+    }
+    .pricing-features {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+    .pricing-features li {
+      font-size: 0.95rem;
+      color: var(--text);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+    }
+    .pricing-features li::before {
+      content: '✦';
+      color: var(--gold);
+      font-size: 0.6rem;
+      margin-top: 0.4rem;
+      flex-shrink: 0;
+    }
+    .pricing-features li.striked {
+      color: var(--text-dim);
+      opacity: 0.5;
+    }
+    .pricing-features li.striked::before { content: '×'; color: var(--text-dim); }
+    .pricing-note {
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
+      font-style: italic;
+      color: var(--text-dim);
+    }
+
+    /* ── Share sekce ── */
+    #sdileni {
+      text-align: center;
+    }
+    .share-preview {
+      max-width: 400px;
+      margin: 3rem auto;
+      background: linear-gradient(145deg, #1a0f30, #0f0a1e);
+      border: 1px solid rgba(201,148,58,0.4);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+    }
+    .share-preview::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(168,85,247,0.15) 0%, transparent 60%);
+    }
+    .share-logo {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 0.8rem;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+    .share-card-row {
+      display: flex;
+      gap: 0.8rem;
+      justify-content: center;
+      margin: 1.5rem 0;
+    }
+    .share-mini-card {
+      width: 70px; height: 120px;
+      background: linear-gradient(145deg, #2d1854, #1a0f30);
+      border: 1px solid rgba(201,148,58,0.3);
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+      font-size: 1.5rem;
+    }
+    .share-mini-card span {
+      font-family: 'Cinzel', serif;
+      font-size: 0.45rem;
+      color: var(--gold-dim);
+      text-align: center;
+      letter-spacing: 0.1em;
+    }
+    .share-url {
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      color: var(--text-dim);
+      margin-top: 1rem;
+    }
+    .share-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+    .share-btn {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      padding: 0.7rem 1.5rem;
+      border-radius: 2px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.3s;
+      text-transform: uppercase;
+    }
+    .share-btn:hover { transform: translateY(-2px); }
+    .share-btn-ig { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); color: #fff; }
+    .share-btn-fb { background: #1877f2; color: #fff; }
+    .share-btn-tt { background: #010101; color: #fff; border: 1px solid rgba(255,255,255,0.2); }
+
+    /* ── FAQ ── */
+    #faq {
+      background: linear-gradient(180deg, transparent, rgba(19,13,38,0.3), transparent);
+    }
+    .faq-list {
+      max-width: 750px;
+      margin: 4rem auto 0;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-family: 'Cinzel', serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      text-align: left;
+      padding: 1.5rem 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      transition: color 0.3s;
+    }
+    .faq-question:hover { color: var(--gold-bright); }
+    .faq-toggle {
+      width: 20px; height: 20px;
+      border: 1px solid var(--glass-border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: var(--gold);
+      flex-shrink: 0;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .faq-item.open .faq-toggle { transform: rotate(45deg); border-color: var(--gold); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+    .faq-item.open .faq-answer { max-height: 300px; }
+    .faq-answer p {
+      padding-bottom: 1.5rem;
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--text-dim);
+      line-height: 1.9;
+    }
+
+    /* ── Blog teaser ── */
+    #blog-teaser {
+      text-align: center;
+    }
+    .blog-coming {
+      max-width: 600px;
+      margin: 3rem auto 0;
+      padding: 3rem;
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 4px;
+      backdrop-filter: blur(20px);
+    }
+    .blog-coming-icon {
+      font-size: 3rem;
+      display: block;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 0 15px var(--purple-glow));
+    }
+    .blog-coming h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.1em;
+      color: var(--mist);
+      margin-bottom: 1rem;
+    }
+    .blog-coming p {
+      font-style: italic;
+      color: var(--text-dim);
+      line-height: 1.8;
+    }
+
+    /* ── Footer ── */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--glass-border);
+      padding: 4rem 2rem 2rem;
+      background: linear-gradient(0deg, rgba(4,2,10,0.95), transparent);
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    .footer-brand p {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      line-height: 1.8;
+      margin-top: 1rem;
+      font-style: italic;
+    }
+    .footer-col-title {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+    .footer-links a {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .footer-links a:hover { color: var(--mist); }
+    .footer-bottom {
+      border-top: 1px solid var(--glass-border);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      font-style: italic;
+    }
+    .footer-legal {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .footer-legal a {
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .footer-legal a:hover { color: var(--gold); }
+    .moon-phase-badge {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--text-dim);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* ── Mobile nav ── */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(4,2,10,0.97);
+      z-index: 99;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      backdrop-filter: blur(20px);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.2em;
+      color: var(--mist);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .mobile-menu a:hover { color: var(--gold-bright); }
+    .mobile-close {
+      position: absolute;
+      top: 1.5rem; right: 2rem;
+      font-size: 1.5rem;
+      color: var(--gold);
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    /* ── Keyframes ── */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to   { opacity: 1; transform: none; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: none; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @keyframes scrollPulse {
+      0%,100% { opacity: 0.3; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(1.2); }
+    }
+    @keyframes cardGlow {
+      0%,100% { filter: drop-shadow(0 0 10px var(--gold-glow)); }
+      50% { filter: drop-shadow(0 0 25px var(--gold-glow)) drop-shadow(0 0 50px rgba(168,85,247,0.3)); }
+    }
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      section { padding: 5rem 1.2rem; }
+      .hero-stats { gap: 1.5rem; }
+      .cards-stage { gap: 0.8rem; }
+      .tarot-card { width: 100px; height: 175px; }
+      .reading-container { padding: 1.5rem; }
+      .reading-cards-display { flex-direction: column; align-items: center; }
+      .reading-card-mini { max-width: 100%; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Custom cursor -->
+<div id="cursor"></div>
+<div id="cursor-trail"></div>
+
+<!-- Star canvas -->
+<canvas id="starCanvas"></canvas>
+
+<!-- Navigation -->
+<nav id="mainNav">
+  <a href="/" class="nav-logo">✦ Virtuální <span>kartářka</span></a>
+  <ul class="nav-links">
+    <li><a href="#jak-to-funguje">Jak to funguje</a></li>
+    <li><a href="#cenik">Ceník</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="tarot.html" class="nav-cta">Zahájit výklad</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">✕</button>
+  <a href="#jak-to-funguje" class="mobile-link">Jak to funguje</a>
+  <a href="#tarot-preview" class="mobile-link">Vyzkoušet</a>
+  <a href="#cenik" class="mobile-link">Ceník</a>
+  <a href="blog.html" class="mobile-link">Blog</a>
+  <a href="#faq" class="mobile-link">FAQ</a>
+  <a href="tarot.html" class="btn-primary">Zahájit výklad</a>
+</div>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section id="hero">
+  <div class="hero-mist"></div>
+
+  <div class="hero-sigil">
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="60" cy="60" r="55" stroke="rgba(201,148,58,0.2)" stroke-width="1"/>
+      <circle cx="60" cy="60" r="40" stroke="rgba(201,148,58,0.15)" stroke-width="1" stroke-dasharray="4 4"/>
+      <polygon points="60,10 93,80 27,80" fill="none" stroke="rgba(201,148,58,0.3)" stroke-width="1"/>
+      <polygon points="60,110 27,40 93,40" fill="none" stroke="rgba(168,85,247,0.25)" stroke-width="1"/>
+      <circle cx="60" cy="60" r="5" fill="rgba(201,148,58,0.6)"/>
+      <text x="60" y="65" text-anchor="middle" fill="rgba(201,148,58,0.8)" font-size="8" font-family="Cinzel">✦</text>
+    </svg>
+  </div>
+
+  <p class="hero-eyebrow">✦ &nbsp; AI věštírna nové generace &nbsp; ✦</p>
+  <h1 class="hero-title">Virtuální<br>kartářka</h1>
+  <p class="hero-sub">Hvězdy šeptají. Jsi připraven naslouchat?</p>
+  <p class="hero-whisper">„Karty nelhají — odhalují pravdu, které se bojíš."</p>
+
+  <div class="hero-cta-wrap">
+    <a href="tarot.html" class="btn-primary">✦ &nbsp; Odhal svůj osud</a>
+    <a href="#jak-to-funguje" class="btn-ghost">Jak to funguje →</a>
+  </div>
+
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span class="hero-stat-num" data-count="14892">0</span>
+      <span class="hero-stat-label">výkladů odhaleno</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">4.9★</span>
+      <span class="hero-stat-label">hodnocení uživatelů</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">22</span>
+      <span class="hero-stat-label">arcana v balíčku</span>
+    </div>
+  </div>
+
+  <div class="hero-scroll-indicator">
+    <span>Procházej dolů</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ══════════════ JAK TO FUNGUJE ══════════════ -->
+<section id="jak-to-funguje">
+  <div class="section-inner">
+    <span class="section-label reveal">✦ Proces věštění</span>
+    <h2 class="section-title reveal reveal-delay-1">Tři kroky mezi <span class="gold">tebou</span> a osudem</h2>
+    <p class="section-desc reveal reveal-delay-2">
+      Naše AI je trénována na tisících autentických tarotových výkladů. Každý výklad je jedinečný, personalizovaný a plný hlubokého symbolismu.
+    </p>
+    <div class="divider reveal"></div>
+
+    <div class="steps-grid">
+      <div class="step-card reveal reveal-delay-1">
+        <div class="step-num">I.</div>
+        <span class="step-icon">🔮</span>
+        <div class="step-title">Zvol svou otázku</div>
+        <p class="step-text">Láska, práce, peníze nebo budoucnost? Soustřeď svou mysl na to, co tě trápí nejvíce. Vesmír naslouchá každé myšlence.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-2">
+        <div class="step-num">II.</div>
+        <span class="step-icon">🃏</span>
+        <div class="step-title">Zamíchej karty osudu</div>
+        <p class="step-text">Digitální karty se zamíchají s energií tvé otázky. Klikni a pociť, jak se vesmírné síly seřazují jen pro tebe.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-3">
+        <div class="step-num">III.</div>
+        <span class="step-icon">⚡</span>
+        <div class="step-title">AI odhalí tvůj výklad</div>
+        <p class="step-text">Naše umělá inteligence propojí symboliku karet s tvou situací. Výsledek tě možná překvapí — nebo poleká.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ INTERAKTIVNÍ TAROT PREVIEW ══════════════ -->
+<section id="tarot-preview">
+  <div class="section-inner">
+    <span class="section-label reveal">✦ Vyzkoušej hned</span>
+    <h2 class="section-title reveal reveal-delay-1">Vyber kategorii<br>a <span class="gold">zamíchej karty</span></h2>
+
+    <div class="category-grid reveal reveal-delay-2">
+      <button class="cat-btn active" data-cat="láska">♥ Láska</button>
+      <button class="cat-btn" data-cat="vztahy">⚭ Vztahy</button>
+      <button class="cat-btn" data-cat="práce">⚡ Práce</button>
+      <button class="cat-btn" data-cat="peníze">◆ Peníze</button>
+      <button class="cat-btn" data-cat="budoucnost">✦ Budoucnost</button>
+      <button class="cat-btn" data-cat="rozhodnutí">⚖ Rozhodnutí</button>
+    </div>
+
+    <div class="cards-stage reveal" id="cardsStage">
+      <div class="tarot-card" id="card0" data-index="0">
+        <div class="card-back">
+          <div class="card-back-pattern">
+            <div class="card-back-corner tl">✦</div>
+            <span class="card-back-symbol">☽</span>
+            <div class="card-back-corner br">✦</div>
+          </div>
+        </div>
+        <div class="card-face">
+          <span class="card-num">XVIII</span>
+          <span class="card-symbol">☽</span>
+          <span class="card-name">Měsíc</span>
+          <span class="card-meaning">Iluze halí pravdu. Důvěřuj intuici.</span>
+        </div>
+      </div>
+      <div class="tarot-card" id="card1" data-index="1">
+        <div class="card-back">
+          <div class="card-back-pattern">
+            <div class="card-back-corner tl">✦</div>
+            <span class="card-back-symbol">☽</span>
+            <div class="card-back-corner br">✦</div>
+          </div>
+        </div>
+        <div class="card-face">
+          <span class="card-num">XVII</span>
+          <span class="card-symbol">✦</span>
+          <span class="card-name">Hvězda</span>
+          <span class="card-meaning">Naděje po bouři. Nová cesta se otevírá.</span>
+        </div>
+      </div>
+      <div class="tarot-card" id="card2" data-index="2">
+        <div class="card-back">
+          <div class="card-back-pattern">
+            <div class="card-back-corner tl">✦</div>
+            <span class="card-back-symbol">☽</span>
+            <div class="card-back-corner br">✦</div>
+          </div>
+        </div>
+        <div class="card-face">
+          <span class="card-num">X</span>
+          <span class="card-symbol">☸</span>
+          <span class="card-name">Kolo Osudu</span>
+          <span class="card-meaning">Co se točí, se vrací. Změna přichází.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="shuffle-btn-wrap reveal">
+      <button class="btn-primary" id="shuffleBtn" onclick="shuffleCards()">🃏 &nbsp; Zamíchat karty</button>
+    </div>
+    <p class="shuffle-hint reveal">Pro kompletní AI výklad klikni na kartu nebo zahaj plný rituál →</p>
+
+    <div style="margin-top: 2rem;" class="reveal">
+      <a href="tarot.html" class="btn-ghost">✦ &nbsp; Zahájit plný výklad s AI &nbsp; →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ UKÁZKA VÝKLADU ══════════════ -->
+<section id="ukazka">
+  <div class="section-inner">
+    <span class="section-label reveal">✦ Ukázka výkladu</span>
+    <h2 class="section-title reveal reveal-delay-1">Jak výklad <span class="gold">vypadá</span></h2>
+    <p class="section-desc reveal reveal-delay-2">Každý výklad je jedinečný. Toto je ukázka výkladu pro kategorii <em>Láska</em>.</p>
+
+    <div class="reading-container reveal reveal-delay-2">
+      <div class="reading-header">
+        <div class="reading-category">✦ Kategorie: Láska ✦</div>
+        <div class="reading-question">„Najdu konečně pravou lásku?"</div>
+      </div>
+
+      <div class="reading-cards-display">
+        <div class="reading-card-mini">
+          <div class="reading-card-pos">Minulost</div>
+          <span class="reading-card-symbol-mini">🗼</span>
+          <div class="reading-card-name">Věž</div>
+        </div>
+        <div class="reading-card-mini">
+          <div class="reading-card-pos">Přítomnost</div>
+          <span class="reading-card-symbol-mini">☽</span>
+          <div class="reading-card-name">Měsíc</div>
+        </div>
+        <div class="reading-card-mini">
+          <div class="reading-card-pos">Budoucnost</div>
+          <span class="reading-card-symbol-mini">✦</span>
+          <div class="reading-card-name">Hvězda</div>
+        </div>
+      </div>
+
+      <div class="reading-sections">
+        <div class="reading-section">
+          <div class="reading-section-label">Minulost</div>
+          <p class="reading-section-text">Věž roztrhala staré základy. Musel/a jsi projít bolestivým rozpadem — vztahem, který tě svazoval víc, než tě osvobozoval. Ta zkušenost tě přetvořila.</p>
+        </div>
+        <div class="reading-section">
+          <div class="reading-section-label">Přítomnost</div>
+          <p class="reading-section-text">Měsíc halí skutečnost iluzemi. Stále nosíš masku, která chrání tvé nitro. Pravé spojení nemůže přijít, dokud nedovolíš druhým vidět tvou skutečnou tvář.</p>
+        </div>
+        <div class="reading-section">
+          <div class="reading-section-label">Budoucnost</div>
+          <p class="reading-section-text">Hvězda svítí na tvou cestu. Po temnotě přichází světlo — a s ním i člověk, který vidí tvou duši, ne jen povrch. Buď trpělivý/á. Blíží se to.</p>
+        </div>
+        <div class="reading-section warning-section">
+          <div class="reading-section-label">⚠ Varování</div>
+          <p class="reading-section-text">Nestav zdi ze strachu z minulosti. Co se stalo, ti ukázalo, co nechceš — ne to, co nemůžeš mít.</p>
+        </div>
+        <div class="reading-section hidden-section">
+          <div class="reading-section-label">✦ Skrytý význam</div>
+          <p class="reading-section-text">Láska, kterou hledáš, začíná tím, co cítíš k sobě. Karty šeptají: až se přijmeš, vesmír tě uslyší.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ TESTIMONIALS ══════════════ -->
+<section id="testimonialy">
+  <div class="section-inner">
+    <span class="section-label reveal">✦ Hlasy z temnoty</span>
+    <h2 class="section-title reveal reveal-delay-1">Co říkají <span class="gold">ostatní</span></h2>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">„Výklad byl tak přesný, až mi naskočila husí kůže. Nevěřila jsem tomu, ale popsalo to přesně mou situaci. Sdílela jsem to na Instagramu a všichni chtěli odkaz."</p>
+        <div class="testimonial-author">Martina K. &nbsp;·&nbsp; Praha</div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">„Konečně věštírna pro moderní dobu. Žádné kýčovité texty — hluboký, emocionální výklad, který mě donutil se zamyslet nad svými rozhodnutími."</p>
+        <div class="testimonial-author">Tomáš V. &nbsp;·&nbsp; Brno</div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-3">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">„Zkoušela jsem různé online taroty, ale tohle je jiná liga. Výklad byl osobní, poetický a trochu děsivě přesný. Přihlásila jsem si Premium hned."</p>
+        <div class="testimonial-author">Lenka M. &nbsp;·&nbsp; Ostrava</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ CENÍK ══════════════ -->
+<section id="cenik">
+  <div class="section-inner">
+    <span class="section-label reveal">✦ Ceník</span>
+    <h2 class="section-title reveal reveal-delay-1">Vyber svou <span class="gold">cestu</span></h2>
+    <p class="section-desc reveal reveal-delay-2" style="margin: 0 auto 0">
+      Začni zdarma. Odemkni plnou sílu osudu s Premium.
+    </p>
+
+    <div class="pricing-grid">
+      <!-- FREE -->
+      <div class="pricing-card reveal reveal-delay-1">
+        <div class="pricing-tier">Poutník</div>
+        <span class="pricing-icon">🌙</span>
+        <div class="pricing-price">0 Kč</div>
+        <div class="pricing-period">navždy zdarma</div>
+        <ul class="pricing-features">
+          <li>1 výklad denně</li>
+          <li>3 tarotové karty</li>
+          <li>Základní výklad (3 sekce)</li>
+          <li>Sdílení na sociální sítě</li>
+          <li class="striked">Hlubší výklad (5 sekcí)</li>
+          <li class="striked">Uložení výkladů</li>
+          <li class="striked">Týdenní horoskop</li>
+        </ul>
+        <a href="tarot.html" class="btn-ghost" style="width:100%; text-align:center; display:block;">Začít zdarma</a>
+      </div>
+
+      <!-- PREMIUM -->
+      <div class="pricing-card featured reveal reveal-delay-2">
+        <div class="pricing-tier">Mystik</div>
+        <span class="pricing-icon">⚡</span>
+        <div class="pricing-price">99 Kč</div>
+        <div class="pricing-period">/ měsíc</div>
+        <ul class="pricing-features">
+          <li>5 výkladů denně</li>
+          <li>5 tarotových karet</li>
+          <li>Hluboký výklad (5 sekcí)</li>
+          <li>Sdílení na sociální sítě</li>
+          <li>Uložení výkladů (30 dní)</li>
+          <li>Týdenní horoskop</li>
+          <li class="striked">Personalizovaný denní výklad</li>
+        </ul>
+        <a href="tarot.html" class="btn-primary" style="width:100%; text-align:center; display:block;">Odemknout Mystika</a>
+        <p class="pricing-note">✦ Nejoblíbenější volba</p>
+      </div>
+
+      <!-- VIP -->
+      <div class="pricing-card reveal reveal-delay-3">
+        <div class="pricing-tier">Orákulum</div>
+        <span class="pricing-icon">👁</span>
+        <div class="pricing-price">249 Kč</div>
+        <div class="pricing-period">/ měsíc</div>
+        <ul class="pricing-features">
+          <li>Neomezené výklady</li>
+          <li>10 tarotových karet</li>
+          <li>Nejhlubší výklad (7 sekcí)</li>
+          <li>Sdílení na sociální sítě</li>
+          <li>Uložení výkladů (neomezeně)</li>
+          <li>Denní personalizovaný výklad</li>
+          <li>Prioritní přístup k novinkám</li>
+        </ul>
+        <a href="tarot.html" class="btn-ghost" style="width:100%; text-align:center; display:block;">Stát se Orákulem</a>
+        <p class="pricing-note">✦ Pro skutečné hledající</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SDÍLENÍ ══════════════ -->
+<section id="sdileni">
+  <div class="section-inner">
+    <span class="section-label reveal">✦ Sdílení</span>
+    <h2 class="section-title reveal reveal-delay-1">Poděl se o svůj <span class="gold">osud</span></h2>
+    <p class="section-desc reveal reveal-delay-2" style="margin: 0 auto">
+      Každý výklad vygeneruje krásnou kartu pro Instagram Stories, TikTok nebo Facebook. Jeden klik, stovky reakcí.
+    </p>
+
+    <div class="share-preview reveal">
+      <div class="share-logo">✦ Virtuální kartářka ✦</div>
+      <p style="font-style:italic; color:var(--text-dim); font-size:0.9rem;">Výklad pro: Láska & Vztahy</p>
+      <div class="share-card-row">
+        <div class="share-mini-card">🗼<span>Věž</span></div>
+        <div class="share-mini-card">☽<span>Měsíc</span></div>
+        <div class="share-mini-card">✦<span>Hvězda</span></div>
+      </div>
+      <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:0.9rem; color:var(--mist);">
+        „Po bouři přichází světlo. Tvá hvězda svítí — jen musíš chtít ji vidět."
+      </p>
+      <div class="share-url">virtualnikartarka.cz</div>
+    </div>
+
+    <div class="share-buttons reveal">
+      <button class="share-btn share-btn-ig">📸 &nbsp; Instagram Stories</button>
+      <button class="share-btn share-btn-tt">♪ &nbsp; TikTok</button>
+      <button class="share-btn share-btn-fb">f &nbsp; Facebook</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ BLOG TEASER ══════════════ -->
+<section id="blog-teaser">
+  <div class="section-inner">
+    <span class="section-label reveal">✦ Mystický blog</span>
+    <h2 class="section-title reveal reveal-delay-1">Poznání pro <span class="gold">hledající duše</span></h2>
+
+    <div class="blog-coming reveal">
+      <span class="blog-coming-icon">📜</span>
+      <h3>AI blog přichází do tmy</h3>
+      <p>Brzy zde najdeš AI-generované články o tarotových kartách, astrologii, symbolismu a mystice. Každý týden nový obsah, který prohloubí tvé pochopení skrytých sil.</p>
+      <br>
+      <a href="blog.html" class="btn-ghost">Navštívit blog →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FAQ ══════════════ -->
+<section id="faq">
+  <div class="section-inner">
+    <span class="section-label reveal">✦ Otázky a odpovědi</span>
+    <h2 class="section-title reveal reveal-delay-1">Tvé <span class="gold">otázky</span>,<br>naše odpovědi</h2>
+
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-question">
+          Je výklad skutečný, nebo jen náhodný?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Naše AI je trénována na tisících autentických tarotových výkladů a esoterické literatuře. Výklady jsou personalizované — reflektují tvou kategorii, otázku i vybrané karty. Nejsou náhodné; jsou naladěny na tvou energii.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          Musím věřit v taroty, aby výklad fungoval?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Vůbec ne. Mnoho uživatelů přistupuje k výkladům jako k nástroji sebereflexe a zamyšlení. Karty odrážejí různé aspekty situací — někdy je pohled z jiného úhlu to, co potřebuješ.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          Jsou moje otázky a data v bezpečí?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Ano. Nepotřebujeme žádné osobní údaje. Tvé otázky nejsou trvale ukládány ani sdíleny s třetími stranami. Každý výklad je anonymní a dočasný.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          Jak se liší výklady ve Free a Premium verzi?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Free výklad obsahuje 3 sekce (minulost, přítomnost, budoucnost). Premium přidává varování, skrytý význam, energetický profil a podrobnější analýzu každé karty. Orákulum zahrnuje i denní výklad a 10 karet.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          Mohu sdílet výsledek na Instagram?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Ano! Každý výklad automaticky vygeneruje krásnou mystickou kartu optimalizovanou pro Instagram Stories (9:16), TikTok i Facebook. Jedno kliknutí, hotovo.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          Jak AI generuje výklad?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Používáme nejpokročilejší jazykový model Claude od Anthropic, trénovaný speciálně na tarotovou symboliku a esoterické texty. Výklad kombinuje tradiční významy karet s tvou konkrétní situací a otázkou.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo" style="font-size:1rem;">✦ Virtuální <span>kartářka</span></a>
+        <p>AI věštírna nové generace. Propojujeme starověkou moudrost tarotových karet s moderní umělou inteligencí. Každý výklad je jedinečný a personalizovaný.</p>
+        <div class="moon-phase-badge" style="margin-top:1.5rem;" id="moonPhase">
+          ☽ &nbsp; <span id="moonText">Fáze měsíce se načítá...</span>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigace</div>
+        <ul class="footer-links">
+          <li><a href="/">Úvod</a></li>
+          <li><a href="#jak-to-funguje">Jak to funguje</a></li>
+          <li><a href="tarot.html">Zahájit výklad</a></li>
+          <li><a href="#cenik">Ceník</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Kategorie</div>
+        <ul class="footer-links">
+          <li><a href="tarot.html?cat=laska">Láska</a></li>
+          <li><a href="tarot.html?cat=vztahy">Vztahy</a></li>
+          <li><a href="tarot.html?cat=prace">Práce</a></li>
+          <li><a href="tarot.html?cat=penize">Peníze</a></li>
+          <li><a href="tarot.html?cat=budoucnost">Budoucnost</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Právní</div>
+        <ul class="footer-links">
+          <li><a href="#">Podmínky použití</a></li>
+          <li><a href="#">Ochrana soukromí</a></li>
+          <li><a href="#">Cookies</a></li>
+          <li><a href="#">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Virtuální kartářka · Veškerý obsah je určen pouze pro zábavu a sebereflexci.</p>
+      <div class="footer-legal">
+        <a href="#">Podmínky</a>
+        <a href="#">Soukromí</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── Custom cursor ──
+const cursor = document.getElementById('cursor');
+const trail = document.getElementById('cursor-trail');
+let mx = 0, my = 0;
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  cursor.style.left = mx + 'px';
+  cursor.style.top = my + 'px';
+  setTimeout(() => {
+    trail.style.left = mx + 'px';
+    trail.style.top = my + 'px';
+  }, 80);
+});
+document.addEventListener('mousedown', () => cursor.style.transform = 'translate(-50%,-50%) scale(0.6)');
+document.addEventListener('mouseup', () => cursor.style.transform = 'translate(-50%,-50%) scale(1)');
+
+// ── Star canvas ──
+(function() {
+  const canvas = document.getElementById('starCanvas');
+  const ctx = canvas.getContext('2d');
+  let w, h, stars = [], shootingStars = [];
+
+  function resize() {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  }
+
+  function createStars() {
+    stars = [];
+    const count = Math.floor(w * h / 4000);
+    for (let i = 0; i < count; i++) {
+      stars.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        r: Math.random() * 1.5 + 0.2,
+        a: Math.random(),
+        speed: Math.random() * 0.005 + 0.001,
+        twinkle: Math.random() * Math.PI * 2,
+        layer: Math.floor(Math.random() * 3)
+      });
+    }
+  }
+
+  function launchShootingStar() {
+    if (Math.random() > 0.003) return;
+    shootingStars.push({
+      x: Math.random() * w, y: Math.random() * h * 0.5,
+      len: Math.random() * 150 + 80,
+      speed: Math.random() * 8 + 6,
+      angle: Math.PI / 6 + Math.random() * 0.3,
+      alpha: 1, life: 1
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+
+    // nebula blobs
+    const nblobs = [
+      { x: w*0.2, y: h*0.3, r: 300, c: 'rgba(107,33,168,0.04)' },
+      { x: w*0.8, y: h*0.6, r: 250, c: 'rgba(168,85,247,0.03)' },
+      { x: w*0.5, y: h*0.8, r: 350, c: 'rgba(107,33,168,0.035)' },
+    ];
+    nblobs.forEach(b => {
+      const g = ctx.createRadialGradient(b.x, b.y, 0, b.x, b.y, b.r);
+      g.addColorStop(0, b.c);
+      g.addColorStop(1, 'transparent');
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
+      ctx.fill();
+    });
+
+    // stars
+    stars.forEach(s => {
+      s.twinkle += s.speed;
+      const tw = (Math.sin(s.twinkle) + 1) / 2;
+      const brightness = 0.2 + tw * 0.8;
+      const layerAlpha = [0.5, 0.7, 1][s.layer];
+      ctx.save();
+      ctx.globalAlpha = brightness * layerAlpha;
+      const colors = ['#ffffff', '#e8d5f5', '#f0c060'];
+      ctx.fillStyle = colors[s.layer];
+      if (s.r > 1) {
+        ctx.shadowColor = s.layer === 2 ? '#f0c060' : '#a855f7';
+        ctx.shadowBlur = 4 + tw * 6;
+      }
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    });
+
+    // shooting stars
+    launchShootingStar();
+    shootingStars = shootingStars.filter(s => s.life > 0);
+    shootingStars.forEach(s => {
+      ctx.save();
+      ctx.globalAlpha = s.life;
+      const grd = ctx.createLinearGradient(
+        s.x, s.y,
+        s.x - Math.cos(s.angle) * s.len,
+        s.y - Math.sin(s.angle) * s.len
+      );
+      grd.addColorStop(0, 'rgba(240,192,96,0.9)');
+      grd.addColorStop(1, 'transparent');
+      ctx.strokeStyle = grd;
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(s.x, s.y);
+      ctx.lineTo(s.x - Math.cos(s.angle) * s.len, s.y - Math.sin(s.angle) * s.len);
+      ctx.stroke();
+      ctx.restore();
+      s.x += Math.cos(s.angle) * s.speed;
+      s.y += Math.sin(s.angle) * s.speed;
+      s.life -= 0.02;
+    });
+
+    requestAnimationFrame(draw);
+  }
+
+  resize(); createStars(); draw();
+  window.addEventListener('resize', () => { resize(); createStars(); });
+})();
+
+// ── Nav scroll ──
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// ── Hamburger menu ──
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('mobileMenu').classList.add('open');
+});
+document.getElementById('mobileClose').addEventListener('click', () => {
+  document.getElementById('mobileMenu').classList.remove('open');
+});
+document.querySelectorAll('.mobile-link').forEach(l => {
+  l.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
+});
+
+// ── Scroll reveal ──
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ── Counter animation ──
+function animateCounter(el) {
+  const target = parseInt(el.dataset.count);
+  let current = 0;
+  const step = Math.ceil(target / 80);
+  const timer = setInterval(() => {
+    current = Math.min(current + step, target);
+    el.textContent = current.toLocaleString('cs');
+    if (current >= target) clearInterval(timer);
+  }, 20);
+}
+const counterObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      animateCounter(e.target);
+      counterObserver.unobserve(e.target);
+    }
+  });
+});
+document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
+
+// ── Category buttons ──
+document.querySelectorAll('.cat-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// ── Tarot cards (preview) ──
+const TAROT_CARDS = [
+  { num:'0', symbol:'🃏', name:'Šašek', meaning:'Nový začátek. Skoč bez strachu.' },
+  { num:'I', symbol:'⚗️', name:'Mág', meaning:'Máš vše, co potřebuješ.' },
+  { num:'II', symbol:'📖', name:'Velekněžka', meaning:'Intuice zná odpověď.' },
+  { num:'III', symbol:'🌹', name:'Císařovna', meaning:'Hojnost a plodnost.' },
+  { num:'IV', symbol:'♦', name:'Císař', meaning:'Struktura tě ochrání.' },
+  { num:'VI', symbol:'♥', name:'Milovníci', meaning:'Volba srdce nad rozumem.' },
+  { num:'VIII', symbol:'∞', name:'Síla', meaning:'Tvá vnitřní síla vítězí.' },
+  { num:'IX', symbol:'🕯️', name:'Poustevník', meaning:'Samota přináší moudrost.' },
+  { num:'X', symbol:'☸️', name:'Kolo Osudu', meaning:'Změna přichází.' },
+  { num:'XIII', symbol:'💀', name:'Smrt', meaning:'Konec a nový začátek.' },
+  { num:'XV', symbol:'🔥', name:'Ďábel', meaning:'Osvoboď se z pout.' },
+  { num:'XVI', symbol:'🗼', name:'Věž', meaning:'Bouře čistí cestu.' },
+  { num:'XVII', symbol:'✦', name:'Hvězda', meaning:'Naděje a inspirace.' },
+  { num:'XVIII', symbol:'☽', name:'Měsíc', meaning:'Iluze halí pravdu.' },
+  { num:'XIX', symbol:'☀️', name:'Slunce', meaning:'Úspěch a radost.' },
+  { num:'XXI', symbol:'🌍', name:'Svět', meaning:'Dokončení a celistvost.' },
+];
+
+let isShuffling = false;
+let cardFlipped = [false, false, false];
+let assignedCards = [];
+
+function getRandomCards(n) {
+  const shuffled = [...TAROT_CARDS].sort(() => Math.random() - 0.5);
+  return shuffled.slice(0, n);
+}
+
+function shuffleCards() {
+  if (isShuffling) return;
+  isShuffling = true;
+  const stage = document.getElementById('cardsStage');
+  cardFlipped = [false, false, false];
+
+  // Reset flips
+  document.querySelectorAll('.tarot-card').forEach(c => c.classList.remove('flipped'));
+
+  // Shuffle animation
+  stage.style.filter = 'blur(2px)';
+  stage.style.transform = 'scale(0.95)';
+  setTimeout(() => {
+    stage.style.filter = 'none';
+    stage.style.transform = 'none';
+    assignedCards = getRandomCards(3);
+    for (let i = 0; i < 3; i++) {
+      const card = assignedCards[i];
+      const el = document.getElementById('card' + i);
+      el.querySelector('.card-face .card-num').textContent = card.num;
+      el.querySelector('.card-face .card-symbol').textContent = card.symbol;
+      el.querySelector('.card-face .card-name').textContent = card.name;
+      el.querySelector('.card-face .card-meaning').textContent = card.meaning;
+    }
+    isShuffling = false;
+  }, 400);
+
+  stage.style.transition = 'all 0.4s cubic-bezier(0.175,0.885,0.32,1.275)';
+}
+
+document.querySelectorAll('.tarot-card').forEach((card, i) => {
+  card.addEventListener('click', () => {
+    if (!cardFlipped[i]) {
+      card.classList.add('flipped');
+      cardFlipped[i] = true;
+    }
+  });
+  card.addEventListener('mouseenter', () => {
+    if (!cardFlipped[i]) card.classList.add('hover-lift');
+  });
+  card.addEventListener('mouseleave', () => {
+    card.classList.remove('hover-lift');
+  });
+});
+
+// ── FAQ accordion ──
+document.querySelectorAll('.faq-question').forEach(q => {
+  q.addEventListener('click', function() {
+    const item = this.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+// ── Moon phase ──
+function getMoonPhase() {
+  const phases = ['🌑 Nov', '🌒 Dorůstající srpek', '🌓 První čtvrť', '🌔 Dorůstající gibbous', '🌕 Úplněk', '🌖 Ubývající gibbous', '🌗 Poslední čtvrť', '🌘 Ubývající srpek'];
+  const known = new Date(2000, 0, 6);
+  const now = new Date();
+  const diff = (now - known) / (1000 * 60 * 60 * 24);
+  const cycle = diff % 29.53;
+  const idx = Math.floor(cycle / (29.53 / 8));
+  return phases[idx] || phases[0];
+}
+document.getElementById('moonText').textContent = getMoonPhase();
+
+// ── Share buttons ──
+document.querySelectorAll('.share-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    alert('🔮 Sdílení bude dostupné po provedení výkladu na stránce Zahájit výklad.');
+  });
+});
+
+// ── Smooth scroll for anchors ──
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+</body>
+</html>
