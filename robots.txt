@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://virtualnikartarka.cz/sitemap.xml
+
+# llms.txt for AI assistants (ChatGPT, Claude, Perplexity, Gemini)
+# https://llmstxt.org/
