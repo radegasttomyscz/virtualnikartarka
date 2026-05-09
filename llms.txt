@@ -1,0 +1,42 @@
+# Virtuální kartářka
+
+> AI tarotová věštírna v češtině. Personalizované výklady tarotových karet pro lásku, vztahy, práci, peníze, budoucnost a osobní rozhodování. Jeden výklad za 49 Kč, jednorázová platba bez předplatného.
+
+Virtuální kartářka kombinuje tradiční symboliku 22 velkých arkán tarotu s moderní AI, která generuje personalizovaný výklad na míru otázce a vybrané kategorii. Každý výklad obsahuje minulost, přítomnost, budoucnost, varování a skrytý význam.
+
+Web je provozován na doméně virtualnikartarka.cz, jazyk: čeština (cs-CZ), cílové publikum: ženy 30+ hledající vhled, sebepoznání nebo zábavu.
+
+## Hlavní stránky
+
+- [Domovská stránka](https://virtualnikartarka.cz/): Úvod do služby, ukázka výkladu, ceník, FAQ
+- [Zahájit výklad](https://virtualnikartarka.cz/tarot.html): Interaktivní rozhraní pro vytvoření výkladu — výběr kategorie, zamíchání karet, AI-generovaný výklad
+- [Magazín](https://virtualnikartarka.cz/blog.html): Články o tarotu, astrologii, runách, symbolice a sebepoznání
+
+## Kategorie výkladů
+
+- Láska — vztahové otázky, hledání partnera, romantická situace
+- Vztahy — rodina, přátelé, dlouhodobé vazby
+- Práce — kariéra, povolání, profesní rozhodnutí
+- Peníze — finanční stabilita, investice, prosperita
+- Budoucnost — obecný výhled, životní směřování
+- Rozhodnutí — pomoc s konkrétní volbou nebo dilematem
+
+## Cena a platba
+
+- 49 Kč za jeden plný výklad (3 karty, 5 sekcí výkladu)
+- Jednorázová platba, žádné předplatné
+- Platba probíhá přes Simpleshop
+- Po zaplacení je výklad zaslán na email
+
+## FAQ — časté otázky
+
+- Výklad je personalizovaný podle vybrané kategorie a otázky, nejde o náhodný text
+- Není potřeba věřit v tarot — funguje jako nástroj sebereflexe
+- Otázky uživatele nejsou trvale ukládány, výklad je anonymní
+- AI engine: Claude (Anthropic), trénovaný mimo jiné na tarotové symbolice
+- Sdílení výkladu na sociálních sítích (Instagram Stories, TikTok, Facebook) je podporováno
+
+## Technické
+
+- robots.txt: https://virtualnikartarka.cz/robots.txt
+- sitemap: https://virtualnikartarka.cz/sitemap.xml
