@@ -147,6 +147,41 @@
     .warning{border:1px solid rgba(214,169,75,.22);background:rgba(214,169,75,.055);border-radius:18px;padding:18px 22px;color:var(--muted);font-size:18px;margin-top:24px}
     footer{border-top:1px solid rgba(255,255,255,.08);padding:34px 0;color:var(--soft);font-size:16px}.footer-inner{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}.footer-links{display:flex;gap:18px;flex-wrap:wrap}.footer-links a{color:var(--muted);text-decoration:none}.footer-links a:hover{color:var(--gold-2)}
     .cookie{position:fixed;left:18px;right:18px;bottom:18px;z-index:80;display:none}.cookie.show{display:block}.cookie-inner{max-width:980px;margin:auto;border:1px solid var(--border);background:rgba(9,4,18,.96);backdrop-filter:blur(18px);border-radius:20px;padding:18px;display:flex;align-items:center;justify-content:space-between;gap:18px;box-shadow:var(--shadow)}.cookie p{font-size:16px;color:var(--muted);line-height:1.45}.cookie-actions{display:flex;gap:10px;flex-wrap:wrap}.cookie button{font-family:Cinzel,serif;text-transform:uppercase;letter-spacing:.12em;border-radius:999px;padding:10px 14px;border:1px solid var(--purple-border);cursor:pointer;background:transparent;color:var(--muted)}.cookie .accept{background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#120719;border:0;font-weight:800}
+
+
+    /* v2: vyšší kontrast a čitelnější karty */
+    :root{
+      --void:#080313;
+      --night:#110822;
+      --panel:#211036;
+      --panel-2:#2a1547;
+      --text:#fffaff;
+      --muted:#eadffd;
+      --soft:#d9c3f3;
+      --glass:rgba(255,255,255,.085);
+      --purple-border:rgba(217,195,243,.30);
+      --border:rgba(255,217,131,.38);
+      --shadow:0 24px 80px rgba(0,0,0,.44);
+    }
+    body{
+      background:
+        radial-gradient(circle at 50% 0%, rgba(139,92,246,.34), transparent 36rem),
+        radial-gradient(circle at 10% 24%, rgba(214,169,75,.18), transparent 25rem),
+        radial-gradient(circle at 86% 18%, rgba(192,132,252,.13), transparent 20rem),
+        linear-gradient(180deg,#080313 0%,#100720 44%,#080313 100%);
+    }
+    .card,.cat,.sample-box,.faq details{
+      background:linear-gradient(180deg,rgba(50,27,82,.76),rgba(20,9,34,.78));
+      border-color:rgba(217,195,243,.34);
+      box-shadow:0 18px 54px rgba(0,0,0,.36);
+    }
+    .card p,.sample-box li,.faq p,.lead,.hero-copy,.trust-note,.warning,.price-card ul,footer{color:var(--muted)}
+    .cat .ico,.cat span{color:var(--gold-2);text-shadow:0 0 18px rgba(214,169,75,.30)}
+    .cat strong{color:#fff7d8;text-shadow:0 0 12px rgba(255,217,131,.16)}
+    .cat:hover{background:linear-gradient(180deg,rgba(83,48,128,.86),rgba(31,14,52,.86));}
+    .price-card{background:linear-gradient(180deg,rgba(49,26,82,.96),rgba(18,8,32,.96));}
+    .btn-ghost{background:rgba(255,255,255,.07);color:#f3eaff}
+
     @media(max-width:860px){body{font-size:18px}.nav-inner{height:auto;min-height:64px}.nav-links{display:none}.hero{padding-top:120px}.grid-3,.preview{grid-template-columns:1fr}.categories{grid-template-columns:repeat(2,1fr)}.tarot-card{width:94px;height:158px}.cookie-inner{display:block}.cookie-actions{margin-top:14px}.footer-inner{display:block}.footer-links{margin-top:12px}.container{width:min(100% - 28px,1120px)}}
   </style>
 </head>
