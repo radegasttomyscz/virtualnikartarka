@@ -13,7 +13,6 @@
             <a class="${is('home')}" href="/">Úvod</a>
             <a href="/#jak-to-funguje">Jak to funguje</a>
             <a href="/#cenik">Ceník</a>
-            <a class="${is('blog')}" href="/blog.html">Magazín</a>
             <a class="nav-button${is('tarot')}" href="/tarot.html">Zahájit výklad</a>
           </nav>
         </div>

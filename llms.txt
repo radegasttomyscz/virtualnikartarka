@@ -14,3 +14,6 @@ Služba:
 - cena: 49 Kč
 
 Poznámka: Výklad je určený pro zábavu, inspiraci a sebereflexi. Nenahrazuje odborné poradenství.
+
+
+Poznámka: Samostatné SEO články jsou ukládány do /blog/*.html. Blog není v hlavní navigaci, pouze ve footeru.
