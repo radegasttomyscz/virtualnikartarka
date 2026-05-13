@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Virtuální kartářka – AI tarotový výklad na 30 dní</title>
-  <meta name="description" content="Osobní AI tarotový výklad na dalších 30 dní. Vyber oblast, polož otázku a nech si po zaplacení odhalit tři karty v soukromém online výkladu." />
+  <title>Virtuální kartářka – tarotový výklad na 30 dní</title>
+  <meta name="description" content="Osobní tarotový výklad na dalších 30 dní. Vyber oblast, polož otázku a nech si odhalit tři karty v soukromém online výkladu." />
   <meta name="robots" content="index,follow" />
   <meta name="author" content="Virtuální kartářka" />
   <link rel="canonical" href="https://virtualnikartarka.cz/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://virtualnikartarka.cz/" />
-  <meta property="og:title" content="Virtuální kartářka – AI tarotový výklad na 30 dní" />
+  <meta property="og:title" content="Virtuální kartářka – tarotový výklad na 30 dní" />
   <meta property="og:description" content="Tři karty. Jedna otázka. Osobní výklad na další měsíc." />
   <meta property="og:image" content="https://virtualnikartarka.cz/og-image.jpg" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Virtuální kartářka" />
-  <meta name="twitter:description" content="AI tarotový výklad na dalších 30 dní." />
+  <meta name="twitter:description" content="Tarotový výklad na dalších 30 dní." />
 
   <script type="application/ld+json">
   {
@@ -25,7 +25,7 @@
     "@type":"WebSite",
     "name":"Virtuální kartářka",
     "url":"https://virtualnikartarka.cz/",
-    "description":"AI tarotový výklad na dalších 30 dní.",
+    "description":"Tarotový výklad na dalších 30 dní.",
     "inLanguage":"cs-CZ"
   }
   </script>
@@ -182,6 +182,61 @@
     .price-card{background:linear-gradient(180deg,rgba(49,26,82,.96),rgba(18,8,32,.96));}
     .btn-ghost{background:rgba(255,255,255,.07);color:#f3eaff}
 
+
+    /* v3: výraznější atmosféra, lepší čitelnost a prémiovější pozadí */
+    body{
+      background:
+        radial-gradient(circle at 50% -8%, rgba(255,217,131,.18), transparent 22rem),
+        radial-gradient(circle at 14% 12%, rgba(192,132,252,.34), transparent 24rem),
+        radial-gradient(circle at 84% 18%, rgba(214,169,75,.16), transparent 22rem),
+        linear-gradient(180deg,#0a0416 0%,#160b2a 38%,#090313 74%,#05020b 100%);
+    }
+    body::after{
+      background:
+        linear-gradient(115deg, transparent 0 28%, rgba(255,217,131,.055) 29%, transparent 41% 100%),
+        radial-gradient(ellipse at 50% 105%, rgba(192,132,252,.24), transparent 42rem);
+      opacity:.95;
+    }
+    .hero{isolation:isolate;overflow:hidden;min-height:92vh;display:grid;align-items:center}
+    .hero::before{
+      content:"";position:absolute;inset:88px max(18px,calc((100vw - 1120px)/2)) 24px;z-index:-1;border-radius:42px;
+      border:1px solid rgba(255,217,131,.18);
+      background:
+        radial-gradient(circle at 50% 18%, rgba(255,217,131,.14), transparent 14rem),
+        radial-gradient(circle at 24% 72%, rgba(192,132,252,.18), transparent 18rem),
+        radial-gradient(circle at 76% 68%, rgba(139,92,246,.16), transparent 18rem),
+        linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.018));
+      box-shadow:0 40px 110px rgba(0,0,0,.42), inset 0 0 90px rgba(255,217,131,.045);
+      backdrop-filter: blur(3px);
+    }
+    .hero::after{
+      content:"✦";position:absolute;right:10%;top:25%;z-index:-1;color:rgba(255,217,131,.18);font-size:130px;
+      filter:blur(.2px) drop-shadow(0 0 45px rgba(255,217,131,.22));animation:floatSigil 8s ease-in-out infinite;
+    }
+    @keyframes floatSigil{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-18px) rotate(8deg)}}
+    h1{color:#ffe59a;text-shadow:0 0 28px rgba(214,169,75,.48), 0 0 88px rgba(192,132,252,.26)}
+    .hero-copy,.lead,.card p,.sample-box li,.faq p,.price-card ul{color:#f0e7ff}
+    section{overflow:hidden}
+    .section-aurora,.section-mist,.section-price,.section-share,.section-orbit{isolation:isolate}
+    .section-aurora::before,.section-mist::before,.section-price::before,.section-share::before,.section-orbit::before{
+      content:"";position:absolute;inset:22px max(12px,calc((100vw - 1180px)/2));z-index:-1;border-radius:38px;pointer-events:none;
+      border:1px solid rgba(255,255,255,.055);
+    }
+    .section-aurora::before{background:linear-gradient(120deg,rgba(92,39,145,.18),rgba(214,169,75,.055),rgba(255,255,255,.02));box-shadow:inset 0 0 80px rgba(192,132,252,.09)}
+    .section-orbit::before{background:radial-gradient(circle at 50% 50%,rgba(214,169,75,.12),transparent 21rem),radial-gradient(circle at 0% 60%,rgba(192,132,252,.11),transparent 25rem)}
+    .section-mist::before{background:radial-gradient(ellipse at 25% 40%,rgba(192,132,252,.18),transparent 26rem),linear-gradient(90deg,rgba(255,255,255,.035),rgba(255,255,255,.015));}
+    .section-price::before{background:radial-gradient(circle at 50% 45%,rgba(255,217,131,.12),transparent 20rem),linear-gradient(180deg,rgba(49,26,82,.20),rgba(10,3,19,.08));box-shadow:0 0 100px rgba(214,169,75,.07)}
+    .section-share::before{background:linear-gradient(135deg,rgba(214,169,75,.08),rgba(192,132,252,.15));}
+    .card,.cat,.sample-box,.faq details,.price-card{
+      backdrop-filter: blur(16px);
+      border-color:rgba(255,217,131,.22);
+    }
+    .card,.cat,.sample-box,.faq details{background:linear-gradient(180deg,rgba(60,33,94,.82),rgba(21,10,39,.86));}
+    .card h3,.faq summary{color:#fff1bf}
+    .cat{box-shadow:inset 0 0 28px rgba(255,217,131,.025), 0 18px 42px rgba(0,0,0,.26)}
+    .warning{background:rgba(255,217,131,.075);color:#f4e9ff;border-color:rgba(255,217,131,.26)}
+    .price-card{background:linear-gradient(180deg,rgba(62,31,96,.98),rgba(19,8,34,.98));}
+
     @media(max-width:860px){body{font-size:18px}.nav-inner{height:auto;min-height:64px}.nav-links{display:none}.hero{padding-top:120px}.grid-3,.preview{grid-template-columns:1fr}.categories{grid-template-columns:repeat(2,1fr)}.tarot-card{width:94px;height:158px}.cookie-inner{display:block}.cookie-actions{margin-top:14px}.footer-inner{display:block}.footer-links{margin-top:12px}.container{width:min(100% - 28px,1120px)}}
   </style>
 </head>
@@ -204,20 +259,19 @@
       <div class="sigil" aria-hidden="true">
         <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="60" r="44" stroke="#d6a94b" stroke-width="1.2" opacity=".9"/><circle cx="60" cy="60" r="24" stroke="#c084fc" stroke-width="1" opacity=".55"/><path d="M60 17v86M17 60h86M31 31l58 58M89 31 31 89" stroke="#d6a94b" stroke-width=".8" opacity=".7"/><path d="M60 37c9 13 9 33 0 46-9-13-9-33 0-46Z" fill="#d6a94b" opacity=".78"/></svg>
       </div>
-      <span class="eyebrow">AI tarotový rituál</span>
+      <span class="eyebrow">Tarotový rituál na 30 dní</span>
       <h1>Virtuální<br>kartářka</h1>
       <p class="hero-sub">Osobní výklad na dalších 30 dní.</p>
       <p class="hero-copy">Tři karty. Jedna otázka. Soukromý výklad, který ti ukáže, jaká energie tě může provázet dalším měsícem — v lásce, práci, penězích nebo rozhodnutí, které už dlouho odkládáš.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="tarot.html">Odhalit výklad za 49 Kč</a>
+        <a class="btn btn-primary" href="tarot.html">Odhalit svůj výklad</a>
         <a class="btn btn-ghost" href="#jak">Jak to funguje</a>
       </div>
-      <p class="trust-note">Výklad je určený pro zábavu a sebereflexi. Nejde o zdravotní, finanční, právní ani psychologické poradenství.</p>
     </div>
   </header>
 
   <main>
-    <section id="jak">
+    <section id="jak" class="section-aurora section-steps">
       <div class="container">
         <div class="section-head center">
           <span class="label">Tři kroky mezi tebou a osudem</span>
@@ -227,12 +281,12 @@
         <div class="grid-3">
           <article class="card"><span class="step-num">I.</span><h3>Zvolíš oblast</h3><p>Vybereš, jestli tě zajímá láska, vztahy, práce, peníze, rozhodnutí nebo obecný výhled na 30 dní.</p></article>
           <article class="card"><span class="step-num">II.</span><h3>Položíš otázku</h3><p>Napíšeš ji normálně lidsky. Čím konkrétnější situaci popíšeš, tím osobnější výklad dostaneš.</p></article>
-          <article class="card"><span class="step-num">III.</span><h3>Dostaneš výklad</h3><p>Po zaplacení AI vytvoří výklad tří karet a pošle ti jej e-mailem i jako soukromou stránku.</p></article>
+          <article class="card"><span class="step-num">III.</span><h3>Dostaneš výklad</h3><p>Po dokončení objednávky Virtuální kartářka otevře výklad tří karet a pošle ti jej e-mailem i jako soukromou stránku.</p></article>
         </div>
       </div>
     </section>
 
-    <section>
+    <section class="section-orbit">
       <div class="container">
         <div class="section-head center">
           <span class="label">Vyber si směr</span>
@@ -249,13 +303,13 @@
       </div>
     </section>
 
-    <section id="ukazka">
+    <section id="ukazka" class="section-mist">
       <div class="container preview">
         <div>
           <span class="label">Ukázka struktury</span>
           <h2>Výklad není jen text. <em>Je to malý rituál.</em></h2>
-          <p class="lead">Po zaplacení se otevře soukromá stránka s kartami, výkladem a doporučením na další měsíc.</p>
-          <div class="warning">Zdarma se negeneruje žádný osobní výklad. AI se spouští až po uhrazení objednávky.</div>
+          <p class="lead">Po dokončení objednávky se otevře soukromá stránka s kartami, výkladem a doporučením na následujících 30 dní.</p>
+          <div class="warning">Před objednávkou uvidíš jen vybrané karty. Jejich osobní význam se otevře až v soukromém výkladu.</div>
         </div>
         <div class="sample-box">
           <div class="tarot-row" aria-hidden="true">
@@ -274,11 +328,11 @@
       </div>
     </section>
 
-    <section id="cena">
+    <section id="cena" class="section-price">
       <div class="container">
         <div class="section-head center">
-          <span class="label">Jedna otázka, jedna cena</span>
-          <h2>Bez předplatného. <em>Bez háčků.</em></h2>
+          <span class="label">Výklad na dalších 30 dní</span>
+          <h2>Jeden měsíc. <em>Jedno poselství.</em></h2>
         </div>
         <div class="price-wrap">
           <article class="price-card">
@@ -297,7 +351,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="section-share">
       <div class="container">
         <div class="section-head center">
           <span class="label">Sdílení</span>
@@ -315,9 +369,10 @@
         </div>
         <div class="faq">
           <details><summary>Je výklad opravdu personalizovaný?</summary><p>Ano. Vychází z vybrané oblasti, tvé otázky, vytažených karet a zadaného kontextu. Nejde o náhodný univerzální odstavec.</p></details>
-          <details><summary>Kdy se spouští AI?</summary><p>Až po zaplacení. Bezplatná část webu negeneruje osobní výklad a nespotřebovává AI kredit.</p></details>
+          <details><summary>Kdy vzniká osobní výklad?</summary><p>Až po dokončení objednávky. Předem uvidíš pouze vybrané karty, ne jejich osobní význam.</p></details>
           <details><summary>Je to skutečná předpověď budoucnosti?</summary><p>Ne. Výklad je zábavný a sebereflexní nástroj. Pomáhá podívat se na situaci jinou optikou, ale nenahrazuje odbornou pomoc ani vlastní rozhodnutí.</p></details>
-          <details><summary>Dostanu výsledek na e-mail?</summary><p>Ano. Po zaplacení přijde e-mail s odkazem na soukromou stránku výsledku.</p></details>
+          <details><summary>Nahrazuje výklad odbornou radu?</summary><p>Ne. Výklad není zdravotní, finanční, právní ani psychologické poradenství. Ber ho jako osobní impuls, ne jako návod, který musíš slepě poslechnout.</p></details>
+          <details><summary>Dostanu výsledek na e-mail?</summary><p>Ano. Po dokončení objednávky přijde e-mail s odkazem na soukromou stránku výsledku.</p></details>
           <details><summary>Můžu výklad zopakovat další měsíc?</summary><p>Ano. Výklad je záměrně stavěný na období dalších 30 dní, takže dává smysl se k němu vrátit nebo si udělat nový.</p></details>
         </div>
       </div>
@@ -326,12 +381,12 @@
 
   <footer>
     <div class="container footer-inner">
-      <div>© <span id="year"></span> Virtuální kartářka · Tomáš Čaňa, IČO 14090759</div>
+      <div>© <span id="year"></span> Virtuální kartářka</div>
       <div class="footer-links">
         <a href="mailto:info@tomys.cz">Kontakt</a>
-        <a href="#">Obchodní podmínky</a>
-        <a href="#">Ochrana osobních údajů</a>
-        <a href="#" id="cookieReset">Cookies</a>
+        <a href="obchodni-podminky.html">Obchodní podmínky</a>
+        <a href="ochrana-osobnich-udaju.html">Ochrana osobních údajů</a>
+        <a href="cookies.html">Cookies</a><a href="#" id="cookieReset">Nastavení cookies</a>
       </div>
     </div>
   </footer>

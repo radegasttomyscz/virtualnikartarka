@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zahájit výklad – Virtuální kartářka</title>
-  <meta name="description" content="Vyber oblast, polož otázku a připrav si osobní tarotový výklad na dalších 30 dní. AI výklad se generuje až po zaplacení." />
+  <meta name="description" content="Vyber oblast, polož otázku a připrav si osobní tarotový výklad na dalších 30 dní. Osobní výklad se otevře po dokončení objednávky." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://virtualnikartarka.cz/tarot.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,6 +56,27 @@
     .simpleshop-box p{color:var(--muted);font-size:17px;text-align:center;margin-bottom:14px}
     .simpleshop-fallback{text-align:center;margin-top:12px;font-size:16px}.simpleshop-fallback a{color:var(--gold2)}
 
+
+    /* v3: výraznější rituální pozadí, čitelnější mobil a skryté technické pole */
+    body{
+      background:
+        radial-gradient(circle at 50% -8%,rgba(255,217,131,.18),transparent 22rem),
+        radial-gradient(circle at 12% 12%,rgba(192,132,252,.33),transparent 24rem),
+        radial-gradient(circle at 88% 22%,rgba(214,169,75,.14),transparent 22rem),
+        linear-gradient(180deg,#0a0416 0%,#160b2a 44%,#080313 100%);
+    }
+    body::after{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:linear-gradient(125deg,transparent 0 30%,rgba(255,217,131,.045) 31%,transparent 44% 100%),radial-gradient(ellipse at 50% 105%,rgba(192,132,252,.20),transparent 42rem)}
+    .panel{background:linear-gradient(180deg,rgba(60,33,94,.86),rgba(18,8,34,.92));border-color:rgba(255,217,131,.24);box-shadow:0 30px 95px rgba(0,0,0,.44), inset 0 0 90px rgba(255,217,131,.025)}
+    .panel::after{content:"✦";position:absolute;right:28px;top:22px;color:rgba(255,217,131,.12);font-size:88px;line-height:1;pointer-events:none;filter:drop-shadow(0 0 32px rgba(255,217,131,.17))}
+    .lead,.small,.hint,.order-note,.locked,.field input,.field textarea{color:#f0e7ff}.field input::placeholder,.field textarea::placeholder{color:#bda8d8}
+    .cat,.pick-card,.result-card,.simpleshop-box{background:linear-gradient(180deg,rgba(50,27,82,.82),rgba(18,8,34,.88));border-color:rgba(255,217,131,.22)}
+    .cat strong,.result-card .name{color:#fff1bf}.cat span,.result-card .sym{color:#ffd983;text-shadow:0 0 20px rgba(255,217,131,.26)}
+    .code-box{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important;opacity:0!important;pointer-events:none!important}
+    .autofill-status{display:none;margin:18px auto 0;max-width:720px;border-radius:16px;padding:12px 16px;font-size:17px;color:#d1fae5;background:rgba(16,185,129,.10);border:1px solid rgba(167,243,208,.28)}
+    .autofill-status.show{display:block}.autofill-status.warn{color:#fff1bf;background:rgba(255,217,131,.08);border-color:rgba(255,217,131,.30)}
+    .manual-fallback{display:none;margin:18px auto 0;max-width:760px;text-align:left;border:1px solid rgba(255,217,131,.30);background:rgba(255,217,131,.08);border-radius:18px;padding:16px;color:#f5eaff;font-size:17px}.manual-fallback.show{display:block}.manual-code{width:100%;min-height:120px;margin-top:12px;border:1px solid rgba(255,217,131,.24);border-radius:14px;background:rgba(0,0,0,.26);color:#f0e7ff;font:12px ui-monospace,SFMono-Regular,Consolas,monospace;padding:12px;resize:vertical}.mini-copy{margin-top:12px;display:inline-flex;border:1px solid rgba(255,217,131,.36);background:rgba(255,255,255,.06);color:#fff1bf;border-radius:999px;padding:10px 14px;font-family:Cinzel,serif;text-transform:uppercase;letter-spacing:.12em;cursor:pointer}
+    .simpleshop-box{display:none}.simpleshop-box.show{display:block}
+
     @media(max-width:760px){body{font-size:18px}.cat-grid{grid-template-columns:repeat(2,1fr)}.spread{grid-template-columns:repeat(2,1fr)}.pick-card{height:132px}.panel{padding:24px 18px}.result-card{width:132px;min-height:216px}.top-inner{height:62px}.top .home{display:none}main{padding-top:95px}.shuffle-card{width:78px;height:132px}.shuffle-area{height:285px}}
   </style>
 </head>
@@ -73,7 +94,7 @@
         <div class="ritual-mark"><span>☾</span></div>
         <span class="eyebrow">Výklad na 30 dní</span>
         <h1>Začni svůj rituál</h1>
-        <p class="lead">Vyber oblast a polož otázku. Karty se mohou připravit hned, ale celý výklad se otevře až po zaplacení.</p>
+        <p class="lead">Vyber oblast a polož otázku pro následujících 30 dní. Karty se připraví hned, jejich osobní význam se otevře až po dokončení objednávky.</p>
         <div class="form-grid">
           <div class="field">
             <label for="name">Jméno nebo oslovení</label>
@@ -108,7 +129,7 @@
       <div class="panel center">
         <span class="eyebrow">Míchání karet</span>
         <h2>Nech karty chvíli <em>bloudit tmou.</em></h2>
-        <p class="lead">Tato část negeneruje žádný AI výklad. Jen připraví tři karty pro placený výstup.</p>
+        <p class="lead">Balíček se míchá pro tvůj výklad na dalších 30 dní. Nespěchej — rituál má mít svůj čas.</p>
         <div class="shuffle-area" id="shuffleArea" aria-hidden="true"></div>
         <div class="bar"><div class="bar-fill" id="barFill"></div></div>
         <p class="small" id="shuffleText">Míchám balíček…</p>
@@ -118,8 +139,8 @@
     <section class="phase" id="phase-pick">
       <div class="panel center">
         <span class="eyebrow">Výběr tří karet</span>
-        <h2>Vyber tři karty. <em>Bez výkladu zdarma.</em></h2>
-        <p class="lead">Uvidíš pouze názvy vybraných karet. Jejich osobní význam se otevře až po zaplacení.</p>
+        <h2>Vyber tři karty. <em>Ty, které tě volají.</em></h2>
+        <p class="lead">Uvidíš pouze názvy vybraných karet. Jejich osobní význam se otevře až v soukromém výkladu.</p>
         <div class="spread" id="spread"></div>
         <div class="actions"><button class="btn btn-primary" id="confirmPick" disabled type="button">Uzamknout karty</button><button class="btn btn-ghost" id="reshuffle" type="button">Zamíchat znovu</button></div>
       </div>
@@ -129,26 +150,32 @@
       <div class="panel center">
         <span class="eyebrow">Karty jsou uzamčené</span>
         <h2>Tvoje tři karty čekají <em>na otevření.</em></h2>
-        <p class="lead">Celý osobní výklad na dalších 30 dní vznikne až po zaplacení objednávky. Žádný AI kredit se před platbou nespustil.</p>
+        <p class="lead">Tři karty jsou připravené. Celý osobní výklad na následujících 30 dní se otevře po dokončení objednávky.</p>
         <div class="reveal-row" id="revealRow"></div>
         <div class="locked">
           <strong style="color:var(--gold2);font-family:Cinzel,serif;letter-spacing:.08em;text-transform:uppercase">Další krok</strong><br>
-          Klikni na objednávku. Web ti automaticky zkopíruje kód výkladu. V SimpleShop formuláři ho vlož do vlastního pole <strong>„Kód výkladu“</strong>, aby se po zaplacení použila přesně tahle otázka a tyhle karty.
+          Klikni na pokračování k objednávce. Tvoje otázka a vybrané karty se pokusíme předat do objednávky automaticky, aby zákazník nic nekopíroval.
         </div>
         <div class="code-box">
-          <div class="field"><label for="ritualCode">Kód výkladu pro SimpleShop / Make</label></div>
+          <div class="field"><label for="ritualCode">Technický kód výkladu</label></div>
           <textarea id="ritualCode" readonly></textarea>
-          <div class="copy-ok" id="copyOk">Kód je zkopírovaný. Teď ho vlož do objednávkového formuláře.</div>
+          <div class="copy-ok" id="copyOk">Technické údaje jsou připravené.</div>
+        </div>
+        <div class="autofill-status" id="autofillStatus" aria-live="polite"></div>
+        <div class="manual-fallback" id="manualFallback">
+          <strong>Automatické předání údajů se nepovedlo.</strong><br>
+          Zkopíruj níže uvedený bezpečnostní kód a vlož ho do pole „Kód výkladu“ v objednávce. Je to záložní řešení pro případ, že SimpleShop formulář nepustí skryté předvyplnění.
+          <textarea class="manual-code" id="manualCode" readonly></textarea>
+          <button class="mini-copy" id="copyOnly" type="button">Zkopírovat bezpečnostní kód</button>
         </div>
         <div class="actions">
-          <button class="btn btn-primary" id="copyAndOrder" type="button">Zkopírovat a objednat za 49 Kč</button>
-          <button class="btn btn-ghost" id="copyOnly" type="button">Jen zkopírovat kód</button>
+          <button class="btn btn-primary" id="copyAndOrder" type="button">Pokračovat k objednávce</button>
           <button class="btn btn-ghost" id="restart" type="button">Začít znovu</button>
         </div>
-        <p class="order-note">Kód výkladu je důležitý pro Make scénář. V objednávkovém formuláři ho vlož do pole <strong>„Kód výkladu“</strong>. Bez něj nepoznáme otázku ani vybrané karty.</p>
+        <p class="order-note">Objednávka se spojí s tímto rituálem automaticky. Kdyby vložený SimpleShop formulář technicky nedovolil skryté předvyplnění, zobrazí se náhradní bezpečnostní postup.</p>
         <div class="simpleshop-box" id="checkoutBox">
           <h3>Objednávka výkladu</h3>
-          <p>Nejdřív zkopíruj kód výkladu výše, potom vyplň objednávku. Cena výkladu je 49 Kč.</p>
+          <p>Vyplň objednávkové údaje. Otázka a vybrané karty už jsou připravené k předání.</p>
           <!-- www.SimpleShop.cz form#147957 start -->
           <div data-SimpleShopForm="oPWle"><div>Prodejní formulář je vytvořen v systému <a href="https://www.simpleshop.cz/?utm_source=simpleshop&utm_medium=form&utm_campaign=55600" target="_blank" rel="noopener">SimpleShop.cz</a>.</div></div>
           <!-- www.SimpleShop.cz form#147957 end -->
@@ -206,7 +233,7 @@
       let progress=0;
       const cards=[...document.querySelectorAll('.shuffle-card')];
       const timer=setInterval(()=>{
-        progress += 4 + Math.random()*6;
+        progress += 1.05 + Math.random()*0.55;
         document.getElementById('barFill').style.width = Math.min(progress,100)+'%';
         cards.forEach((card,i)=>{
           const angle=(i/cards.length)*Math.PI*2 + progress/28;
@@ -217,7 +244,7 @@
           card.style.opacity=.45+Math.random()*.45;
         });
         if(progress>=100){clearInterval(timer);document.getElementById('shuffleText').textContent='Balíček je připravený.';setTimeout(buildSpread,450)}
-      },115);
+      },150);
     }
 
     function buildSpread(){
@@ -267,7 +294,13 @@
       row.innerHTML=cards.map((c,i)=>`<article class="result-card"><div class="pos">${POSITIONS[i]}</div><div class="num">${c.num}</div><div class="sym">${c.sym}</div><div class="name">${escapeHtml(c.name)}</div><div class="sub">${escapeHtml(c.sub)}</div></article>`).join('');
       const code=JSON.stringify(payload,null,2);
       document.getElementById('ritualCode').value=code;
+      const manualCode = document.getElementById('manualCode');
+      if(manualCode) manualCode.value = code;
       localStorage.setItem('vk_last_ritual',code);
+      document.getElementById('checkoutBox').classList.remove('show');
+      document.getElementById('manualFallback').classList.remove('show');
+      document.getElementById('autofillStatus').className='autofill-status';
+      document.getElementById('autofillStatus').textContent='';
     }
     function escapeHtml(str){return String(str).replace(/[&<>'"]/g,s=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[s]));}
     async function copyCode(){
@@ -275,13 +308,87 @@
       try{await navigator.clipboard.writeText(txt)}catch(e){const ta=document.getElementById('ritualCode');ta.focus();ta.select();document.execCommand('copy')}
       document.getElementById('copyOk').style.display='block';
     }
-    document.getElementById('copyOnly').addEventListener('click',copyCode);
-    document.getElementById('copyAndOrder').addEventListener('click',async()=>{
-      await copyCode();
+    const copyOnlyBtn = document.getElementById('copyOnly');
+    if(copyOnlyBtn) copyOnlyBtn.addEventListener('click',copyCode);
+
+    function norm(str){return String(str||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,' ').trim();}
+    function dispatchFill(el,value){
+      const setter = Object.getOwnPropertyDescriptor(Object.getPrototypeOf(el),'value')?.set;
+      if(setter) setter.call(el,value); else el.value=value;
+      el.dispatchEvent(new Event('input',{bubbles:true}));
+      el.dispatchEvent(new Event('change',{bubbles:true}));
+    }
+    function fieldLabelText(root, el){
+      const bits=[];
+      if(el.id){
+        const safeId = (window.CSS && CSS.escape) ? CSS.escape(el.id) : el.id.replace(/[^a-zA-Z0-9_-]/g,'');
+        const lbl = root.querySelector(`label[for="${safeId}"]`);
+        if(lbl) bits.push(lbl.textContent);
+      }
+      if(el.getAttribute('aria-label')) bits.push(el.getAttribute('aria-label'));
+      if(el.getAttribute('placeholder')) bits.push(el.getAttribute('placeholder'));
+      if(el.name) bits.push(el.name);
+      if(el.closest('label')) bits.push(el.closest('label').textContent);
+      if(el.parentElement) bits.push(el.parentElement.textContent.slice(0,240));
+      return norm(bits.join(' '));
+    }
+    function hideField(el,root){
+      let lbl=null;
+      if(el.id){try{const safeId=(window.CSS && CSS.escape)?CSS.escape(el.id):el.id.replace(/[^a-zA-Z0-9_-]/g,''); lbl=root.querySelector(`label[for="${safeId}"]`)}catch(e){}}
+      const wrap = el.closest('.form-group,.form-row,.ss-form-group,.input,.field,.row') || (lbl && lbl.parentElement) || el.parentElement;
+      if(wrap && wrap !== document.body){
+        wrap.style.position='absolute';wrap.style.left='-9999px';wrap.style.width='1px';wrap.style.height='1px';wrap.style.overflow='hidden';wrap.style.opacity='0';wrap.setAttribute('aria-hidden','true');
+      }
+    }
+    function tryFillInRoot(root, value){
+      const fields=[...root.querySelectorAll('textarea,input[type="text"],input:not([type])')];
+      for(const el of fields){
+        if(el.id === 'ritualCode' || el.closest('.code-box')) continue;
+        const txt=fieldLabelText(root,el);
+        if(txt.includes('kod vykladu') || txt.includes('kód výkladu') || txt.includes('technicky kod') || txt.includes('ritual')){
+          dispatchFill(el,value);
+          hideField(el,root);
+          return true;
+        }
+      }
+      return false;
+    }
+    function tryAutofillSimpleShop(value){
+      let filled=false;
+      try{filled = tryFillInRoot(document,value) || filled;}catch(e){}
+      document.querySelectorAll('iframe').forEach(frame=>{
+        try{
+          if(frame.contentDocument) filled = tryFillInRoot(frame.contentDocument,value) || filled;
+        }catch(e){}
+      });
+      return filled;
+    }
+    function showStatus(message, warn=false){
+      const st=document.getElementById('autofillStatus');
+      st.textContent=message;st.className='autofill-status show' + (warn?' warn':'');
+    }
+    function openCheckout(){
       const box = document.getElementById('checkoutBox');
-      if(box){box.scrollIntoView({behavior:'smooth',block:'start'});return;}
-      window.location.href = SIMPLESHOP_URL;
-    });
+      const code = document.getElementById('ritualCode').value;
+      if(box) box.classList.add('show');
+      showStatus('Připravuji objednávkový formulář…', true);
+      let tries=0;
+      const timer=setInterval(()=>{
+        tries++;
+        const ok = tryAutofillSimpleShop(code);
+        if(ok){
+          clearInterval(timer);
+          document.getElementById('manualFallback').classList.remove('show');
+          showStatus('Hotovo. Údaje k výkladu jsou v objednávce připravené.');
+        }else if(tries>=30){
+          clearInterval(timer);
+          showStatus('Formulář se načetl, ale technické pole se nepodařilo skrytě předvyplnit.', true);
+          document.getElementById('manualFallback').classList.add('show');
+        }
+      },400);
+      if(box) setTimeout(()=>box.scrollIntoView({behavior:'smooth',block:'start'}),120);
+    }
+    document.getElementById('copyAndOrder').addEventListener('click',openCheckout);
   </script>
 
   <script>
