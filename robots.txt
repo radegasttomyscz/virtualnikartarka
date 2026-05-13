@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /vysledky/
-Disallow: /vysledek.html
 
 Sitemap: https://virtualnikartarka.cz/sitemap.xml

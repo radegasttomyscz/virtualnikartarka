@@ -1,125 +1,23 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stránka nenalezena – Virtuální kartářka</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --void: #04020a;
-    --gold: #c9943a;
-    --gold-bright: #f0c060;
-    --lavender: #a855f7;
-    --mist: #c4a7e7;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    background: var(--void);
-    color: #e8d5b7;
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-weight: 600;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    overflow: hidden;
-    -webkit-font-smoothing: antialiased;
-  }
-  canvas { position: fixed; inset: 0; z-index: 0; }
-  .content { position: relative; z-index: 1; padding: 2rem; }
-  .card-404 {
-    width: 160px; height: 260px;
-    background: linear-gradient(160deg, #1a0a2e, #0d0520);
-    border: 1px solid rgba(201,148,58,0.4);
-    border-radius: 12px;
-    margin: 0 auto 2rem;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    font-size: 5rem;
-    box-shadow: 0 0 40px rgba(168,85,247,0.3), inset 0 0 30px rgba(0,0,0,0.5);
-    animation: float 4s ease-in-out infinite;
-  }
-  @keyframes float {
-    0%,100% { transform: translateY(0) rotate(-2deg); }
-    50% { transform: translateY(-20px) rotate(2deg); }
-  }
-  h1 {
-    font-family: 'Cinzel Decorative', serif;
-    font-size: clamp(1.4rem, 5vw, 2.5rem);
-    background: linear-gradient(135deg, var(--gold), var(--gold-bright));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 1rem;
-  }
-  p {
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: #f5eaff;
-    max-width: 460px;
-    line-height: 1.7;
-    margin-bottom: 2.5rem;
-  }
-  a {
-    display: inline-block;
-    padding: 0.9rem 2.5rem;
-    background: linear-gradient(135deg, var(--gold), var(--gold-bright));
-    color: var(--void);
-    font-family: 'Cinzel', serif;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: all 0.3s;
-    box-shadow: 0 0 25px rgba(201,148,58,0.4);
-  }
-  a:hover { transform: scale(1.05); box-shadow: 0 0 40px rgba(201,148,58,0.7); }
-</style>
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D1CFYHSG59"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-D1CFYHSG59');
-</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site.css" />
+  <title>Stránka nenalezena – Virtuální kartářka</title>
+  <meta name="description" content="Stránka nebyla nalezena." />
+  
 </head>
-<body>
-<canvas id="c"></canvas>
-<div class="content">
-  <div class="card-404">🌙</div>
-  <h1>Tato cesta neexistuje</h1>
-  <p>Karty mlčí. Hvězdy tuto stránku neznají.<br>Možná jsi zabloudil/a v mlze osudu…</p>
-  <a href="/">← Zpět do věštírny</a>
-</div>
-<script>
-const c = document.getElementById('c');
-const ctx = c.getContext('2d');
-let W, H, stars = [];
-function resize() { W = c.width = innerWidth; H = c.height = innerHeight; }
-function init() {
-  stars = Array.from({length: 200}, () => ({
-    x: Math.random()*W, y: Math.random()*H,
-    r: Math.random()*1.5, a: Math.random(), speed: 0.002+Math.random()*0.005
-  }));
-}
-function draw() {
-  ctx.clearRect(0,0,W,H);
-  stars.forEach(s => {
-    s.a += s.speed; if(s.a>1) s.a=0;
-    ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
-    ctx.fillStyle = `rgba(200,180,255,${Math.sin(s.a*Math.PI)})`;
-    ctx.fill();
-  });
-  requestAnimationFrame(draw);
-}
-resize(); init(); draw();
-window.addEventListener('resize', () => { resize(); init(); });
-</script>
+<body data-page="">
+  <div data-site-header></div>
+  <main class="site-main">
+<section class="page-hero"><div class="container"><span class="eyebrow">404</span><h1 class="page-title">Tato cesta neexistuje</h1><p class="hero-copy">Karty tuto stránku neznají. Zkus se vrátit zpět do věštírny.</p><div class="actions"><a class="btn btn-primary" href="/">Zpět na úvod</a></div></div></section>
+  </main>
+  <div data-site-footer></div>
+  <script src="/assets/site.js" defer></script>
+
 </body>
 </html>

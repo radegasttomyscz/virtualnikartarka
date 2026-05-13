@@ -3,119 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tvůj výklad – Virtuální kartářka</title>
-  <meta name="description" content="Soukromý tarotový výklad na 30 dní." />
-  <meta name="robots" content="noindex,nofollow" />
-  <link rel="canonical" href="https://virtualnikartarka.cz/vysledek.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
-  <style>
-    :root{--void:#05020b;--night:#0c0617;--panel:#130a24;--panel2:#1c0e34;--gold:#d6a94b;--gold2:#ffd983;--violet:#8b5cf6;--violet2:#c084fc;--text:#fbf7ff;--muted:#cbb9de;--soft:#9f86b9;--border:rgba(214,169,75,.28);--pborder:rgba(192,132,252,.22);--glass:rgba(255,255,255,.045);--shadow:0 24px 80px rgba(0,0,0,.55);--radius:24px}
-    *{box-sizing:border-box;margin:0;padding:0}html{background:var(--void)}body{min-height:100vh;color:var(--text);font-family:"Cormorant Garamond",Georgia,serif;font-size:20px;font-weight:600;line-height:1.72;background:radial-gradient(circle at 50% -10%,rgba(139,92,246,.22),transparent 34rem),radial-gradient(circle at 10% 20%,rgba(214,169,75,.11),transparent 22rem),linear-gradient(180deg,#05020b,#090412 55%,#05020b);overflow-x:hidden;-webkit-font-smoothing:antialiased}body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:radial-gradient(circle,rgba(255,255,255,.75) 0 1px,transparent 1.2px),radial-gradient(circle,rgba(214,169,75,.65) 0 1px,transparent 1.2px);background-size:85px 85px,140px 140px;background-position:0 0,34px 48px;opacity:.18}.container{width:min(1040px,calc(100% - 34px));margin:auto}.top{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(5,2,11,.90);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.06)}.top-inner{height:68px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font-family:"Cinzel Decorative",serif;color:var(--gold2);font-size:16px;letter-spacing:.1em;text-decoration:none}.brand span{color:var(--violet2)}.top a:not(.brand){font-family:Cinzel,serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:var(--muted)}main{padding:116px 0 70px}.hero{text-align:center;margin-bottom:38px}.eyebrow{font-family:Cinzel,serif;color:var(--gold);font-size:12px;letter-spacing:.32em;text-transform:uppercase;display:block;margin-bottom:12px}h1{font-family:"Cinzel Decorative",serif;font-size:clamp(38px,7vw,70px);line-height:1.05;letter-spacing:.055em;color:var(--gold2);text-shadow:0 0 36px rgba(214,169,75,.30);margin-bottom:14px}.lead{max-width:760px;margin:auto;color:var(--muted);font-size:22px}.panel{background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.025));border:1px solid var(--pborder);border-radius:28px;padding:32px;box-shadow:var(--shadow);position:relative;overflow:hidden}.panel::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(214,169,75,.11),transparent 60%);pointer-events:none}.panel>*{position:relative}.meta{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:22px}.pill{border:1px solid var(--border);background:rgba(214,169,75,.06);border-radius:999px;padding:9px 14px;font-family:Cinzel,serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2)}.cards{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin:36px 0}.tarot-card{width:170px;min-height:268px;border-radius:22px;border:1px solid var(--border);background:linear-gradient(160deg,#251143,#10071c);box-shadow:0 26px 60px rgba(0,0,0,.46),inset 0 0 42px rgba(214,169,75,.05);padding:18px;text-align:center;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative}.tarot-card .pos{position:absolute;top:12px;left:0;right:0;font-family:Cinzel,serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--soft)}.tarot-card .num{font-family:Cinzel,serif;color:var(--gold);font-size:13px}.tarot-card .sym{font-size:50px;color:var(--gold2);margin:16px 0 8px;text-shadow:0 0 28px rgba(214,169,75,.35)}.tarot-card .name{font-family:Cinzel,serif;font-size:16px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);line-height:1.25}.tarot-card .sub{font-size:16px;color:var(--muted);font-style:italic;line-height:1.25;margin-top:8px}.tarot-card .meaning{font-size:15px;color:var(--muted);line-height:1.35;margin-top:14px}.theme{border:1px solid rgba(214,169,75,.25);background:rgba(214,169,75,.055);border-radius:22px;padding:24px;text-align:center;margin-bottom:24px}.theme h2{font-family:Cinzel,serif;font-size:clamp(24px,4vw,36px);line-height:1.2;letter-spacing:.05em;color:var(--gold2);margin-bottom:8px}.theme p{color:var(--muted);font-size:22px}.sections{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}.section{border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.035);border-radius:20px;padding:22px}.section h3{font-family:Cinzel,serif;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2);margin-bottom:9px}.section p{color:var(--muted);font-size:20px}.section.wide{grid-column:1/-1}.actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:14px 23px;font-family:Cinzel,serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:.25s ease}.btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#120719;font-weight:800;box-shadow:0 0 34px rgba(214,169,75,.24)}.btn-ghost{border-color:var(--pborder);background:rgba(255,255,255,.03);color:var(--muted)}.share-preview{display:none;margin-top:34px;text-align:center}.share-preview img{max-width:min(360px,100%);border-radius:24px;border:1px solid var(--border);box-shadow:var(--shadow)}.state{text-align:center;padding:80px 20px}.state h1{font-size:clamp(32px,6vw,56px)}.state p{color:var(--muted);font-size:22px;max-width:720px;margin:12px auto 24px}.footer{padding:36px 0 0;text-align:center;color:var(--soft);font-size:15px}.footer a{color:var(--muted)}@media(max-width:760px){body{font-size:18px}.sections{grid-template-columns:1fr}.panel{padding:24px 18px}.tarot-card{width:138px;min-height:232px}.top .home{display:none}main{padding-top:96px}.top-inner{height:62px}}
-  
-    /* v2: vyšší kontrast výsledkové stránky */
-    :root{--text:#fffaff;--muted:#eadffd;--soft:#d8c2f3;--glass:rgba(255,255,255,.085);--border:rgba(255,217,131,.40);--pborder:rgba(217,195,243,.34)}
-    body{background:radial-gradient(circle at 50% 0%,rgba(139,92,246,.34),transparent 36rem),radial-gradient(circle at 12% 28%,rgba(214,169,75,.18),transparent 25rem),linear-gradient(180deg,#080313 0%,#100720 52%,#080313 100%)}
-    .panel,.card,.section{background:linear-gradient(180deg,rgba(49,27,79,.86),rgba(18,8,32,.88));border-color:rgba(217,195,243,.38)}
-    p,li,.muted,.lead{color:var(--muted)}
-
-  </style>
+  <link rel="stylesheet" href="/assets/site.css" />
+  <title>Soukromý výklad – Virtuální kartářka</title>
+  <meta name="description" content="Soukromá výsledková stránka tarotového výkladu." />
+  <style>.result-wrap{padding:70px 0}.result-panel{max-width:960px;margin:auto;border:1px solid var(--line2);border-radius:30px;background:rgba(255,255,255,.055);box-shadow:var(--shadow);padding:34px}.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0}.reading-section{border-top:1px solid rgba(255,255,255,.1);padding:20px 0}.reading-section h2{font-size:28px;color:var(--gold2)}@media(max-width:760px){.result-grid{grid-template-columns:1fr}.result-panel{padding:24px 18px}}</style>
 </head>
-<body>
-  <nav class="top"><div class="container top-inner"><a class="brand" href="/">Virtuální <span>kartářka</span></a><a class="home" href="tarot.html">Nový výklad</a></div></nav>
-  <main class="container">
-    <div id="app" class="state"><h1>Načítám výklad…</h1><p>Karty hledají správný odkaz.</p></div>
-    <div class="footer">© <span id="year"></span> Virtuální kartářka · <a href="mailto:info@tomys.cz">info@tomys.cz</a></div>
+<body data-page="">
+  <div data-site-header></div>
+  <main class="site-main">
+
+    <section class="result-wrap">
+      <div class="container">
+        <div class="result-panel" id="resultPanel">
+          <div class="center"><span class="eyebrow">Soukromý výklad</span><h1 class="page-title">Výklad se otevírá…</h1><p class="lead">Načítám karty.</p></div>
+        </div>
+      </div>
+    </section>
+
   </main>
+  <div data-site-footer></div>
+  <script src="/assets/site.js" defer></script>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const params = new URLSearchParams(location.search);
-    const id = (params.get('id') || '').replace(/[^a-zA-Z0-9_-]/g,'');
-    const app = document.getElementById('app');
+<script>
+(async()=>{const id=new URLSearchParams(location.search).get('id')||'demo';const panel=document.getElementById('resultPanel');try{const res=await fetch(`/vysledky/${encodeURIComponent(id)}.json`,{cache:'no-store'});if(!res.ok) throw new Error('missing');const d=await res.json();const cards=(d.cards||[]).map(c=>`<div class="result-card"><div class="pos">${c.position||''}</div><div class="sym">${c.symbol||'✦'}</div><strong>${c.name}</strong><small>${c.meaning||''}</small></div>`).join('');const sections=(d.sections||[]).map(s=>`<div class="reading-section"><h2>${s.title}</h2><p>${s.text}</p></div>`).join('');panel.innerHTML=`<div class="center"><span class="eyebrow">Výklad na 30 dní</span><h1 class="page-title">${d.title||'Tvůj výklad'}</h1><p class="lead">${d.intro||''}</p></div><div class="result-grid">${cards}</div>${sections}<div class="article-cta"><h2>Uzavírá se jeden měsíc?</h2><p class="muted">Až budeš chtít nový výhled, vrať se ke kartám s novou otázkou.</p><a class="btn btn-primary" href="/tarot.html">Nový výklad</a></div>`}catch(e){panel.innerHTML='<div class="center"><span class="eyebrow">Karty mlčí</span><h1 class="page-title">Výklad nebyl nalezen</h1><p class="lead">Zkontroluj odkaz v e-mailu, nebo napiš na info@tomys.cz.</p><div class="actions"><a class="btn btn-primary" href="/tarot.html">Zahájit nový výklad</a></div></div>'}})();
+</script>
 
-    if(!id){
-      showState('Výklad nebyl nalezen', 'V odkazu chybí identifikátor výsledku. Zkontroluj prosím e-mail, ze kterého jsi odkaz otevřel/a.', true);
-    } else {
-      loadResult(id);
-    }
-
-    async function loadResult(resultId){
-      try{
-        const res = await fetch(`vysledky/${encodeURIComponent(resultId)}.json`, { cache:'no-store' });
-        if(!res.ok) throw new Error('NOT_FOUND');
-        const data = await res.json();
-        renderResult(data);
-      }catch(e){
-        showState('Výklad se zatím připravuje', 'Pokud jsi právě zaplatil/a, dej systému chvilku. Jakmile Make dokončí generování, stránka se začne zobrazovat. Zkus ji za chvíli obnovit.', false);
-      }
-    }
-
-    function showState(title,text,showBtn){
-      app.className='state';
-      app.innerHTML = `<h1>${escapeHtml(title)}</h1><p>${escapeHtml(text)}</p>${showBtn?'<a class="btn btn-primary" href="/">Zpět do věštírny</a>':'<button class="btn btn-primary" onclick="location.reload()">Obnovit stránku</button>'}`;
-    }
-
-    function renderResult(d){
-      const cards = Array.isArray(d.cards) ? d.cards : [];
-      app.className='';
-      app.innerHTML = `
-        <header class="hero">
-          <span class="eyebrow">Soukromý výklad</span>
-          <h1>${escapeHtml(d.title || 'Tvůj výklad na 30 dní')}</h1>
-          <p class="lead">${escapeHtml(d.intro || 'Karty byly otevřeny. Ber jejich hlas jako symbolický vhled, ne jako příkaz.')}</p>
-          <div class="meta">
-            ${d.customerName ? `<span class="pill">${escapeHtml(d.customerName)}</span>` : ''}
-            ${d.category ? `<span class="pill">${escapeHtml(d.category)}</span>` : ''}
-            ${d.validUntil ? `<span class="pill">Do ${escapeHtml(d.validUntil)}</span>` : '<span class="pill">Výklad na 30 dní</span>'}
-          </div>
-        </header>
-        <section class="panel">
-          <div class="theme"><h2>${escapeHtml(d.monthTheme || 'Hlavní energie měsíce')}</h2><p>${escapeHtml(d.monthSummary || '')}</p></div>
-          <div class="cards">${cards.map((c,i)=>renderCard(c,i)).join('')}</div>
-          <div class="sections">
-            ${renderSection('Minulost', d.sections?.past)}
-            ${renderSection('Přítomnost', d.sections?.present)}
-            ${renderSection('Blízkých 30 dní', d.sections?.future)}
-            ${renderSection('Varování', d.sections?.warning)}
-            ${renderSection('Skrytý význam', d.sections?.hidden, true)}
-            ${renderSection('Doporučení', d.sections?.recommendation, true)}
-          </div>
-          <div class="actions">
-            <button class="btn btn-primary" id="downloadShare">Stáhnout share kartu</button>
-            <a class="btn btn-ghost" href="tarot.html">Nový výklad</a>
-          </div>
-          <div class="share-preview" id="sharePreview"><p class="lead" style="font-size:18px;margin-bottom:12px">Takhle může vypadat veřejný teaser. Celý výklad zůstává soukromý.</p><img id="shareImage" alt="Share karta výsledku"></div>
-        </section>
-      `;
-      document.getElementById('downloadShare').addEventListener('click',()=>downloadShareCard(d));
-    }
-    function renderCard(c,i){return `<article class="tarot-card"><div class="pos">${escapeHtml(c.position || ['Minulost','Přítomnost','30 dní'][i] || 'Karta')}</div><div class="num">${escapeHtml(c.num || '')}</div><div class="sym">${escapeHtml(c.symbol || c.sym || '☾')}</div><div class="name">${escapeHtml(c.name || '')}</div><div class="sub">${escapeHtml(c.sub || '')}</div>${c.meaning?`<div class="meaning">${escapeHtml(c.meaning)}</div>`:''}</article>`}
-    function renderSection(title,text,wide){return `<article class="section ${wide?'wide':''}"><h3>${escapeHtml(title)}</h3><p>${escapeHtml(text || 'Tato část výkladu čeká na doplnění.')}</p></article>`}
-    function escapeHtml(str){return String(str ?? '').replace(/[&<>'"]/g,s=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[s]));}
-
-    function downloadShareCard(d){
-      const canvas = document.createElement('canvas'); canvas.width = 1080; canvas.height = 1920;
-      const ctx = canvas.getContext('2d');
-      const grad = ctx.createLinearGradient(0,0,0,1920); grad.addColorStop(0,'#05020b'); grad.addColorStop(.55,'#130a24'); grad.addColorStop(1,'#05020b'); ctx.fillStyle = grad; ctx.fillRect(0,0,1080,1920);
-      for(let i=0;i<170;i++){ctx.fillStyle = i%5===0?'rgba(214,169,75,.70)':'rgba(255,255,255,.45)';ctx.beginPath();ctx.arc(Math.random()*1080, Math.random()*1920, Math.random()*1.7+0.4,0,Math.PI*2);ctx.fill();}
-      ctx.textAlign='center'; ctx.fillStyle='#ffd983'; ctx.font='700 48px Cinzel, serif'; ctx.fillText('Virtuální kartářka',540,150);
-      ctx.fillStyle='#cbb9de'; ctx.font='italic 44px Cormorant Garamond, serif'; ctx.fillText('Můj výklad na 30 dní',540,230);
-      ctx.strokeStyle='rgba(214,169,75,.36)'; ctx.lineWidth=2; roundRect(ctx,150,330,780,980,44,true,false);
-      ctx.fillStyle='rgba(255,255,255,.035)'; roundRect(ctx,150,330,780,980,44,false,true);
-      ctx.fillStyle='#ffd983'; ctx.font='700 54px Cinzel, serif'; wrapText(ctx, d.share?.title || d.monthTheme || 'Moje karta měsíce', 540,440,660,68);
-      const cards = d.cards || [];
-      let y=680;
-      cards.slice(0,3).forEach((c,idx)=>{ctx.fillStyle='rgba(214,169,75,.16)';roundRect(ctx,240,y-55,600,135,26,false,true);ctx.fillStyle='#d6a94b';ctx.font='600 30px Cinzel, serif';ctx.fillText(c.position || ['Minulost','Přítomnost','30 dní'][idx],540,y-8);ctx.fillStyle='#fbf7ff';ctx.font='700 42px Cinzel, serif';ctx.fillText((c.symbol||'☾')+' '+(c.name||''),540,y+48);y+=180;});
-      ctx.fillStyle='#cbb9de'; ctx.font='italic 42px Cormorant Garamond, serif'; wrapText(ctx, d.share?.text || 'Něco se v následujících dnech začne ukazovat jasněji.',540,1240,760,55);
-      ctx.fillStyle='#ffd983'; ctx.font='700 44px Cinzel, serif'; ctx.fillText('virtualnikartarka.cz',540,1710);
-      const url = canvas.toDataURL('image/png');
-      const img = document.getElementById('shareImage'); const prev = document.getElementById('sharePreview'); img.src = url; prev.style.display='block';
-      const a = document.createElement('a'); a.href = url; a.download = `virtualni-kartarka-${id || 'vyklad'}.png`; document.body.appendChild(a); a.click(); a.remove();
-    }
-    function roundRect(ctx,x,y,w,h,r,stroke,fill){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();if(fill)ctx.fill();if(stroke)ctx.stroke();}
-    function wrapText(ctx,text,x,y,maxWidth,lineHeight){const words=String(text).split(' ');let line='';for(let n=0;n<words.length;n++){const test=line+words[n]+' ';if(ctx.measureText(test).width>maxWidth && n>0){ctx.fillText(line.trim(),x,y);line=words[n]+' ';y+=lineHeight}else{line=test}}ctx.fillText(line.trim(),x,y)}
-  </script>
 </body>
 </html>

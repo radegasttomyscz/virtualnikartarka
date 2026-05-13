@@ -1,27 +1,42 @@
 {
-  "id": "demo",
-  "title": "Ukázkový výklad na 30 dní",
-  "intro": "Toto je pouze ukázkový soubor pro otestování vzhledu výsledkové stránky. Skutečný placený výklad bude generovat Make + Claude po uhrazení objednávky.",
-  "customerName": "Ukázka",
-  "category": "Výhled na 30 dní",
-  "validUntil": "za 30 dní",
-  "monthTheme": "Měsíc mezi dveřmi",
-  "monthSummary": "Následující období může přinést víc ticha než jasných odpovědí. Právě v něm se ale začne ukazovat, co už nejde dál přehlížet.",
+  "title": "Tvůj ukázkový výklad",
+  "intro": "Tři karty ukazují, jaká energie může provázet následujících 30 dní.",
   "cards": [
-    {"position":"Minulost","num":"IX","name":"Poustevník","sub":"pravda v tichu","symbol":"◇","meaning":"Něco v tobě dozrávalo o samotě. Nešlo o slabost, ale o sbírání odvahy podívat se na věc bez hluku okolí."},
-    {"position":"Přítomnost","num":"XVIII","name":"Měsíc","sub":"mlha a podvědomí","symbol":"☽","meaning":"Teď nemusí být všechno jasné. Některé signály jsou neúplné a část odpovědi leží mezi tím, co tušíš, a tím, co si nechceš přiznat."},
-    {"position":"Blízkých 30 dní","num":"XIX","name":"Slunce","sub":"jasnost a radost","symbol":"☀","meaning":"Během dalších týdnů se může rozsvítit konkrétní směr. Ne nutně dramaticky, spíš přes jednoduchý moment, který konečně zapadne."}
+    {
+      "position": "Minulost",
+      "symbol": "☽",
+      "name": "Měsíc",
+      "meaning": "mlha a intuice"
+    },
+    {
+      "position": "Přítomnost",
+      "symbol": "⚡",
+      "name": "Věž",
+      "meaning": "odhalení pravdy"
+    },
+    {
+      "position": "Blízkých 30 dní",
+      "symbol": "★",
+      "name": "Hvězda",
+      "meaning": "naděje a nový směr"
+    }
   ],
-  "sections": {
-    "past": "Minulost ukazuje období, kdy ses víc stáhl/a do sebe. Možná proto, že vnější odpovědi byly příliš hlasité a žádná z nich nezněla jako tvoje vlastní.",
-    "present": "Přítomnost je zastřená. Neznamená to, že se nic neděje. Znamená to, že ještě není vhodné dělat závěr z prvního dojmu.",
-    "future": "V následujících 30 dnech se může objevit jasnější impuls. Sleduj hlavně situace, po kterých se ti uleví, ne ty, které tě nutí hrát roli.",
-    "warning": "Pozor na rychlé rozhodnutí udělané jen proto, aby skončilo napětí. Karta Měsíce varuje před polopravdami a domýšlením.",
-    "hidden": "Skrytý význam výkladu je jednoduchý: odpověď už možná znáš, jen čekáš, až ti ji potvrdí někdo nebo něco zvenčí.",
-    "recommendation": "Dej si čas do konce měsíčního cyklu. Zapisuj si opakující se signály a rozhodnutí udělej až ve chvíli, kdy bude v těle méně strachu a více klidu."
-  },
-  "share": {
-    "title": "Moje karta měsíce: Měsíc",
-    "text": "Něco nevyřčeného se začíná ukazovat. Ne všechno, co je skryté, je proti mně."
-  }
+  "sections": [
+    {
+      "title": "Minulost",
+      "text": "Měsíc ukazuje období nejistoty, domněnek a nevyslovených pocitů. Něco nebylo úplně jasné a možná jsi musel/a víc vnímat atmosféru než slova."
+    },
+    {
+      "title": "Přítomnost",
+      "text": "Věž v přítomnosti naznačuje, že se může ukazovat pravda, kterou už nejde ignorovat. Nemusí to být konec, ale rozhodně je to okamžik probuzení."
+    },
+    {
+      "title": "Blízkých 30 dní",
+      "text": "Hvězda přináší zklidnění a nový směr. Po napětí se může objevit naděje, pokud si dovolíš vidět věci pravdivěji a nepřikrášlovat je."
+    },
+    {
+      "title": "Skrytý význam",
+      "text": "Celý výklad šeptá: nehledej jistotu v druhých, dokud ji nemáš v sobě. Následující měsíc může být o návratu k vlastnímu hlasu."
+    }
+  ]
 }

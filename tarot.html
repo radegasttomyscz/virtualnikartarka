@@ -3,406 +3,73 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zahájit výklad – Virtuální kartářka</title>
-  <meta name="description" content="Vyber oblast, polož otázku a připrav si osobní tarotový výklad na dalších 30 dní. Osobní výklad se otevře po dokončení objednávky." />
-  <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://virtualnikartarka.cz/tarot.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site.css" />
+  <title>Zahájit výklad – Virtuální kartářka</title>
+  <meta name="description" content="Vyber oblast, polož otázku a uzamkni tři tarotové karty pro výklad na následujících 30 dní." />
+  
   <style>
-    :root{--void:#05020b;--night:#0c0617;--panel:#130a24;--panel2:#1c0e34;--gold:#d6a94b;--gold2:#ffd983;--violet:#8b5cf6;--violet2:#c084fc;--text:#fbf7ff;--muted:#cbb9de;--soft:#9f86b9;--border:rgba(214,169,75,.28);--pborder:rgba(192,132,252,.22);--glass:rgba(255,255,255,.045);--shadow:0 24px 80px rgba(0,0,0,.55);--radius:22px;--ok:#a7f3d0;--danger:#fca5a5}
-    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;background:var(--void)}body{min-height:100vh;color:var(--text);font-family:"Cormorant Garamond",Georgia,serif;font-size:20px;line-height:1.65;font-weight:600;background:radial-gradient(circle at 50% -10%,rgba(139,92,246,.25),transparent 34rem),radial-gradient(circle at 12% 28%,rgba(214,169,75,.11),transparent 22rem),linear-gradient(180deg,#05020b 0%,#090412 52%,#05020b 100%);overflow-x:hidden;-webkit-font-smoothing:antialiased}body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background-image:radial-gradient(circle,rgba(255,255,255,.75) 0 1px,transparent 1.2px),radial-gradient(circle,rgba(214,169,75,.65) 0 1px,transparent 1.2px);background-size:86px 86px,140px 140px;background-position:0 0,34px 48px;opacity:.22;animation:stars 24s linear infinite}@keyframes stars{to{background-position:86px 86px,174px 188px}}.container{width:min(980px,calc(100% - 34px));margin-inline:auto}.top{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(5,2,11,.90);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.06)}.top-inner{height:68px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font-family:"Cinzel Decorative",serif;color:var(--gold2);font-size:16px;letter-spacing:.1em;text-decoration:none}.brand span{color:var(--violet2)}.top a:not(.brand){font-family:Cinzel,serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:var(--muted)}.top a:hover{color:var(--gold2)}main{padding:118px 0 70px}.phase{display:none}.phase.active{display:block;animation:rise .5s ease both}@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}.panel{background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.025));border:1px solid var(--pborder);border-radius:28px;padding:32px;box-shadow:var(--shadow);position:relative;overflow:hidden}.panel::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(214,169,75,.11),transparent 60%);pointer-events:none}.panel>*{position:relative}.center{text-align:center}.eyebrow{font-family:Cinzel,serif;color:var(--gold);font-size:12px;letter-spacing:.32em;text-transform:uppercase;display:block;margin-bottom:12px}h1{font-family:"Cinzel Decorative",serif;font-size:clamp(36px,7vw,64px);line-height:1.05;letter-spacing:.055em;color:var(--gold2);text-shadow:0 0 36px rgba(214,169,75,.28);margin-bottom:14px}h2{font-family:Cinzel,serif;font-size:clamp(28px,4vw,42px);line-height:1.15;letter-spacing:.05em;color:var(--text);margin-bottom:14px}h2 em{color:var(--gold2);font-style:normal}.lead{color:var(--muted);font-size:22px;max-width:720px;margin:0 auto 24px}.small{color:var(--soft);font-size:17px}.ritual-mark{width:102px;height:102px;margin:0 auto 24px;border:1px solid var(--border);border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,rgba(214,169,75,.09),rgba(139,92,246,.08));box-shadow:0 0 70px rgba(139,92,246,.24)}.ritual-mark span{font-size:48px;color:var(--gold2);filter:drop-shadow(0 0 18px rgba(214,169,75,.45))}.form-grid{display:grid;gap:20px;margin-top:28px}.field{text-align:left}.field label{display:block;font-family:Cinzel,serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}.field input,.field textarea{width:100%;border:1px solid var(--pborder);border-radius:18px;background:rgba(255,255,255,.045);color:var(--text);font-family:"Cormorant Garamond",Georgia,serif;font-size:21px;font-weight:600;padding:15px 16px;outline:none;transition:.2s ease}.field textarea{min-height:130px;resize:vertical}.field input:focus,.field textarea:focus{border-color:var(--gold);box-shadow:0 0 28px rgba(214,169,75,.13)}.hint{font-size:16px;color:var(--soft);margin-top:7px}.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.cat{border:1px solid var(--pborder);border-radius:20px;background:rgba(255,255,255,.035);padding:18px 12px;text-align:center;cursor:pointer;transition:.22s ease}.cat:hover,.cat.selected{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 0 34px rgba(214,169,75,.13);background:rgba(214,169,75,.06)}.cat span{display:block;font-size:28px;margin-bottom:7px}.cat strong{font-family:Cinzel,serif;font-size:12px;letter-spacing:.13em;text-transform:uppercase}.actions{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;padding:14px 23px;font-family:Cinzel,serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:.25s ease}.btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#120719;font-weight:800;box-shadow:0 0 34px rgba(214,169,75,.24)}.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 52px rgba(214,169,75,.42)}.btn-ghost{border-color:var(--pborder);background:rgba(255,255,255,.03);color:var(--muted)}.btn-ghost:hover{border-color:var(--gold);color:var(--gold2)}.btn:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}.error{display:none;margin-top:18px;border:1px solid rgba(252,165,165,.25);background:rgba(252,165,165,.07);color:#fecaca;border-radius:16px;padding:12px 14px}.shuffle-area{height:330px;position:relative;margin:28px auto;width:min(100%,540px);overflow:hidden}.shuffle-card{position:absolute;width:96px;height:158px;border-radius:15px;border:1px solid var(--border);background:linear-gradient(145deg,#24113f,#0d0618);box-shadow:0 22px 55px rgba(0,0,0,.48),inset 0 0 35px rgba(214,169,75,.04);display:grid;place-items:center;font-size:34px;color:rgba(214,169,75,.70);transition:.45s cubic-bezier(.2,.8,.2,1)}.bar{width:min(360px,100%);height:8px;background:rgba(255,255,255,.06);border:1px solid var(--pborder);border-radius:999px;overflow:hidden;margin:18px auto 0}.bar-fill{height:100%;width:0;background:linear-gradient(90deg,var(--violet),var(--gold2));box-shadow:0 0 20px rgba(214,169,75,.34);transition:width .18s ease}.spread{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:30px auto;max-width:780px}.pick-card{height:152px;border-radius:15px;border:1px solid var(--pborder);background:linear-gradient(145deg,#21103a,#0c0617);display:grid;place-items:center;cursor:pointer;font-size:31px;color:rgba(214,169,75,.75);box-shadow:0 16px 42px rgba(0,0,0,.35);transition:.22s ease;position:relative}.pick-card:hover{border-color:var(--gold);transform:translateY(-4px)}.pick-card.selected{border-color:var(--gold2);background:linear-gradient(145deg,#332052,#150a26);box-shadow:0 0 34px rgba(214,169,75,.22)}.pick-card.selected::after{content:attr(data-order);position:absolute;right:9px;top:8px;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--gold2);color:#120719;font-family:Cinzel,serif;font-size:13px;font-weight:800}.reveal-row{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin:30px 0}.result-card{width:158px;min-height:244px;border-radius:20px;border:1px solid var(--border);background:linear-gradient(160deg,#251143,#10071c);box-shadow:0 26px 60px rgba(0,0,0,.46), inset 0 0 42px rgba(214,169,75,.05);padding:16px;text-align:center;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative}.result-card .pos{position:absolute;top:11px;left:0;right:0;text-align:center;font-family:Cinzel,serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--soft)}.result-card .num{font-family:Cinzel,serif;color:var(--gold);font-size:13px}.result-card .sym{font-size:46px;color:var(--gold2);margin:14px 0 8px;text-shadow:0 0 28px rgba(214,169,75,.35)}.result-card .name{font-family:Cinzel,serif;font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);line-height:1.25}.result-card .sub{font-size:15px;color:var(--muted);font-style:italic;line-height:1.25;margin-top:7px}.locked{border:1px solid rgba(214,169,75,.25);background:rgba(214,169,75,.055);border-radius:20px;padding:20px;margin-top:26px;color:var(--muted)}.code-box{margin-top:22px;text-align:left}.code-box textarea{width:100%;min-height:140px;border:1px solid var(--pborder);border-radius:18px;background:rgba(0,0,0,.25);color:var(--muted);font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12px;padding:14px;resize:vertical}.copy-ok{display:none;color:var(--ok);font-size:16px;margin-top:8px}.order-note{font-size:17px;color:var(--soft);max-width:760px;margin:14px auto 0}.footer{padding:35px 0 0;text-align:center;color:var(--soft);font-size:15px}.footer a{color:var(--muted)}
-
-    /* v2: vyšší kontrast, světlejší panely a čitelné karty */
-    :root{
-      --void:#080313;
-      --night:#120822;
-      --panel:#211036;
-      --panel2:#2d174b;
-      --text:#fffaff;
-      --muted:#eadffd;
-      --soft:#d8c2f3;
-      --glass:rgba(255,255,255,.085);
-      --pborder:rgba(217,195,243,.34);
-      --border:rgba(255,217,131,.40);
-      --shadow:0 24px 80px rgba(0,0,0,.44);
-    }
-    body{
-      background:
-        radial-gradient(circle at 50% -10%,rgba(139,92,246,.36),transparent 36rem),
-        radial-gradient(circle at 12% 28%,rgba(214,169,75,.18),transparent 25rem),
-        radial-gradient(circle at 88% 20%,rgba(192,132,252,.13),transparent 21rem),
-        linear-gradient(180deg,#080313 0%,#100720 52%,#080313 100%);
-    }
-    .panel{
-      background:linear-gradient(180deg,rgba(49,27,79,.86),rgba(18,8,32,.88));
-      border-color:rgba(217,195,243,.38);
-      box-shadow:0 22px 70px rgba(0,0,0,.40);
-    }
-    .cat,.pick-card,.result-card,.field input,.field textarea,.locked,.code-box textarea{
-      background:linear-gradient(180deg,rgba(45,25,73,.84),rgba(18,8,32,.88));
-      border-color:rgba(217,195,243,.36);
-      color:#fffaff;
-    }
-    .field input::placeholder,.field textarea::placeholder{color:#cbb9de;opacity:.92}
-    .cat span,.pick-card,.result-card .sym{color:var(--gold2);text-shadow:0 0 18px rgba(214,169,75,.28)}
-    .cat strong,.result-card .name{color:#fff7d8;text-shadow:0 0 12px rgba(255,217,131,.16)}
-    .cat:hover,.cat.selected,.pick-card:hover,.pick-card.selected{background:linear-gradient(180deg,rgba(77,45,118,.92),rgba(28,13,48,.92));}
-    .lead,.small,.hint,.locked,.order-note,.result-card .sub,.footer{color:var(--muted)}
-    .btn-ghost{background:rgba(255,255,255,.07);color:#f3eaff}
-    .simpleshop-box{margin-top:28px;text-align:left;border:1px solid rgba(255,217,131,.34);border-radius:22px;background:linear-gradient(180deg,rgba(255,217,131,.075),rgba(45,25,73,.42));padding:18px;box-shadow:0 18px 48px rgba(0,0,0,.28)}
-    .simpleshop-box h3{font-family:Cinzel,serif;color:var(--gold2);font-size:16px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;text-align:center}
-    .simpleshop-box p{color:var(--muted);font-size:17px;text-align:center;margin-bottom:14px}
-    .simpleshop-fallback{text-align:center;margin-top:12px;font-size:16px}.simpleshop-fallback a{color:var(--gold2)}
-
-
-    /* v3: výraznější rituální pozadí, čitelnější mobil a skryté technické pole */
-    body{
-      background:
-        radial-gradient(circle at 50% -8%,rgba(255,217,131,.18),transparent 22rem),
-        radial-gradient(circle at 12% 12%,rgba(192,132,252,.33),transparent 24rem),
-        radial-gradient(circle at 88% 22%,rgba(214,169,75,.14),transparent 22rem),
-        linear-gradient(180deg,#0a0416 0%,#160b2a 44%,#080313 100%);
-    }
-    body::after{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:linear-gradient(125deg,transparent 0 30%,rgba(255,217,131,.045) 31%,transparent 44% 100%),radial-gradient(ellipse at 50% 105%,rgba(192,132,252,.20),transparent 42rem)}
-    .panel{background:linear-gradient(180deg,rgba(60,33,94,.86),rgba(18,8,34,.92));border-color:rgba(255,217,131,.24);box-shadow:0 30px 95px rgba(0,0,0,.44), inset 0 0 90px rgba(255,217,131,.025)}
-    .panel::after{content:"✦";position:absolute;right:28px;top:22px;color:rgba(255,217,131,.12);font-size:88px;line-height:1;pointer-events:none;filter:drop-shadow(0 0 32px rgba(255,217,131,.17))}
-    .lead,.small,.hint,.order-note,.locked,.field input,.field textarea{color:#f0e7ff}.field input::placeholder,.field textarea::placeholder{color:#bda8d8}
-    .cat,.pick-card,.result-card,.simpleshop-box{background:linear-gradient(180deg,rgba(50,27,82,.82),rgba(18,8,34,.88));border-color:rgba(255,217,131,.22)}
-    .cat strong,.result-card .name{color:#fff1bf}.cat span,.result-card .sym{color:#ffd983;text-shadow:0 0 20px rgba(255,217,131,.26)}
-    .code-box{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important;opacity:0!important;pointer-events:none!important}
-    .autofill-status{display:none;margin:18px auto 0;max-width:720px;border-radius:16px;padding:12px 16px;font-size:17px;color:#d1fae5;background:rgba(16,185,129,.10);border:1px solid rgba(167,243,208,.28)}
-    .autofill-status.show{display:block}.autofill-status.warn{color:#fff1bf;background:rgba(255,217,131,.08);border-color:rgba(255,217,131,.30)}
-    .manual-fallback{display:none;margin:18px auto 0;max-width:760px;text-align:left;border:1px solid rgba(255,217,131,.30);background:rgba(255,217,131,.08);border-radius:18px;padding:16px;color:#f5eaff;font-size:17px}.manual-fallback.show{display:block}.manual-code{width:100%;min-height:120px;margin-top:12px;border:1px solid rgba(255,217,131,.24);border-radius:14px;background:rgba(0,0,0,.26);color:#f0e7ff;font:12px ui-monospace,SFMono-Regular,Consolas,monospace;padding:12px;resize:vertical}.mini-copy{margin-top:12px;display:inline-flex;border:1px solid rgba(255,217,131,.36);background:rgba(255,255,255,.06);color:#fff1bf;border-radius:999px;padding:10px 14px;font-family:Cinzel,serif;text-transform:uppercase;letter-spacing:.12em;cursor:pointer}
-    .simpleshop-box{display:none}.simpleshop-box.show{display:block}
-
-    @media(max-width:760px){body{font-size:18px}.cat-grid{grid-template-columns:repeat(2,1fr)}.spread{grid-template-columns:repeat(2,1fr)}.pick-card{height:132px}.panel{padding:24px 18px}.result-card{width:132px;min-height:216px}.top-inner{height:62px}.top .home{display:none}main{padding-top:95px}.shuffle-card{width:78px;height:132px}.shuffle-area{height:285px}}
+    body[data-page="tarot"] .site-main{padding-top:72px}.ritual{padding:50px 0 70px}.panel{width:min(820px,100%);margin:0 auto;border:1px solid var(--line2);border-radius:30px;background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035));box-shadow:var(--shadow);padding:38px;position:relative;overflow:hidden}.panel::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(255,224,138,.14),transparent 38%),radial-gradient(circle at 0% 70%,rgba(157,99,255,.12),transparent 38%);pointer-events:none}.panel>*{position:relative}.center{text-align:center}.ritual-mark{width:86px;height:86px;margin:0 auto 22px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;background:rgba(255,224,138,.055);box-shadow:0 0 60px rgba(157,99,255,.18)}.ritual-mark span{font-size:36px;color:var(--gold2)}.phase{display:none}.phase.active{display:block}.form-grid{display:grid;gap:20px;text-align:left;margin-top:30px}.field label{display:block;font-family:Cinzel,serif;color:var(--gold);letter-spacing:.18em;text-transform:uppercase;font-size:12px;margin-bottom:8px}.field input,.field textarea{width:100%;border:1px solid var(--line2);border-radius:16px;background:rgba(255,255,255,.055);color:var(--text);font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:600;padding:14px 16px;outline:none}.field textarea{min-height:118px;resize:vertical}.field input:focus,.field textarea:focus{border-color:var(--gold);box-shadow:0 0 24px rgba(216,169,71,.12)}.hint{font-size:16px;color:var(--muted);margin-top:7px}.counter{font-size:15px;color:var(--soft);text-align:right;margin-top:4px}.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.cat{border:1px solid var(--line2);border-radius:18px;background:rgba(255,255,255,.04);padding:18px 10px;color:var(--text);cursor:pointer;transition:.22s}.cat.selected,.cat:hover{border-color:var(--gold);box-shadow:0 0 28px rgba(216,169,71,.14)}.cat span{display:block;font-size:25px}.cat strong{display:block;font-family:Cinzel,serif;font-size:12px;letter-spacing:.11em;text-transform:uppercase;margin-top:6px}.error{display:none;margin-top:16px;color:#ffd1d1}.shuffle-area{height:330px;position:relative;margin:30px auto;max-width:560px}.shuffle-card{position:absolute;left:50%;top:50%;width:86px;height:146px;margin:-73px 0 0 -43px;border-radius:14px;border:1px solid var(--line);background:linear-gradient(145deg,#2a164a,#10071d);box-shadow:0 18px 44px rgba(0,0,0,.4);display:grid;place-items:center;color:var(--gold2);font-size:30px;transition:transform .7s cubic-bezier(.2,.9,.2,1),opacity .3s}.bar{height:7px;border:1px solid var(--line2);background:rgba(255,255,255,.05);border-radius:999px;overflow:hidden}.bar-fill{height:100%;width:0;background:linear-gradient(90deg,var(--violet),var(--gold2));transition:width .25s}.small{color:var(--muted);font-size:18px;margin-top:12px}.spread{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:32px auto;max-width:760px}.pick-card{height:160px;border:1px solid var(--line2);border-radius:16px;background:linear-gradient(145deg,#201038,#0b0614);display:grid;place-items:center;color:var(--gold);cursor:pointer;transition:.22s;position:relative;overflow:hidden}.pick-card::before{content:"☾";font-size:34px}.pick-card.selected{border-color:var(--gold);transform:translateY(-5px);box-shadow:0 0 32px rgba(216,169,71,.18)}.pick-card.selected::after{content:attr(data-order);position:absolute;top:10px;right:10px;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--gold2);color:#130719;font-family:Cinzel,serif;font-size:12px;font-weight:800}.reveal-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin:30px 0}.result-card{width:150px;min-height:230px;border-radius:18px;border:1px solid var(--line);background:linear-gradient(160deg,#281545,#0d0617);padding:16px;text-align:center;display:flex;flex-direction:column;justify-content:center;box-shadow:0 20px 58px rgba(0,0,0,.38)}.result-card .pos{font-family:Cinzel,serif;color:var(--gold);font-size:11px;letter-spacing:.14em;text-transform:uppercase}.result-card .sym{font-size:42px;margin:13px 0;color:var(--gold2)}.result-card strong{font-family:Cinzel,serif;color:var(--text);letter-spacing:.08em}.locked{border:1px solid var(--line2);border-radius:20px;background:rgba(255,255,255,.045);padding:20px;color:var(--text2);margin:22px 0}.code-box,.manual-fallback{display:none}.autofill-status{margin-top:14px;color:var(--muted);font-size:17px}.order-note{font-size:17px;color:var(--muted);margin-top:12px}.simpleshop-box{display:none;margin-top:30px;text-align:left;border:1px solid var(--line2);border-radius:24px;background:#fff;color:#111;padding:22px}.simpleshop-box.show{display:block}.simpleshop-box h3{font-family:Cinzel,serif;color:#271348;margin-bottom:6px}.simpleshop-box p{color:#3a2a4a}.simpleshop-fallback{font-size:15px;color:#4a3a5b;margin-top:10px}.ssItemID-iv8jj9oo{display:none!important}@media(max-width:760px){.panel{padding:24px 18px;border-radius:24px}.cat-grid{grid-template-columns:repeat(2,1fr)}.spread{grid-template-columns:repeat(2,1fr)}.pick-card{height:136px}.shuffle-card{width:76px;height:128px}.shuffle-area{height:285px}.result-card{width:132px;min-height:210px}}
   </style>
 </head>
-<body>
-  <nav class="top">
-    <div class="container top-inner">
-      <a class="brand" href="/">Virtuální <span>kartářka</span></a>
-      <a class="home" href="/">Zpět na úvod</a>
-    </div>
-  </nav>
+<body data-page="tarot">
+  <div data-site-header></div>
+  <main class="site-main">
 
-  <main class="container">
-    <section class="phase active" id="phase-start">
-      <div class="panel center">
-        <div class="ritual-mark"><span>☾</span></div>
-        <span class="eyebrow">Výklad na 30 dní</span>
-        <h1>Začni svůj rituál</h1>
-        <p class="lead">Vyber oblast a polož otázku pro následujících 30 dní. Karty se připraví hned, jejich osobní význam se otevře až po dokončení objednávky.</p>
-        <div class="form-grid">
-          <div class="field">
-            <label for="name">Jméno nebo oslovení</label>
-            <input id="name" name="name" autocomplete="given-name" placeholder="Např. Klára" maxlength="60">
-            <p class="hint">Nepovinné. Pomůže výklad více zosobnit.</p>
-          </div>
-
-          <div class="field">
-            <label>Oblast výkladu</label>
-            <div class="cat-grid" id="catGrid">
-              <button class="cat" type="button" data-cat="Láska"><span>♥</span><strong>Láska</strong></button>
-              <button class="cat" type="button" data-cat="Vztahy a rodina"><span>☽</span><strong>Vztahy</strong></button>
-              <button class="cat" type="button" data-cat="Práce"><span>✦</span><strong>Práce</strong></button>
-              <button class="cat" type="button" data-cat="Peníze"><span>◆</span><strong>Peníze</strong></button>
-              <button class="cat" type="button" data-cat="Rozhodnutí"><span>⚖</span><strong>Rozhodnutí</strong></button>
-              <button class="cat" type="button" data-cat="Výhled na 30 dní"><span>☀</span><strong>30 dní</strong></button>
+    <section class="ritual">
+      <div class="container">
+        <section class="phase active" id="phase-start">
+          <div class="panel center">
+            <div class="ritual-mark"><span>☾</span></div>
+            <span class="eyebrow">Výklad na 30 dní</span>
+            <h1 class="page-title">Začni svůj rituál</h1>
+            <p class="lead">Vyber oblast a polož otázku. Karty se připraví hned, celý osobní výklad se otevře po dokončení objednávky.</p>
+            <div class="form-grid">
+              <div class="field"><label for="name">Jméno nebo oslovení</label><input id="name" placeholder="Např. Klára" maxlength="40"><p class="hint">Nepovinné. Pomůže výklad víc zosobnit.</p></div>
+              <div class="field"><label>Oblast výkladu</label><div class="cat-grid" id="catGrid"><button class="cat" type="button" data-cat="Láska"><span>♥</span><strong>Láska</strong></button><button class="cat" type="button" data-cat="Vztahy a rodina"><span>☽</span><strong>Vztahy</strong></button><button class="cat" type="button" data-cat="Práce"><span>✦</span><strong>Práce</strong></button><button class="cat" type="button" data-cat="Peníze"><span>◆</span><strong>Peníze</strong></button><button class="cat" type="button" data-cat="Rozhodnutí"><span>⚖</span><strong>Rozhodnutí</strong></button><button class="cat" type="button" data-cat="Výhled na 30 dní"><span>☀</span><strong>30 dní</strong></button></div></div>
+              <div class="field"><label for="question">Tvoje otázka nebo situace</label><textarea id="question" maxlength="280" placeholder="Např. Nevím, jestli mám dát vztahu ještě šanci. Poslední týdny se míjíme a cítím, že něco není řečené..."></textarea><div class="counter"><span id="charCount">0</span>/280</div><p class="hint">Piš normálně jako člověk. Kvůli skrytému předání do objednávky je otázka zatím kratší.</p></div>
             </div>
+            <div class="actions"><button class="btn btn-primary" id="startBtn" type="button">Zamíchat karty</button></div>
+            <div class="error" id="startError">Vyber oblast a napiš aspoň krátkou otázku. Bez toho budou karty jen mlčet.</div>
           </div>
-
-          <div class="field">
-            <label for="question">Tvoje otázka nebo situace</label>
-            <textarea id="question" name="question" maxlength="1300" placeholder="Např. Nevím, jestli mám dát vztahu ještě šanci. Poslední týdny se hodně míjíme a já cítím, že něco není řečené..."></textarea>
-            <p class="hint">Piš normálně jako člověk. Detaily pomůžou. Nezadávej citlivé údaje třetích osob.</p>
-          </div>
-        </div>
-        <div class="actions"><button class="btn btn-primary" id="startBtn" type="button">Zamíchat karty</button></div>
-        <div class="error" id="startError">Vyber oblast a napiš aspoň krátkou otázku. Bez toho budou karty jen mlčet.</div>
+        </section>
+        <section class="phase" id="phase-shuffle"><div class="panel center"><span class="eyebrow">Míchání karet</span><h2>Nech karty chvíli <em>bloudit tmou.</em></h2><p class="lead">Balíček se míchá pro tvůj výklad na následujících 30 dní. Rituál potrvá několik vteřin.</p><div class="shuffle-area" id="shuffleArea"></div><div class="bar"><div class="bar-fill" id="barFill"></div></div><p class="small" id="shuffleText">Míchám balíček…</p></div></section>
+        <section class="phase" id="phase-pick"><div class="panel center"><span class="eyebrow">Výběr tří karet</span><h2>Vyber tři karty. <em>Ty, které tě volají.</em></h2><p class="lead">Uvidíš pouze názvy vybraných karet. Jejich osobní význam se otevře až v soukromém výkladu.</p><div class="spread" id="spread"></div><div class="actions"><button class="btn btn-primary" id="confirmPick" disabled type="button">Uzamknout karty</button><button class="btn btn-ghost" id="reshuffle" type="button">Zamíchat znovu</button></div></div></section>
+        <section class="phase" id="phase-ready"><div class="panel center"><span class="eyebrow">Karty jsou uzamčené</span><h2>Tvoje tři karty čekají <em>na otevření.</em></h2><p class="lead">Tři karty jsou připravené. Celý osobní výklad na následujících 30 dní se otevře po dokončení objednávky.</p><div class="reveal-row" id="revealRow"></div><div class="locked"><strong style="color:var(--gold2);font-family:Cinzel,serif;letter-spacing:.08em;text-transform:uppercase">Další krok</strong><br>Pokračuj do objednávky. Tvoje otázka a vybrané karty se předají skrytě do formuláře.</div><div class="autofill-status" id="autofillStatus"></div><div class="actions"><button class="btn btn-primary" id="orderBtn" type="button">Pokračovat k objednávce</button><button class="btn btn-ghost" id="restart" type="button">Začít znovu</button></div><p class="order-note">Ve formuláři vyplníš už jen objednávkové údaje. Technická data výkladu zákazník neřeší.</p><div class="simpleshop-box" id="checkoutBox"><h3>Objednávka výkladu</h3><p>Formulář se načte níže. Skryté pole „hodnoty“ se vyplní automaticky.</p><div data-SimpleShopForm="oPWle"><div>Prodejní formulář je vytvořen v systému <a href="https://www.simpleshop.cz/?utm_source=simpleshop&utm_medium=form&utm_campaign=55600" target="_blank" rel="noopener">SimpleShop.cz</a>.</div></div><div class="simpleshop-fallback">Kdyby se formulář nenačetl, otevři ho <a id="externalOrder" href="https://form.simpleshop.cz/oPWle/" target="_blank" rel="noopener">v nové kartě</a>.</div></div></div></section>
       </div>
     </section>
 
-    <section class="phase" id="phase-shuffle">
-      <div class="panel center">
-        <span class="eyebrow">Míchání karet</span>
-        <h2>Nech karty chvíli <em>bloudit tmou.</em></h2>
-        <p class="lead">Balíček se míchá pro tvůj výklad na dalších 30 dní. Nespěchej — rituál má mít svůj čas.</p>
-        <div class="shuffle-area" id="shuffleArea" aria-hidden="true"></div>
-        <div class="bar"><div class="bar-fill" id="barFill"></div></div>
-        <p class="small" id="shuffleText">Míchám balíček…</p>
-      </div>
-    </section>
-
-    <section class="phase" id="phase-pick">
-      <div class="panel center">
-        <span class="eyebrow">Výběr tří karet</span>
-        <h2>Vyber tři karty. <em>Ty, které tě volají.</em></h2>
-        <p class="lead">Uvidíš pouze názvy vybraných karet. Jejich osobní význam se otevře až v soukromém výkladu.</p>
-        <div class="spread" id="spread"></div>
-        <div class="actions"><button class="btn btn-primary" id="confirmPick" disabled type="button">Uzamknout karty</button><button class="btn btn-ghost" id="reshuffle" type="button">Zamíchat znovu</button></div>
-      </div>
-    </section>
-
-    <section class="phase" id="phase-ready">
-      <div class="panel center">
-        <span class="eyebrow">Karty jsou uzamčené</span>
-        <h2>Tvoje tři karty čekají <em>na otevření.</em></h2>
-        <p class="lead">Tři karty jsou připravené. Celý osobní výklad na následujících 30 dní se otevře po dokončení objednávky.</p>
-        <div class="reveal-row" id="revealRow"></div>
-        <div class="locked">
-          <strong style="color:var(--gold2);font-family:Cinzel,serif;letter-spacing:.08em;text-transform:uppercase">Další krok</strong><br>
-          Klikni na pokračování k objednávce. Tvoje otázka a vybrané karty se pokusíme předat do objednávky automaticky, aby zákazník nic nekopíroval.
-        </div>
-        <div class="code-box">
-          <div class="field"><label for="ritualCode">Technický kód výkladu</label></div>
-          <textarea id="ritualCode" readonly></textarea>
-          <div class="copy-ok" id="copyOk">Technické údaje jsou připravené.</div>
-        </div>
-        <div class="autofill-status" id="autofillStatus" aria-live="polite"></div>
-        <div class="manual-fallback" id="manualFallback">
-          <strong>Automatické předání údajů se nepovedlo.</strong><br>
-          Zkopíruj níže uvedený bezpečnostní kód a vlož ho do pole „Kód výkladu“ v objednávce. Je to záložní řešení pro případ, že SimpleShop formulář nepustí skryté předvyplnění.
-          <textarea class="manual-code" id="manualCode" readonly></textarea>
-          <button class="mini-copy" id="copyOnly" type="button">Zkopírovat bezpečnostní kód</button>
-        </div>
-        <div class="actions">
-          <button class="btn btn-primary" id="copyAndOrder" type="button">Pokračovat k objednávce</button>
-          <button class="btn btn-ghost" id="restart" type="button">Začít znovu</button>
-        </div>
-        <p class="order-note">Objednávka se spojí s tímto rituálem automaticky. Kdyby vložený SimpleShop formulář technicky nedovolil skryté předvyplnění, zobrazí se náhradní bezpečnostní postup.</p>
-        <div class="simpleshop-box" id="checkoutBox">
-          <h3>Objednávka výkladu</h3>
-          <p>Vyplň objednávkové údaje. Otázka a vybrané karty už jsou připravené k předání.</p>
-          <!-- www.SimpleShop.cz form#147957 start -->
-          <div data-SimpleShopForm="oPWle"><div>Prodejní formulář je vytvořen v systému <a href="https://www.simpleshop.cz/?utm_source=simpleshop&utm_medium=form&utm_campaign=55600" target="_blank" rel="noopener">SimpleShop.cz</a>.</div></div>
-          <!-- www.SimpleShop.cz form#147957 end -->
-          <div class="simpleshop-fallback">Kdyby se formulář nenačetl, otevři ho <a href="https://form.simpleshop.cz/oPWle/" target="_blank" rel="noopener">v nové kartě</a>.</div>
-        </div>
-      </div>
-    </section>
-
-    <div class="footer">© <span id="year"></span> Virtuální kartářka · <a href="mailto:info@tomys.cz">info@tomys.cz</a></div>
   </main>
+  <div data-site-footer></div>
+  <script src="/assets/site.js" defer></script>
 
   <script>
-    const SIMPLESHOP_URL = 'https://form.simpleshop.cz/oPWle/';
-    const POSITIONS = ['Minulost','Přítomnost','Blízkých 30 dní'];
-    const DECK = [
-      {num:'0',name:'Blázen',sub:'nový začátek',sym:'☼'}, {num:'I',name:'Mág',sub:'vůle a záměr',sym:'✦'}, {num:'II',name:'Velekněžka',sub:'intuice a tajemství',sym:'☾'},
-      {num:'III',name:'Císařovna',sub:'růst a cit',sym:'✿'}, {num:'IV',name:'Císař',sub:'hranice a řád',sym:'♜'}, {num:'V',name:'Velekněz',sub:'tradice a lekce',sym:'☩'},
-      {num:'VI',name:'Milenci',sub:'volba srdce',sym:'♥'}, {num:'VII',name:'Vůz',sub:'pohyb a odvaha',sym:'♞'}, {num:'VIII',name:'Síla',sub:'klidná moc',sym:'∞'},
-      {num:'IX',name:'Poustevník',sub:'pravda v tichu',sym:'◇'}, {num:'X',name:'Kolo osudu',sub:'obrat cyklu',sym:'◎'}, {num:'XI',name:'Spravedlnost',sub:'rovnováha',sym:'⚖'},
-      {num:'XII',name:'Viselec',sub:'jiný úhel',sym:'☍'}, {num:'XIII',name:'Smrt',sub:'konec a proměna',sym:'✧'}, {num:'XIV',name:'Mírnost',sub:'léčení a čas',sym:'♒'},
-      {num:'XV',name:'Ďábel',sub:'pouta a touha',sym:'♑'}, {num:'XVI',name:'Věž',sub:'náhlé odhalení',sym:'⚡'}, {num:'XVII',name:'Hvězda',sub:'naděje',sym:'★'},
-      {num:'XVIII',name:'Měsíc',sub:'mlha a podvědomí',sym:'☽'}, {num:'XIX',name:'Slunce',sub:'jasnost a radost',sym:'☀'}, {num:'XX',name:'Soud',sub:'probuzení',sym:'☊'},
-      {num:'XXI',name:'Svět',sub:'uzavření kruhu',sym:'◉'}
-    ];
-    let selectedCategory = '';
-    let assignedCards = [];
-    let picked = [];
-    let currentPayload = null;
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    const map = {laska:'Láska',vztahy:'Vztahy a rodina',prace:'Práce',penize:'Peníze',rozhodnuti:'Rozhodnutí','30dni':'Výhled na 30 dní'};
-    const param = new URLSearchParams(location.search).get('cat');
-    if(param && map[param]) selectCategory(map[param]);
-
-    document.querySelectorAll('.cat').forEach(btn=>btn.addEventListener('click',()=>selectCategory(btn.dataset.cat)));
-    function selectCategory(cat){selectedCategory = cat;document.querySelectorAll('.cat').forEach(b=>b.classList.toggle('selected', b.dataset.cat===cat));}
-    function show(id){document.querySelectorAll('.phase').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
-
-    document.getElementById('startBtn').addEventListener('click',()=>{
-      const q = document.getElementById('question').value.trim();
-      if(!selectedCategory || q.length < 8){document.getElementById('startError').style.display='block';return;}
-      document.getElementById('startError').style.display='none';
-      startShuffle();
-    });
-
-    function shuffleArray(arr){return [...arr].sort(()=>Math.random()-.5)}
-    function startShuffle(){
-      show('phase-shuffle');
-      const area = document.getElementById('shuffleArea'); area.innerHTML = '';
-      const cx = area.clientWidth/2, cy = 160;
-      for(let i=0;i<9;i++){
-        const card = document.createElement('div'); card.className='shuffle-card'; card.textContent='☾';
-        area.appendChild(card);
-      }
-      let progress=0;
-      const cards=[...document.querySelectorAll('.shuffle-card')];
-      const timer=setInterval(()=>{
-        progress += 1.05 + Math.random()*0.55;
-        document.getElementById('barFill').style.width = Math.min(progress,100)+'%';
-        cards.forEach((card,i)=>{
-          const angle=(i/cards.length)*Math.PI*2 + progress/28;
-          const r=52 + progress*.78 + Math.sin(progress/12+i)*12;
-          card.style.left=(cx + Math.cos(angle)*r - card.offsetWidth/2)+'px';
-          card.style.top=(cy + Math.sin(angle)*r - card.offsetHeight/2)+'px';
-          card.style.transform=`rotate(${angle*57.29 + progress*2}deg)`;
-          card.style.opacity=.45+Math.random()*.45;
-        });
-        if(progress>=100){clearInterval(timer);document.getElementById('shuffleText').textContent='Balíček je připravený.';setTimeout(buildSpread,450)}
-      },150);
-    }
-
-    function buildSpread(){
-      picked=[];
-      assignedCards = shuffleArray(DECK).slice(0,10);
-      const spread=document.getElementById('spread');spread.innerHTML='';
-      assignedCards.forEach((card,i)=>{
-        const el=document.createElement('button'); el.type='button'; el.className='pick-card'; el.textContent='☾'; el.setAttribute('aria-label','Vybrat kartu');
-        el.addEventListener('click',()=>pickCard(i,el)); spread.appendChild(el);
-      });
-      document.getElementById('confirmPick').disabled=true;
-      show('phase-pick');
-    }
-    function pickCard(i,el){
-      if(el.classList.contains('selected')){
-        picked = picked.filter(x=>x!==i); el.classList.remove('selected'); el.removeAttribute('data-order'); refreshPickOrder(); return;
-      }
-      if(picked.length>=3) return;
-      picked.push(i); el.classList.add('selected'); el.dataset.order=picked.length; document.getElementById('confirmPick').disabled = picked.length!==3;
-    }
-    function refreshPickOrder(){document.querySelectorAll('.pick-card').forEach((el,idx)=>{const order=picked.indexOf(idx); if(order>=0) el.dataset.order=order+1;}); document.getElementById('confirmPick').disabled=picked.length!==3;}
-    document.getElementById('reshuffle').addEventListener('click',startShuffle);
-    document.getElementById('confirmPick').addEventListener('click',()=>{
-      const cards = picked.map(i=>assignedCards[i]);
-      currentPayload = buildPayload(cards);
-      renderReady(cards,currentPayload);
-      show('phase-ready');
-    });
-    document.getElementById('restart').addEventListener('click',()=>{currentPayload=null;show('phase-start')});
-
-    function buildPayload(cards){
-      const now = new Date();
-      const id = 'VK-' + now.toISOString().slice(0,10).replace(/-/g,'') + '-' + Math.random().toString(36).slice(2,8).toUpperCase();
-      return {
-        ritualId:id,
-        createdAt:now.toISOString(),
-        period:'30 dní od vytvoření výkladu',
-        name:document.getElementById('name').value.trim(),
-        category:selectedCategory,
-        question:document.getElementById('question').value.trim(),
-        cards:cards.map((c,i)=>({position:POSITIONS[i],num:c.num,name:c.name,sub:c.sub,symbol:c.sym})),
-        source:'virtualnikartarka.cz/tarot.html'
-      };
-    }
-    function renderReady(cards,payload){
-      const row=document.getElementById('revealRow');
-      row.innerHTML=cards.map((c,i)=>`<article class="result-card"><div class="pos">${POSITIONS[i]}</div><div class="num">${c.num}</div><div class="sym">${c.sym}</div><div class="name">${escapeHtml(c.name)}</div><div class="sub">${escapeHtml(c.sub)}</div></article>`).join('');
-      const code=JSON.stringify(payload,null,2);
-      document.getElementById('ritualCode').value=code;
-      const manualCode = document.getElementById('manualCode');
-      if(manualCode) manualCode.value = code;
-      localStorage.setItem('vk_last_ritual',code);
-      document.getElementById('checkoutBox').classList.remove('show');
-      document.getElementById('manualFallback').classList.remove('show');
-      document.getElementById('autofillStatus').className='autofill-status';
-      document.getElementById('autofillStatus').textContent='';
-    }
-    function escapeHtml(str){return String(str).replace(/[&<>'"]/g,s=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[s]));}
-    async function copyCode(){
-      const txt=document.getElementById('ritualCode').value;
-      try{await navigator.clipboard.writeText(txt)}catch(e){const ta=document.getElementById('ritualCode');ta.focus();ta.select();document.execCommand('copy')}
-      document.getElementById('copyOk').style.display='block';
-    }
-    const copyOnlyBtn = document.getElementById('copyOnly');
-    if(copyOnlyBtn) copyOnlyBtn.addEventListener('click',copyCode);
-
-    function norm(str){return String(str||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,' ').trim();}
-    function dispatchFill(el,value){
-      const setter = Object.getOwnPropertyDescriptor(Object.getPrototypeOf(el),'value')?.set;
-      if(setter) setter.call(el,value); else el.value=value;
-      el.dispatchEvent(new Event('input',{bubbles:true}));
-      el.dispatchEvent(new Event('change',{bubbles:true}));
-    }
-    function fieldLabelText(root, el){
-      const bits=[];
-      if(el.id){
-        const safeId = (window.CSS && CSS.escape) ? CSS.escape(el.id) : el.id.replace(/[^a-zA-Z0-9_-]/g,'');
-        const lbl = root.querySelector(`label[for="${safeId}"]`);
-        if(lbl) bits.push(lbl.textContent);
-      }
-      if(el.getAttribute('aria-label')) bits.push(el.getAttribute('aria-label'));
-      if(el.getAttribute('placeholder')) bits.push(el.getAttribute('placeholder'));
-      if(el.name) bits.push(el.name);
-      if(el.closest('label')) bits.push(el.closest('label').textContent);
-      if(el.parentElement) bits.push(el.parentElement.textContent.slice(0,240));
-      return norm(bits.join(' '));
-    }
-    function hideField(el,root){
-      let lbl=null;
-      if(el.id){try{const safeId=(window.CSS && CSS.escape)?CSS.escape(el.id):el.id.replace(/[^a-zA-Z0-9_-]/g,''); lbl=root.querySelector(`label[for="${safeId}"]`)}catch(e){}}
-      const wrap = el.closest('.form-group,.form-row,.ss-form-group,.input,.field,.row') || (lbl && lbl.parentElement) || el.parentElement;
-      if(wrap && wrap !== document.body){
-        wrap.style.position='absolute';wrap.style.left='-9999px';wrap.style.width='1px';wrap.style.height='1px';wrap.style.overflow='hidden';wrap.style.opacity='0';wrap.setAttribute('aria-hidden','true');
-      }
-    }
-    function tryFillInRoot(root, value){
-      const fields=[...root.querySelectorAll('textarea,input[type="text"],input:not([type])')];
-      for(const el of fields){
-        if(el.id === 'ritualCode' || el.closest('.code-box')) continue;
-        const txt=fieldLabelText(root,el);
-        if(txt.includes('kod vykladu') || txt.includes('kód výkladu') || txt.includes('technicky kod') || txt.includes('ritual')){
-          dispatchFill(el,value);
-          hideField(el,root);
-          return true;
-        }
-      }
-      return false;
-    }
-    function tryAutofillSimpleShop(value){
-      let filled=false;
-      try{filled = tryFillInRoot(document,value) || filled;}catch(e){}
-      document.querySelectorAll('iframe').forEach(frame=>{
-        try{
-          if(frame.contentDocument) filled = tryFillInRoot(frame.contentDocument,value) || filled;
-        }catch(e){}
-      });
-      return filled;
-    }
-    function showStatus(message, warn=false){
-      const st=document.getElementById('autofillStatus');
-      st.textContent=message;st.className='autofill-status show' + (warn?' warn':'');
-    }
-    function openCheckout(){
-      const box = document.getElementById('checkoutBox');
-      const code = document.getElementById('ritualCode').value;
-      if(box) box.classList.add('show');
-      showStatus('Připravuji objednávkový formulář…', true);
-      let tries=0;
-      const timer=setInterval(()=>{
-        tries++;
-        const ok = tryAutofillSimpleShop(code);
-        if(ok){
-          clearInterval(timer);
-          document.getElementById('manualFallback').classList.remove('show');
-          showStatus('Hotovo. Údaje k výkladu jsou v objednávce připravené.');
-        }else if(tries>=30){
-          clearInterval(timer);
-          showStatus('Formulář se načetl, ale technické pole se nepodařilo skrytě předvyplnit.', true);
-          document.getElementById('manualFallback').classList.add('show');
-        }
-      },400);
-      if(box) setTimeout(()=>box.scrollIntoView({behavior:'smooth',block:'start'}),120);
-    }
-    document.getElementById('copyAndOrder').addEventListener('click',openCheckout);
+  const POSITIONS = ['Minulost','Přítomnost','Blízkých 30 dní'];
+  const DECK = [
+    {num:'0',name:'Blázen',sub:'nový začátek',sym:'☼'}, {num:'I',name:'Mág',sub:'vůle a záměr',sym:'✦'}, {num:'II',name:'Velekněžka',sub:'intuice a tajemství',sym:'☾'}, {num:'III',name:'Císařovna',sub:'růst a cit',sym:'✿'}, {num:'IV',name:'Císař',sub:'hranice a řád',sym:'♜'}, {num:'V',name:'Velekněz',sub:'tradice a lekce',sym:'☩'}, {num:'VI',name:'Milenci',sub:'volba srdce',sym:'♥'}, {num:'VII',name:'Vůz',sub:'pohyb a odvaha',sym:'♞'}, {num:'VIII',name:'Síla',sub:'klidná moc',sym:'∞'}, {num:'IX',name:'Poustevník',sub:'pravda v tichu',sym:'◇'}, {num:'X',name:'Kolo osudu',sub:'obrat cyklu',sym:'◎'}, {num:'XI',name:'Spravedlnost',sub:'rovnováha',sym:'⚖'}, {num:'XII',name:'Viselec',sub:'jiný úhel',sym:'☍'}, {num:'XIII',name:'Smrt',sub:'konec a proměna',sym:'✧'}, {num:'XIV',name:'Mírnost',sub:'léčení a čas',sym:'♒'}, {num:'XV',name:'Ďábel',sub:'pouta a touha',sym:'♑'}, {num:'XVI',name:'Věž',sub:'náhlé odhalení',sym:'⚡'}, {num:'XVII',name:'Hvězda',sub:'naděje',sym:'★'}, {num:'XVIII',name:'Měsíc',sub:'mlha a podvědomí',sym:'☽'}, {num:'XIX',name:'Slunce',sub:'jasnost a radost',sym:'☀'}, {num:'XX',name:'Soud',sub:'probuzení',sym:'☊'}, {num:'XXI',name:'Svět',sub:'uzavření kruhu',sym:'◉'}
+  ];
+  let selectedCategory = '', assignedCards = [], picked = [], currentPayload = '';
+  const map = {laska:'Láska',vztahy:'Vztahy a rodina',prace:'Práce',penize:'Peníze',rozhodnuti:'Rozhodnutí','30dni':'Výhled na 30 dní'};
+  const param = new URLSearchParams(location.search).get('cat'); if(param && map[param]) selectCategory(map[param]);
+  document.querySelectorAll('.cat').forEach(btn=>btn.addEventListener('click',()=>selectCategory(btn.dataset.cat)));
+  document.getElementById('question').addEventListener('input', e=>{document.getElementById('charCount').textContent=e.target.value.length});
+  function selectCategory(cat){selectedCategory=cat;document.querySelectorAll('.cat').forEach(b=>b.classList.toggle('selected', b.dataset.cat===cat));}
+  function show(id){document.querySelectorAll('.phase').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
+  document.getElementById('startBtn').addEventListener('click',()=>{const q=document.getElementById('question').value.trim();if(!selectedCategory||q.length<8){document.getElementById('startError').style.display='block';return;}document.getElementById('startError').style.display='none';startShuffle();});
+  function shuffleCopy(arr){return [...arr].sort(()=>Math.random()-.5)}
+  function startShuffle(){show('phase-shuffle');const area=document.getElementById('shuffleArea');area.innerHTML='';for(let i=0;i<14;i++){const d=document.createElement('div');d.className='shuffle-card';d.textContent='☾';area.appendChild(d)}let progress=0;const cards=[...area.children];const int=setInterval(()=>{progress+=2.5;document.getElementById('barFill').style.width=Math.min(progress,100)+'%';cards.forEach((c,i)=>{const a=(Date.now()/35+i*31)%360;const x=Math.sin(a)*155;const y=Math.cos(a*1.23)*78;const r=(a+i*19)%70-35;c.style.transform=`translate(${x}px,${y}px) rotate(${r}deg)`});if(progress>=100){clearInterval(int);setTimeout(preparePick,500)}},250)}
+  function preparePick(){assignedCards=shuffleCopy(DECK).slice(0,12);picked=[];const spread=document.getElementById('spread');spread.innerHTML='';assignedCards.forEach((card,i)=>{const el=document.createElement('button');el.className='pick-card';el.type='button';el.dataset.index=i;el.addEventListener('click',()=>pickCard(el,i));spread.appendChild(el)});document.getElementById('confirmPick').disabled=true;show('phase-pick')}
+  function pickCard(el,i){if(el.classList.contains('selected')){picked=picked.filter(x=>x!==i);el.classList.remove('selected');el.removeAttribute('data-order')}else{if(picked.length>=3)return;picked.push(i);el.classList.add('selected');el.dataset.order=picked.length}document.querySelectorAll('.pick-card.selected').forEach(x=>{x.dataset.order=picked.indexOf(Number(x.dataset.index))+1});document.getElementById('confirmPick').disabled=picked.length!==3}
+  document.getElementById('reshuffle').addEventListener('click',startShuffle);document.getElementById('confirmPick').addEventListener('click',ready);document.getElementById('restart').addEventListener('click',()=>location.href='/tarot.html');
+  function compactPayload(){const name=document.getElementById('name').value.trim().slice(0,40);const question=document.getElementById('question').value.trim().slice(0,280);const cards=picked.map((idx,i)=>({p:POSITIONS[i],n:assignedCards[idx].name,s:assignedCards[idx].sub,r:assignedCards[idx].num}));let payload=JSON.stringify({v:4,t:Date.now(),n:name,c:selectedCategory,q:question,k:cards});if(payload.length>495){const allowed=Math.max(80, 280-(payload.length-495)-5);payload=JSON.stringify({v:4,t:Date.now(),n:name,c:selectedCategory,q:question.slice(0,allowed),k:cards});}return payload.slice(0,500)}
+  function ready(){const row=document.getElementById('revealRow');row.innerHTML='';picked.forEach((idx,i)=>{const card=assignedCards[idx];row.innerHTML+=`<div class="result-card"><div class="pos">${POSITIONS[i]}</div><div class="sym">${card.sym}</div><strong>${card.name}</strong><small>${card.sub}</small></div>`});currentPayload=compactPayload();window.VK_RITUAL_PAYLOAD=currentPayload;try{sessionStorage.setItem('VK_RITUAL_PAYLOAD',currentPayload)}catch(e){}const ext='https://form.simpleshop.cz/oPWle/?vk='+encodeURIComponent(currentPayload);document.getElementById('externalOrder').href=ext;show('phase-ready')}
+  document.getElementById('orderBtn').addEventListener('click',()=>{const box=document.getElementById('checkoutBox');box.classList.add('show');document.getElementById('autofillStatus').textContent='Načítám objednávkový formulář a předávám údaje výkladu…';loadSimpleShop();setTimeout(()=>{tryFillSimpleShop()},500);box.scrollIntoView({behavior:'smooth',block:'start'});});
+  let ssLoaded=false;function loadSimpleShop(){if(ssLoaded)return;ssLoaded=true;(function(i,s,o,g,r,a,m){i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://form.simpleshop.cz/prj/js/SimpleShopService.js','sss');sss('createForm','oPWle');}
+  function tryFillSimpleShop(){let tries=0;const timer=setInterval(()=>{tries++;window.VK_RITUAL_PAYLOAD=currentPayload;const field=document.querySelector('textarea[name="payment[-::iv8jj9oo::value]"]')||document.querySelector('textarea[name*="iv8jj9oo"][name*="value"]')||Array.from(document.querySelectorAll('textarea')).find(t=>/hodnoty/i.test((t.closest('.tr')||t.parentElement).textContent||''));if(field){field.value=currentPayload;field.dispatchEvent(new Event('input',{bubbles:true}));field.dispatchEvent(new Event('change',{bubbles:true}));const row=field.closest('.ssItemID-iv8jj9oo')||field.closest('.tr');if(row)row.style.display='none';document.getElementById('autofillStatus').textContent='Údaje výkladu byly připojené k objednávce.';clearInterval(timer)}else if(tries>45){document.getElementById('autofillStatus').innerHTML='Formulář se načetl bez potvrzení skrytého pole. Otevři objednávku v nové kartě — pokud je v SimpleShopu vložený náš JS kód, předání proběhne přes URL.';clearInterval(timer)}},250)}
   </script>
+  <script src="/assets/simpleshop-autofill.js" defer></script>
 
-  <script>
-   (function(i, s, o, g, r, a, m){
-    i[r] = i[r] || function(){
-     (i[r].q = i[r].q || []).push(arguments)
-    }, i[r].l = 1 * new Date();
-    a = s.createElement(o),
-    m = s.getElementsByTagName(o)[0];
-    a.async = 1;
-    a.src = g;
-    m.parentNode.insertBefore(a, m)
-   })(window, document, "script", "https://form.simpleshop.cz/prj/js/SimpleShopService.js", "sss");
-   sss("createForm", "oPWle");
-  </script>
 </body>
 </html>
