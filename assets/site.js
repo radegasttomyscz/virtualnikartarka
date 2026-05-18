@@ -52,7 +52,7 @@
               </div>
             </div>
           </div>
-          <div class="footer-small"><span>© ${new Date().getFullYear()} Virtuální kartářka</span><span>Výklad slouží pro zábavu a sebereflexi.</span></div>
+          <div class="footer-small"><span>© ${new Date().getFullYear()} Virtuální kartářka</span><span>Symbolický vhled, ne odborné doporučení.</span></div>
         </div>
       </footer>`;
   }

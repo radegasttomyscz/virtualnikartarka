@@ -13,7 +13,7 @@ Služba:
 - výsledek: e-mail + soukromá stránka
 - cena: 49 Kč
 
-Poznámka: Výklad je určený pro zábavu, inspiraci a sebereflexi. Nenahrazuje odborné poradenství.
+Poznámka: Výklad je symbolická interpretace tarotových karet a osobní vhled. Nejde o oficiální věštbu, garanci budoucnosti ani odborné poradenství.
 
 
 Poznámka: Samostatné SEO články jsou ukládány do /blog/*.html. Blog není v hlavní navigaci, pouze ve footeru.
