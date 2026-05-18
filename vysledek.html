@@ -9,27 +9,258 @@
   <link rel="stylesheet" href="/assets/site.css" />
   <title>Soukromý výklad – Virtuální kartářka</title>
   <meta name="description" content="Soukromá výsledková stránka tarotového výkladu." />
-  <style>.result-wrap{padding:70px 0}.result-panel{max-width:960px;margin:auto;border:1px solid var(--line2);border-radius:30px;background:rgba(255,255,255,.055);box-shadow:var(--shadow);padding:34px}.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0}.reading-section{border-top:1px solid rgba(255,255,255,.1);padding:20px 0}.reading-section h2{font-size:28px;color:var(--gold2)}@media(max-width:760px){.result-grid{grid-template-columns:1fr}.result-panel{padding:24px 18px}}</style>
+  <style>
+    .result-wrap{position:relative;padding:76px 0 86px;overflow:hidden}.result-wrap::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 50% 8%,rgba(255,224,138,.13),transparent 24rem),radial-gradient(circle at 18% 16%,rgba(207,156,255,.12),transparent 28rem),radial-gradient(circle at 88% 42%,rgba(157,99,255,.14),transparent 30rem)}.result-shell{width:min(1180px,calc(100% - 36px));margin:auto}.result-panel{position:relative;border:1px solid rgba(255,224,138,.22);border-radius:34px;background:linear-gradient(180deg,rgba(31,19,53,.92),rgba(9,5,18,.92));box-shadow:0 45px 130px rgba(0,0,0,.62),0 0 90px rgba(157,99,255,.12);padding:34px;overflow:hidden}.result-panel::before{content:"";position:absolute;inset:-2px;background:radial-gradient(circle at 50% 0%,rgba(255,224,138,.13),transparent 26rem),linear-gradient(115deg,transparent 0 36%,rgba(255,224,138,.055) 48%,transparent 58%);pointer-events:none}.result-panel>*{position:relative}.result-hero{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center;padding:10px 0 28px}.result-title{font-family:"Cinzel Decorative",serif;font-size:clamp(42px,6vw,78px);line-height:1.04;letter-spacing:.055em;color:var(--gold2);text-shadow:0 0 28px rgba(216,169,71,.42),0 0 80px rgba(157,99,255,.18);margin:0 0 18px}.result-intro{font-size:23px;color:var(--text2);max-width:760px}.result-meta{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 0}.result-pill{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.055);border-radius:999px;padding:8px 12px;color:var(--muted);font-size:16px}.result-deck{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:end;perspective:1200px}.oracle-card{min-height:292px;border-radius:22px;border:1px solid rgba(255,224,138,.34);background:linear-gradient(160deg,#301a53 0%,#150a29 44%,#07030f 100%);box-shadow:0 24px 70px rgba(0,0,0,.48),inset 0 0 50px rgba(255,224,138,.055);padding:18px 14px;text-align:center;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;position:relative;transform:rotate(var(--tilt,0deg));transition:.25s ease}.oracle-card:nth-child(2){transform:translateY(-18px) rotate(var(--tilt,0deg))}.oracle-card::before{content:"";position:absolute;inset:12px;border:1px solid rgba(255,224,138,.18);border-radius:16px;pointer-events:none}.oracle-card::after{content:"";position:absolute;left:50%;top:46%;width:112px;height:112px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(255,224,138,.18),transparent 62%);filter:blur(1px);opacity:.78}.oracle-pos{font-family:Cinzel,serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);min-height:34px}.oracle-symbol{font-size:46px;color:var(--gold2);text-shadow:0 0 22px rgba(255,224,138,.45);z-index:1}.oracle-name{font-family:Cinzel,serif;color:var(--text);font-size:22px;line-height:1.15;letter-spacing:.08em;text-transform:uppercase;z-index:1}.oracle-meaning{color:var(--muted);font-size:16px;line-height:1.25;z-index:1}.reading-layout{display:grid;grid-template-columns:1fr 330px;gap:24px;margin-top:28px}.reading-sections{display:grid;gap:14px}.reading-section{border:1px solid rgba(255,255,255,.10);border-radius:22px;background:linear-gradient(180deg,rgba(255,255,255,.062),rgba(255,255,255,.032));padding:24px;box-shadow:0 16px 50px rgba(0,0,0,.22)}.reading-section h2{display:flex;align-items:center;gap:12px;font-family:Cinzel,serif;font-size:24px;color:var(--gold2);letter-spacing:.08em;text-transform:uppercase;margin:0 0 10px}.reading-section h2::before{content:"✦";font-size:15px;color:var(--gold)}.reading-section p{font-size:20px;color:var(--text2);margin:0}.side-panel{display:grid;gap:16px;align-content:start}.share-box,.private-box,.next-box{border:1px solid rgba(255,224,138,.20);border-radius:24px;background:rgba(255,255,255,.055);padding:20px;box-shadow:0 18px 60px rgba(0,0,0,.24)}.share-preview{aspect-ratio:9/16;border-radius:24px;border:1px solid rgba(255,224,138,.28);background:radial-gradient(circle at 50% 18%,rgba(255,224,138,.20),transparent 10rem),radial-gradient(circle at 50% 65%,rgba(157,99,255,.24),transparent 16rem),linear-gradient(180deg,#271348,#090414);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:22px;margin:14px 0;overflow:hidden;position:relative}.share-preview::before{content:"";position:absolute;inset:14px;border:1px solid rgba(255,224,138,.18);border-radius:18px}.share-preview .mini-brand{font-family:Cinzel,serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}.share-preview h3{font-family:"Cinzel Decorative",serif;font-size:clamp(25px,4vw,35px);line-height:1.05;color:var(--gold2);margin:14px 0;text-shadow:0 0 26px rgba(216,169,71,.4)}.share-mini-cards{display:flex;gap:8px;margin:10px 0 16px}.share-mini-card{width:58px;height:92px;border-radius:10px;border:1px solid rgba(255,224,138,.32);background:linear-gradient(160deg,#301a53,#080311);display:grid;place-items:center;color:var(--gold2);font-size:22px}.share-preview p{font-size:16px;line-height:1.35;color:var(--text2);margin:0}.share-actions{display:grid;gap:10px}.btn-small{padding:11px 15px;font-size:11px;width:100%}.private-box h3,.next-box h3,.share-box h3{font-family:Cinzel,serif;color:var(--gold2);letter-spacing:.08em;text-transform:uppercase;font-size:17px;margin-bottom:8px}.private-box p,.next-box p,.share-box p{color:var(--muted);font-size:17px;line-height:1.45}.result-bottom-cta{margin-top:24px;padding:28px;border-radius:28px;border:1px solid var(--line);background:radial-gradient(circle at 50% 0%,rgba(255,224,138,.13),transparent 16rem),linear-gradient(180deg,rgba(255,224,138,.08),rgba(157,99,255,.08));text-align:center}.result-bottom-cta h2{font-family:"Cinzel Decorative",serif;color:var(--gold2);font-size:clamp(28px,4vw,46px);line-height:1.1}.copy-toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);z-index:1000;background:rgba(10,5,20,.96);border:1px solid var(--line);border-radius:999px;padding:12px 18px;color:var(--gold2);box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.25s}.copy-toast.is-visible{opacity:1;transform:translateX(-50%) translateY(0)}.loading-oracle{text-align:center;min-height:360px;display:grid;place-items:center}.loading-oracle .sigil{margin-bottom:18px}.missing-panel{max-width:960px;margin:auto;border:1px solid var(--line2);border-radius:30px;background:rgba(255,255,255,.055);box-shadow:var(--shadow);padding:44px;text-align:center}@media(max-width:980px){.result-hero,.reading-layout{grid-template-columns:1fr}.result-deck{max-width:720px;margin:auto}.side-panel{grid-template-columns:1fr 1fr}.share-box{grid-column:1/-1}.share-preview{max-width:310px;margin:14px auto}}@media(max-width:700px){.result-panel{padding:22px 16px;border-radius:24px}.result-hero{gap:20px}.result-deck{grid-template-columns:1fr;max-width:310px}.oracle-card,.oracle-card:nth-child(2){transform:none;min-height:250px}.side-panel{grid-template-columns:1fr}.reading-section{padding:20px 18px}.reading-section h2{font-size:20px}.reading-section p{font-size:19px}.result-meta{justify-content:center}.result-hero{text-align:center}.result-title{font-size:40px}}
+  </style>
 </head>
 <body data-page="">
   <div data-site-header></div>
   <main class="site-main">
-
     <section class="result-wrap">
-      <div class="container">
+      <div class="result-shell">
         <div class="result-panel" id="resultPanel">
-          <div class="center"><span class="eyebrow">Soukromý výklad</span><h1 class="page-title">Výklad se otevírá…</h1><p class="lead">Načítám karty.</p></div>
+          <div class="loading-oracle">
+            <div>
+              <div class="sigil"><span>☽</span></div>
+              <span class="eyebrow">Soukromý výklad</span>
+              <h1 class="page-title">Karty se otevírají…</h1>
+              <p class="lead">Načítám tvůj výklad.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-
   </main>
   <div data-site-footer></div>
+  <div class="copy-toast" id="copyToast">Hotovo.</div>
   <script src="/assets/site.js" defer></script>
 
 <script>
-(async()=>{const id=new URLSearchParams(location.search).get('id')||'demo';const panel=document.getElementById('resultPanel');try{const res=await fetch(`/vysledky/${encodeURIComponent(id)}.json`,{cache:'no-store'});if(!res.ok) throw new Error('missing');const d=await res.json();const cards=(d.cards||[]).map(c=>`<div class="result-card"><div class="pos">${c.position||''}</div><div class="sym">${c.symbol||'✦'}</div><strong>${c.name}</strong><small>${c.meaning||''}</small></div>`).join('');const sections=(d.sections||[]).map(s=>`<div class="reading-section"><h2>${s.title}</h2><p>${s.text}</p></div>`).join('');panel.innerHTML=`<div class="center"><span class="eyebrow">Výklad na 30 dní</span><h1 class="page-title">${d.title||'Tvůj výklad'}</h1><p class="lead">${d.intro||''}</p></div><div class="result-grid">${cards}</div>${sections}<div class="article-cta"><h2>Uzavírá se jeden měsíc?</h2><p class="muted">Až budeš chtít nový výhled, vrať se ke kartám s novou otázkou.</p><a class="btn btn-primary" href="/tarot.html">Nový výklad</a></div>`}catch(e){panel.innerHTML='<div class="center"><span class="eyebrow">Karty mlčí</span><h1 class="page-title">Výklad nebyl nalezen</h1><p class="lead">Zkontroluj odkaz v e-mailu, nebo napiš na info@tomys.cz.</p><div class="actions"><a class="btn btn-primary" href="/tarot.html">Zahájit nový výklad</a></div></div>'}})();
-</script>
+(() => {
+  const id = new URLSearchParams(location.search).get('id') || 'demo';
+  const panel = document.getElementById('resultPanel');
+  const toast = document.getElementById('copyToast');
+  const siteUrl = 'https://virtualnikartarka.cz/';
 
+  const esc = (v) => String(v ?? '').replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
+  const showToast = (msg) => { toast.textContent = msg; toast.classList.add('is-visible'); setTimeout(() => toast.classList.remove('is-visible'), 2300); };
+  const nice = (txt) => String(txt || '').replace(/\b30 dni\b/gi, '30 dní');
+  const cardFallback = [
+    { position:'Minulost', symbol:'✦', name:'První karta', meaning:'otevřený začátek' },
+    { position:'Přítomnost', symbol:'☽', name:'Druhá karta', meaning:'tichý signál' },
+    { position:'Blízkých 30 dní', symbol:'◆', name:'Třetí karta', meaning:'nový směr' }
+  ];
+
+  async function loadReading() {
+    try {
+      const res = await fetch(`/vysledky/${encodeURIComponent(id)}.json`, { cache: 'no-store' });
+      if (!res.ok) throw new Error('missing');
+      const data = await res.json();
+      renderResult(data);
+    } catch (e) {
+      panel.className = 'missing-panel';
+      panel.innerHTML = `
+        <span class="eyebrow">Karty mlčí</span>
+        <h1 class="page-title">Výklad nebyl nalezen</h1>
+        <p class="lead">Zkontroluj odkaz v e-mailu, nebo napiš na info@tomys.cz.</p>
+        <div class="actions"><a class="btn btn-primary" href="/tarot.html">Zahájit nový výklad</a></div>`;
+    }
+  }
+
+  function renderResult(data) {
+    const cards = (Array.isArray(data.cards) && data.cards.length ? data.cards : cardFallback).slice(0, 3).map((c, i) => ({ ...cardFallback[i], ...c }));
+    const title = nice(data.title || 'Tvůj výklad na následujících 30 dní');
+    const intro = nice(data.intro || 'Tři karty se otevřely a ukazují náladu následujícího období.');
+    const sections = Array.isArray(data.sections) ? data.sections : [];
+
+    const cardsHtml = cards.map((c, i) => `
+      <article class="oracle-card" style="--tilt:${i === 0 ? '-4deg' : i === 2 ? '4deg' : '0deg'}">
+        <div class="oracle-pos">${esc(nice(c.position))}</div>
+        <div class="oracle-symbol">${esc(c.symbol || '✦')}</div>
+        <div class="oracle-name">${esc(c.name)}</div>
+        <div class="oracle-meaning">${esc(nice(c.meaning))}</div>
+      </article>`).join('');
+
+    const sectionsHtml = sections.map((s) => `
+      <section class="reading-section">
+        <h2>${esc(nice(s.title))}</h2>
+        <p>${esc(nice(s.text))}</p>
+      </section>`).join('');
+
+    const miniCards = cards.map(c => `<div class="share-mini-card">${esc(c.symbol || '✦')}</div>`).join('');
+
+    panel.innerHTML = `
+      <div class="result-hero">
+        <div>
+          <span class="eyebrow">Výklad na 30 dní</span>
+          <h1 class="result-title">${esc(title)}</h1>
+          <p class="result-intro">${esc(intro)}</p>
+          <div class="result-meta">
+            <span class="result-pill">Soukromá stránka</span>
+            <span class="result-pill">3 tarotové karty</span>
+            <span class="result-pill">Následujících 30 dní</span>
+          </div>
+        </div>
+        <div class="result-deck">${cardsHtml}</div>
+      </div>
+
+      <div class="reading-layout">
+        <div class="reading-sections">${sectionsHtml || '<section class="reading-section"><h2>Výklad</h2><p>Výklad se nepodařilo správně načíst. Napiš prosím na info@tomys.cz.</p></section>'}</div>
+        <aside class="side-panel">
+          <div class="share-box">
+            <h3>Anonymní náhled ke sdílení</h3>
+            <p>Náhled neobsahuje tvoji otázku ani osobní text výkladu. Sdílí jen tři karty a odkaz na projekt.</p>
+            <div class="share-preview" id="sharePreview" aria-hidden="true">
+              <div class="mini-brand">Virtuální kartářka</div>
+              <h3>Můj výklad na dalších 30 dní</h3>
+              <div class="share-mini-cards">${miniCards}</div>
+              <p>${esc(cards.map(c => c.name).join(' · '))}</p>
+            </div>
+            <div class="share-actions">
+              <button class="btn btn-primary btn-small" type="button" id="downloadShare">Stáhnout náhled</button>
+              <button class="btn btn-ghost btn-small" type="button" id="nativeShare">Sdílet náhled</button>
+              <button class="btn btn-ghost btn-small" type="button" id="copyProjectLink">Zkopírovat odkaz na kartářku</button>
+            </div>
+          </div>
+          <div class="private-box">
+            <h3>Soukromí výkladu</h3>
+            <p>Celý výklad nechávej ideálně jen pro sebe. Odkaz na tuto stránku může otevřít každý, kdo ho má.</p>
+          </div>
+          <div class="next-box">
+            <h3>Vrať se s odstupem</h3>
+            <p>Některé významy začnou dávat větší smysl až po pár dnech. K výkladu se můžeš vrátit znovu později.</p>
+          </div>
+        </aside>
+      </div>
+
+      <div class="result-bottom-cta">
+        <h2>Uzavírá se jeden měsíc?</h2>
+        <p class="muted">Až budeš chtít nový výhled, vrať se ke kartám s novou otázkou.</p>
+        <div class="actions"><a class="btn btn-primary" href="/tarot.html">Zahájit nový výklad</a></div>
+      </div>`;
+
+    bindShare(cards);
+  }
+
+  function bindShare(cards) {
+    const downloadBtn = document.getElementById('downloadShare');
+    const shareBtn = document.getElementById('nativeShare');
+    const copyBtn = document.getElementById('copyProjectLink');
+    downloadBtn?.addEventListener('click', async () => {
+      const blob = await createShareBlob(cards);
+      downloadBlob(blob, `virtualni-kartarka-nahled-${id}.png`);
+      showToast('Náhled stažen jako obrázek.');
+    });
+    shareBtn?.addEventListener('click', async () => {
+      const blob = await createShareBlob(cards);
+      const file = new File([blob], `virtualni-kartarka-nahled-${id}.png`, { type: 'image/png' });
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        await navigator.share({ title: 'Můj výklad na dalších 30 dní', text: 'Tři karty mi ukázaly výhled na další měsíc.', files: [file] });
+      } else if (navigator.share) {
+        await navigator.share({ title: 'Virtuální kartářka', text: 'Můj výklad na dalších 30 dní je otevřený.', url: siteUrl });
+      } else {
+        downloadBlob(blob, `virtualni-kartarka-nahled-${id}.png`);
+        showToast('Sdílení není dostupné, náhled jsem stáhl.');
+      }
+    });
+    copyBtn?.addEventListener('click', async () => {
+      await navigator.clipboard.writeText(siteUrl);
+      showToast('Odkaz na projekt zkopírován.');
+    });
+  }
+
+  function downloadBlob(blob, name) {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+
+  function createShareBlob(cards) {
+    const canvas = document.createElement('canvas');
+    canvas.width = 1080; canvas.height = 1920;
+    const ctx = canvas.getContext('2d');
+    const grad = ctx.createLinearGradient(0, 0, 0, canvas.height);
+    grad.addColorStop(0, '#160925'); grad.addColorStop(.55, '#080311'); grad.addColorStop(1, '#04020a');
+    ctx.fillStyle = grad; ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // glow
+    const glow = ctx.createRadialGradient(540, 330, 10, 540, 330, 540);
+    glow.addColorStop(0, 'rgba(255,224,138,.28)'); glow.addColorStop(1, 'rgba(255,224,138,0)');
+    ctx.fillStyle = glow; ctx.fillRect(0, 0, canvas.width, canvas.height);
+    const purple = ctx.createRadialGradient(540, 1040, 10, 540, 1040, 650);
+    purple.addColorStop(0, 'rgba(157,99,255,.25)'); purple.addColorStop(1, 'rgba(157,99,255,0)');
+    ctx.fillStyle = purple; ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // stars deterministic-ish
+    ctx.fillStyle = 'rgba(255,255,255,.58)';
+    for (let i = 0; i < 145; i++) {
+      const x = (Math.sin(i * 74.31) * 0.5 + 0.5) * 1080;
+      const y = (Math.cos(i * 31.77) * 0.5 + 0.5) * 1920;
+      const r = (i % 4 === 0) ? 2.1 : 1.2;
+      ctx.globalAlpha = (i % 5 === 0) ? .8 : .38;
+      ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+
+    ctx.strokeStyle = 'rgba(255,224,138,.28)'; ctx.lineWidth = 2;
+    roundedRect(ctx, 74, 74, 932, 1772, 46); ctx.stroke();
+    roundedRect(ctx, 112, 112, 856, 1696, 34); ctx.strokeStyle = 'rgba(255,224,138,.12)'; ctx.stroke();
+
+    ctx.textAlign = 'center';
+    ctx.fillStyle = '#d8a947'; ctx.font = '700 34px Cinzel, serif';
+    ctx.fillText('VIRTUÁLNÍ KARTÁŘKA', 540, 230);
+    ctx.fillStyle = '#ffe08a'; ctx.font = '900 72px Cinzel Decorative, Cinzel, serif';
+    wrapCanvasText(ctx, 'MŮJ VÝKLAD NA DALŠÍCH 30 DNÍ', 540, 350, 820, 82);
+
+    const cardW = 246, cardH = 410, gap = 32, startX = (1080 - (cardW * 3 + gap * 2)) / 2;
+    cards.slice(0, 3).forEach((c, i) => {
+      const x = startX + i * (cardW + gap), y = 720 + (i === 1 ? -34 : 0);
+      drawShareCard(ctx, x, y, cardW, cardH, c);
+    });
+
+    ctx.fillStyle = '#e8d8f4'; ctx.font = '600 42px Cormorant Garamond, serif';
+    wrapCanvasText(ctx, cards.slice(0,3).map(c => c.name || '').join(' · '), 540, 1250, 780, 48);
+    ctx.fillStyle = '#c8b3dd'; ctx.font = '600 36px Cormorant Garamond, serif';
+    wrapCanvasText(ctx, 'Tři karty mi ukázaly výhled na další měsíc.', 540, 1390, 780, 46);
+    ctx.fillStyle = '#ffe08a'; ctx.font = '700 38px Cinzel, serif';
+    ctx.fillText('virtualnikartarka.cz', 540, 1638);
+
+    return new Promise(resolve => canvas.toBlob(resolve, 'image/png', .95));
+  }
+
+  function drawShareCard(ctx, x, y, w, h, c) {
+    const g = ctx.createLinearGradient(x, y, x+w, y+h);
+    g.addColorStop(0, '#301a53'); g.addColorStop(.52, '#160a2b'); g.addColorStop(1, '#080311');
+    ctx.fillStyle = g; roundedRect(ctx, x, y, w, h, 24); ctx.fill();
+    ctx.strokeStyle = 'rgba(255,224,138,.42)'; ctx.lineWidth = 2; roundedRect(ctx, x, y, w, h, 24); ctx.stroke();
+    ctx.strokeStyle = 'rgba(255,224,138,.18)'; roundedRect(ctx, x+16, y+16, w-32, h-32, 16); ctx.stroke();
+    ctx.fillStyle = '#d8a947'; ctx.font = '700 22px Cinzel, serif'; ctx.textAlign = 'center';
+    wrapCanvasText(ctx, String(c.position || '').toUpperCase(), x+w/2, y+60, w-38, 26);
+    ctx.fillStyle = '#ffe08a'; ctx.font = '700 66px Cormorant Garamond, serif';
+    ctx.fillText(c.symbol || '✦', x+w/2, y+205);
+    ctx.fillStyle = '#fff9ff'; ctx.font = '800 28px Cinzel, serif';
+    wrapCanvasText(ctx, String(c.name || '').toUpperCase(), x+w/2, y+292, w-32, 34);
+    ctx.fillStyle = '#c8b3dd'; ctx.font = '600 25px Cormorant Garamond, serif';
+    wrapCanvasText(ctx, c.meaning || '', x+w/2, y+355, w-38, 28);
+  }
+
+  function roundedRect(ctx, x, y, w, h, r) {
+    ctx.beginPath(); ctx.moveTo(x+r, y); ctx.arcTo(x+w, y, x+w, y+h, r); ctx.arcTo(x+w, y+h, x, y+h, r); ctx.arcTo(x, y+h, x, y, r); ctx.arcTo(x, y, x+w, y, r); ctx.closePath();
+  }
+
+  function wrapCanvasText(ctx, text, x, y, maxWidth, lineHeight) {
+    const words = String(text || '').split(/\s+/); let line = ''; let yy = y;
+    for (const word of words) {
+      const test = line ? line + ' ' + word : word;
+      if (ctx.measureText(test).width > maxWidth && line) { ctx.fillText(line, x, yy); line = word; yy += lineHeight; }
+      else line = test;
+    }
+    if (line) ctx.fillText(line, x, yy);
+  }
+
+  loadReading();
+})();
+</script>
 </body>
 </html>
