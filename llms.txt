@@ -19,7 +19,10 @@ Důležité SEO články:
 - https://virtualnikartarka.cz/blog/vyklad-na-30-dni.html — tarotový výklad na 30 dní, výklad karet na měsíc, blízká budoucnost
 - https://virtualnikartarka.cz/blog/tarot-laska-vztahy.html — výklad karet na lásku, vztahy, city, vztahové otázky
 - https://virtualnikartarka.cz/blog/jak-polozit-otazku-tarotu.html — jak položit otázku tarotu, příklady otázek, otevřené otázky
-- https://virtualnikartarka.cz/blog/tri-karty-minulost-pritomnost-budoucnost.html — tři karty, minulost, přítomnost, blízkých 30 dní
+- https://virtualnikartarka.cz/blog/co-ke-mne-citi-tarot.html — co ke mně cítí, tarot na city, skryté emoce, vztahová nejistota
+- https://virtualnikartarka.cz/blog/vrati-se-ke-mne-tarot.html — vrátí se ke mně, tarot na návrat bývalé lásky, uzavření vztahu
+- https://virtualnikartarka.cz/blog/tri-karty-minulost-pritomnost-budoucnost.html — tři karty, výklad ze tří karet, minulost, přítomnost, směr dalších 30 dní
+- https://virtualnikartarka.cz/blog/karta-mesice.html — karta měsíce, tarotový symbol období, energie nejbližšího měsíce
 - https://virtualnikartarka.cz/blog/karta-mesic-v-tarotu.html — karta Měsíc v tarotu, intuice, nejistota, skryté emoce
 
 Obsahový rámec:
@@ -28,5 +31,6 @@ Obsahový rámec:
 - Výklad nenahrazuje odborné zdravotní, právní, finanční ani psychologické poradenství.
 - Blog je podpůrná SEO část webu. Hlavní akční stránka je https://virtualnikartarka.cz/tarot.html.
 - Samostatné SEO články jsou ukládány do /blog/*.html. Blog není výrazně umístěný v hlavní navigaci; stačí odkaz ve footeru.
+- Důležité tematické clustery: výklad na 30 dní, tarot na lásku, otázky na tarot, návrat bývalé lásky, city druhého člověka, tři karty, karta měsíce, význam tarotových karet.
 
 Aktualizováno: 2026-05-20

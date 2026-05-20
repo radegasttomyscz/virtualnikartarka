@@ -55,15 +55,33 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://virtualnikartarka.cz/blog/co-ke-mne-citi-tarot.html</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://virtualnikartarka.cz/blog/vrati-se-ke-mne-tarot.html</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
     <loc>https://virtualnikartarka.cz/blog/tri-karty-minulost-pritomnost-budoucnost.html</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://virtualnikartarka.cz/blog/karta-mesice.html</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://virtualnikartarka.cz/blog/karta-mesic-v-tarotu.html</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
 </urlset>
