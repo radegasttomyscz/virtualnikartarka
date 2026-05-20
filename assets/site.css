@@ -61,3 +61,6 @@ radial-gradient(ellipse at 50% 100%,rgba(157,99,255,.24),transparent 38rem)}.her
 .hero .container::after{right:max(-40px,7vw);transform:translateY(-45%) rotate(13deg);}
 .site-nav .nav-button,.site-nav a.nav-button,.site-nav a.nav-button:visited,.site-nav a.nav-button:hover,.site-nav a.nav-button.is-active{color:#120719!important;font-weight:900!important;text-shadow:none!important;}
 @media(max-width:760px){.hero{min-height:auto;padding-top:92px}.hero .container::before,.hero .container::after{display:none}}
+
+/* Blog SEO update */
+.article-body a{color:var(--gold2);text-decoration:underline;text-underline-offset:3px}.article-body a:hover{color:var(--gold)}.article-related{margin-top:28px;padding-top:22px;border-top:1px solid rgba(255,255,255,.10)}.article-related h2{font-size:26px}.article-body ul,.article-body ol{padding-left:24px;margin:0 0 18px}.article-body li{color:var(--text2);margin-bottom:8px}.article-body .lead{margin-bottom:22px}
