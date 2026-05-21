@@ -1,0 +1,50 @@
+{
+  "title": "Tarotový výklad na 30 dní – Práce a kariéra",
+  "intro": "Františku, před tebou leží výklad, který se dotýká tvé pracovní cesty v nadcházejících dnech. Tři karty, které si zvolil, kreslí obraz člověka, jenž stojí na přelomu – za sebou má pevnou půdu, v přítomnosti ticho a naslouchání, a před sebou výzvu, která může změnit směr. Pojďme se do toho ponořit.",
+  "cards": [
+    {
+      "position": "Minulost",
+      "symbol": "✦",
+      "name": "Císař",
+      "meaning": "Autorita, řád, struktura a kontrola"
+    },
+    {
+      "position": "Přítomnost",
+      "symbol": "☽",
+      "name": "Velekněžka",
+      "meaning": "Intuice, skryté vědění, čekání v pozadí"
+    },
+    {
+      "position": "Blízkých 30 dní",
+      "symbol": "◆",
+      "name": "Soud",
+      "meaning": "Probuzení, výzva k akci, volání ke změně"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Minulost",
+      "text": "Františku, v pracovní oblasti jsi po dlouhou dobu fungoval v duchu Císaře – s důrazem na řád, strukturu a jasně nastavená pravidla. Možná jsi byl tím, kdo věci organizoval, udržoval stabilitu nebo nesl zodpovědnost za výsledky. Tato energie ti dávala pevnost, ale zároveň mohla vytvořit určitou rigiditu – způsob práce a myšlení, který jsi nebyl ochoten nebo schopen snadno opustit. Tato fáze tě formovala a dala ti základ, ze kterého nyní čerpáš."
+    },
+    {
+      "title": "Přítomnost",
+      "text": "V tuto chvíli do tvého pracovního života vstupuje Velekněžka – a ta nemluví nahlas. Naznačuje, že se právě nacházíš v období ticha, pozorování a vnitřního zpracovávání. Možná cítíš, že situace v práci není zcela čitelná, že se něco děje pod povrchem – v zákulisí, v jednáních, která k tobě ještě nedorazila. Velekněžka tě vybízí, abys naslouchal více své intuici než jen faktům a číslům. Pokud tě něco v práci znepokojuje nebo naopak tiše přitahuje, je čas tato tušení brát vážně."
+    },
+    {
+      "title": "Blízkých 30 dní",
+      "text": "Karta Soudu v pozici blízkých 30 dní je výrazný signál. Tato karta nepřichází jemně – přichází jako hlas, který volá k probuzení a rozhodnutí. V pracovním kontextu to může znamenat, že se brzy otevře příležitost nebo situace, která bude vyžadovat jasné stanovisko. Možná přijde nabídka, hodnocení, rozhovor se nadřízeným, nebo pocit, že je čas uzavřít jednu kapitolu a začít jinou. Soud neříká, co máš udělat – říká, že přichází moment, kdy mlčení nebo odkládání nebude možné. Buď připraven se vyjádřit."
+    },
+    {
+      "title": "Varování",
+      "text": "Přechod od struktury Císaře přes tiché čekání Velekněžky k razantnosti Soudu nese jedno riziko – pokud budeš příliš dlouho setrvávat v pasivním pozorování, může tě moment rozhodnutí zaskočit nepřipraveného. Soud nepočká. Dávej si pozor na to, abys svou intuici nepřehlušoval pohodlím zavedených zvyků. Zároveň se vyvaruj unáhlených kroků – nejdříve naslouchej, pak jednej."
+    },
+    {
+      "title": "Skrytý význam",
+      "text": "Ve spojení těchto tří karet se skrývá hlubší příběh: v práci možná procházíš nevědomým přerodem autority. Kdysi jsi věci řídil nebo se podřizoval řádu – nyní se v tobě probouzí jiný hlas, hlubší a osobnější. Velekněžka a Soud dohromady naznačují, že odpověď na otázku, jak se ti bude v práci dařit, leží z velké části v tobě samém. Dařit se ti bude do té míry, do jaké budeš ochotný naslouchat svému vnitřnímu hlasu a následně jednat v souladu s ním."
+    },
+    {
+      "title": "Doporučení",
+      "text": "Františku, v nadcházejících 30 dnech si dopřej prostor pro klidné pozorování toho, co se v práci opravdu děje – nejen co je vidět, ale i co cítíš. Velekněžka ti dává dar rozpoznání, ale jen pokud ji necháš hovořit. Až přijde moment Soudu – a přijde – vstup do něj s rozmyslem a upřímností. Neodkládej rozhovory, rozhodnutí ani vyjádření, která jsou zralá na čas. Tvé pracovní směřování v tomto období neleží v rukou náhody, ale ve tvé připravenosti slyšet sám sebe."
+    }
+  ]
+}
