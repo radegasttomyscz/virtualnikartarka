@@ -1,0 +1,46 @@
+{
+  "title": "Tarotový výklad na tvou otázku v lásce",
+  "intro": "Afafdafa, tvoje otázka o pocitech a poutech v lásce přitáhla tři velmi silné karty. Jejich energie spolu mluví nahlas a jasně. Pojďme se společně podívat na to, co se skutečně odehrává pod povrchem tvého vztahu.",
+  "cards": [
+    {
+      "position": "Kořen otázky",
+      "symbol": "✦",
+      "name": "Ďábel",
+      "meaning": "silné pouto, přitažlivost, svázanost"
+    },
+    {
+      "position": "Co se ukazuje",
+      "symbol": "☽",
+      "name": "Mág",
+      "meaning": "záměr, síla vůle, vědomá přitažlivost"
+    },
+    {
+      "position": "Možný směr",
+      "symbol": "◆",
+      "name": "Smrt",
+      "meaning": "proměna, konec jedné formy, nový začátek"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Odpověď k otázce",
+      "text": "Ano, karty ukazují, že v oblasti lásky skutečně prožíváš silné napětí a intenzivní city. Ďábel v kořeni otázky potvrzuje, že tady nějaké pouto existuje a není povrchní. Je to energie, která se těžko přehlíží. Zároveň ale naznačuje, že část toho, co cítíš, může být spjata se závislostí nebo s touhou, která není zcela svobodná."
+    },
+    {
+      "title": "Co situaci ovlivňuje",
+      "text": "Mág v přítomnosti říká, že ty nebo někdo ve tvém okolí v této situaci jedná velmi vědomě a cíleně. Přitažlivost, kterou vnímáš, není náhodná. Někdo ví, co dělá, a má jasný záměr. Tato karta může znamenat, že city jsou skutečné, ale také že ve hře je určitá manipulace nebo silná vůle formovat situaci podle vlastních představ."
+    },
+    {
+      "title": "Co může být skryté",
+      "text": "Pod povrchem se možná skrývá strach ze ztráty tohoto pouta, i kdyby nebylo zcela zdravé. Ďábel s Mágem dohromady naznačují, že přitažlivost může zakrývat to, co je skutečně potřeba vidět. Otázka není jen to, jestli jsou city silné, ale jestli je to, co tě poutá, skutečně pro tebe dobré."
+    },
+    {
+      "title": "Na co si dát pozor",
+      "text": "Smrt jako třetí karta přináší jasný signál: něco se mění nebo se změnit musí. Pozor na lpění na formě vztahu nebo situace, která už dosloužila. Pokud se budeš držet toho, co bylo, může ti to bránit vidět, co skutečně přichází. Tato karta není hrozbou, ale varováním před strachem z proměny."
+    },
+    {
+      "title": "Doporučení",
+      "text": "Karty tě vybízejí, abys k situaci přistoupila s otevřenýma očima a ptala se nejen na to, co cítíš, ale proč to cítíš. Silné pouto ještě neznamená správné pouto. Proměna, na kterou ukazuje Smrt, může být přesně tím, co otevře dveře k něčemu upřímnějšímu a svobodnějšímu. Dovolte si vidět situaci takovou, jaká je, ne jen takovou, jakou si ji přejete mít."
+    }
+  ]
+}
