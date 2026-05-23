@@ -1,0 +1,46 @@
+{
+  "title": "Tarotový výklad na otázku: Bude zítra dobré jídlo?",
+  "intro": "Krophane, tvoje otázka je zdánlivě prostá, ale karty ji vzaly vážně. Tři arcana se sešly, aby ti řekly víc než jen ano nebo ne. Výklad odhaluje nejen to, co zítra čeká na talíři, ale i to, jakou roli v tom hraješ ty sám.",
+  "cards": [
+    {
+      "position": "Kořen otázky",
+      "symbol": "✦",
+      "name": "Vůz",
+      "meaning": "rozhodný pohyb, vlastní vůle"
+    },
+    {
+      "position": "Co se ukazuje",
+      "symbol": "☽",
+      "name": "Mág",
+      "meaning": "vzít věci do vlastních rukou"
+    },
+    {
+      "position": "Možný směr",
+      "symbol": "◆",
+      "name": "Viselec",
+      "meaning": "počkej, nový úhel pohledu"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Odpověď k otázce",
+      "text": "Karty naznačují, že kvalita zítřejšího jídla není jen věcí náhody. Vůz i Mág ukazují na aktivní přístup, a pokud ty sám máš vliv na to, co se uvaří nebo kde se jí, výsledek by mohl být velmi dobrý. Pokud ale čekáš, že někdo jiný zázrak zařídí, Viselec varuje, že očekávání nemusí být naplněno."
+    },
+    {
+      "title": "Co situaci ovlivňuje",
+      "text": "Mág v pozici přítomnosti je silný signál. Máš v ruce nástroje, ingredience, čas nebo kontakty, které mohou zítřejší zážitek s jídlem posunout od průměru k něčemu, co si zapamatuješ. Záleží jen na tom, zda se rozhodneš je použít."
+    },
+    {
+      "title": "Co může být skryté",
+      "text": "Viselec jako třetí karta přináší jemné varování: možná jídlo vidíš jen z jednoho úhlu. Třeba očekáváš konkrétní chuť, místo nebo způsob přípravy, a skutečnost bude jiná. Ale jiná neznamená horší. Viselec učí, že změna perspektivy může z obyčejného jídla udělat zážitek."
+    },
+    {
+      "title": "Na co si dát pozor",
+      "text": "Vůz v kořeni otázky naznačuje, že ses o tuto situaci zasloužil svými předchozími rozhodnutími, ať pozitivními nebo negativními. Pokud jsi zítřek přenechal plně do rukou okolnostem, nebo jsi odkládal jakoukoliv přípravu, karty tě jemně upozorňují, že teď je ještě čas něco malého změnit."
+    },
+    {
+      "title": "Doporučení",
+      "text": "Nečekej jen pasivně. I malý krok dnes večer, třeba rychlá příprava, výběr správného místa nebo domluva s někým, kdo v kuchyni umí, může rozhodnout o tom, zda zítřejší jídlo bude jen nutnost nebo malá radost dne. Mág ti říká, že máš na to více, než si myslíš."
+    }
+  ]
+}
