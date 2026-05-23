@@ -1,0 +1,46 @@
+{
+  "title": "Má mě Kačenka ráda?",
+  "intro": "Tomáši, položil jsi otázku, která ti leží na srdci, a karty ji přijaly s plnou vážností. Tři arcana se seřadila tak, aby ti ukázala nejen to, co vidíš, ale i to, co cítíš a čemu se možná bojíš věřit. Výklad nepřináší jednoznačný verdikt, ale světlo do míst, kde dosud panovala nejistota.",
+  "cards": [
+    {
+      "position": "Kořen otázky",
+      "symbol": "✦",
+      "name": "Velekněžka",
+      "meaning": "nevyřčené city, ticho jako ochrana"
+    },
+    {
+      "position": "Co se ukazuje",
+      "symbol": "☽",
+      "name": "Slunce",
+      "meaning": "radost, otevřenost, přirozená blízkost"
+    },
+    {
+      "position": "Možný směr",
+      "symbol": "◆",
+      "name": "Kolo osudu",
+      "meaning": "obrat, pohyb, přelomový moment"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Odpověď k otázce",
+      "text": "Karty naznačují, že něco mezi vámi existuje, a není to zanedbatelné. Velekněžka v kořeni otázky říká, že city v tomto vztahu jsou přítomné, ale skryté pod povrchem, chráněné tichem. Slunce v pozici toho, co se ukazuje, je jedna z nejvřelejších karet celého tarotu a v kontextu tvé otázky na ni mluví jasně: tam, kde Kačenka je, se děje něco světlého. Zda to ona sama pojmenovává jako lásku nebo sympatie, to karty neurčí, ale energeticky zde není prázdno."
+    },
+    {
+      "title": "Co situaci ovlivňuje",
+      "text": "Velekněžka ukazuje, že celá tato situace je obalená nevyřčeností. Možná ona čeká, možná ty čekáš, možná oba dva cítíte totéž, ale nikdo zatím neudělal první krok. Ticho Velekněžky není odmítnutí, je to spíš vnitřní svět, který dosud nebyl pozván ven. Slunce pak toto ticho prosvětluje a říká, že tam, kde spolu skutečně jste, panuje přirozená radost a otevřenost. To není náhoda."
+    },
+    {
+      "title": "Co může být skryté",
+      "text": "Velekněžka skrývá víc, než prozrazuje, a to platí pro oba. Je možné, že Kačenka své city vědomě tají, třeba ze strachu z odmítnutí nebo proto, že ještě sama sobě v tom není úplně jasná. Skrytou vrstvou situace může být i to, že ona vnímá tvůj zájem, ale čeká na nějaký signál, který by jí dal jistotu, že je ten zájem opravdový."
+    },
+    {
+      "title": "Na co si dát pozor",
+      "text": "Kolo osudu přináší pohyb, ale pohyb může jít oběma směry. Pokud situace zůstane v nečinnosti, může se okno příležitosti posunout nebo uzavřít, aniž by se cokoliv skutečně odehrálo. Neznamená to tlak ani spěch, ale pozor na přílišné čekání v naději, že se vše vyřeší samo. Ticho má svůj čas, ale i své limity."
+    },
+    {
+      "title": "Doporučení",
+      "text": "Karty ti neukazují důvod k rezignaci, spíše naopak. Slunce a Kolo osudu vedle sebe naznačují, že se něco pohybuje správným směrem, jen k tomu možná potřebuje malý impuls zvenčí. Malý, autentický projev zájmu, upřímnost bez velkých gest, může být právě tím, co situaci z místa pohne. Výklad neukazuje slepou uličku, ukazuje dveře, u kterých ještě nikdo nezaklepal."
+    }
+  ]
+}
