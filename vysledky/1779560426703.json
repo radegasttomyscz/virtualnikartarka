@@ -1,0 +1,50 @@
+{
+  "title": "Tarotový výklad na příštích 30 dní – práce",
+  "intro": "Tomáši, karty před tebou vykreslují cestu, která nezačala teprve včera. Něco v tobě zrálo v tichu, něco se teprve rozjíždí a něco tě v příštím měsíci vyzve k trpělivosti jiného druhu. Podívejme se společně, co tě v práci čeká.",
+  "cards": [
+    {
+      "position": "Minulost",
+      "symbol": "✦",
+      "name": "Viselec",
+      "meaning": "čekání, nový úhel pohledu, dobrovolné pozastavení"
+    },
+    {
+      "position": "Přítomnost",
+      "symbol": "☽",
+      "name": "Vůz",
+      "meaning": "postup vpřed, vůle, řízení vlastního směru"
+    },
+    {
+      "position": "Blízkých 30 dní",
+      "symbol": "◆",
+      "name": "Velekněz",
+      "meaning": "pravidla, učení, instituce, vnitřní autorita"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Minulost",
+      "text": "Viselec na pozici minulosti vypovídá o období, kdy jsi v práci musel čekat – možná na rozhodnutí druhých, možná na správnou příležitost, možná jen na to, až se situace vyjasní sama. Tohle čekání nebylo ztrátou času, i když se tak možná jevilo. Viselec tě donutil dívat se na věci z jiného úhlu a přehodnotit, co vlastně v pracovním životě chceš a proč. Tenhle posun v myšlení je základem toho, co se teď děje."
+    },
+    {
+      "title": "Přítomnost",
+      "text": "Vůz je karta pohybu, odhodlání a řízeného postupu. V přítomnosti ti říká, že jsi konečně vzal otěže do vlastních rukou. Možná jsi začal aktivněji prosazovat svůj názor, převzal zodpovědnost za projekt, nebo se prostě přestal zdráhat a šel do toho. Energie Vozu je silná, ale vyžaduje rovnováhu – rychlost bez směru nevede nikam. Teď jsi na správné cestě, důležité je udržet fokus."
+    },
+    {
+      "title": "Blízkých 30 dní",
+      "text": "Velekněz v pozici blízkých třiceti dní naznačuje, že příští měsíc tě v práci konfrontuje se strukturami, pravidly a zavedenými postupy. Může jít o jednání s nadřízeným, o interní procesy, o byrokratické kroky, které nelze přeskočit, nebo o situaci, kde budeš muset projevit respekt k hierarchii – i když s ní nemusíš plně souhlasit. Velekněz ale také symbolizuje učení a mentorství. Je možné, že v tomto období narazíš na někoho zkušenějšího, od koho si můžeš vzít cenné poučení, nebo naopak sám převezmeš roli průvodce pro kolegu."
+    },
+    {
+      "title": "Varování",
+      "text": "Spojení Vozu a Velekněze nese jedno tiché varování: energie pohybu a energie řádu se ne vždy snáší lehce. Příští měsíc buď opatrný na to, abys ve svém odhodlání a snaze jít dopředu nezačal narážet na systém zbytečně tvrdě. Někdy je moudřejší přizpůsobit styl, ne cíl. Touha po rychlém výsledku tě může svádět k přeskakování kroků, které jsou ale v dané struktuře důležité."
+    },
+    {
+      "title": "Skrytý význam",
+      "text": "Pod povrchem tohoto výkladu leží hlubší otázka: naučil ses za dobu čekání (Viselec) skutečně naslouchat – sobě i druhým? Velekněz není jen o vnějších pravidlech. Je také o vnitřní integritě a o tom, zda jednáš v souladu s tím, co opravdu uznáváš. V práci to příští měsíc může znamenat moment, kdy budeš muset rozhodnout, zda jdeš s proudem systému, nebo si zachováš vlastní hodnoty. Obojí je možné – záleží na tom, co ti dává smysl."
+    },
+    {
+      "title": "Doporučení",
+      "text": "Tomáši, karty ti příští měsíc v práci otevírají dveře, které sis svým pohybem a odhodláním sám připravil. Přistupuj k jakýmkoli pravidlům nebo strukturám, na které narazíš, s klidnou myslí – ne jako k překážkám, ale jako k součásti cesty. Hledej v okolí lidi, od kterých se můžeš něco naučit, a zároveň důvěřuj zkušenostem, které sis sám prošel. Ticho a čekání minulosti v tobě zanechalo víc, než si možná uvědomuješ."
+    }
+  ]
+}
