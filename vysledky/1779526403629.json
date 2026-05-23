@@ -1,0 +1,50 @@
+{
+  "title": "Tarotový výklad na následujících 30 dní – Práce",
+  "intro": "Kabate, karty, které jsi přitáhl, vypráví jasný příběh o přechodu. Za tebou stojí rozhodnutí, která měla svou váhu. Teď stojíš na místě dokončení – a před tebou se otevírá prostor, kde záleží především na tobě, jak ho naplníš.",
+  "cards": [
+    {
+      "position": "Minulost",
+      "symbol": "✦",
+      "name": "Spravedlnost",
+      "meaning": "smlouva, rozhodnutí, vyvážení"
+    },
+    {
+      "position": "Přítomnost",
+      "symbol": "☽",
+      "name": "Svět",
+      "meaning": "dokončení, uzavření cyklu, úspěch"
+    },
+    {
+      "position": "Blízkých 30 dní",
+      "symbol": "◆",
+      "name": "Mág",
+      "meaning": "schopnost jednat, iniciativa, nové začátky"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Minulost",
+      "text": "Spravedlnost v pozici minulosti ukazuje, že v pracovní oblasti proběhlo něco zásadního – smlouva, dohoda, hodnocení nebo rozhodnutí, které mělo reálné důsledky. Mohlo jít o formální záležitost, třeba změnu podmínek nebo nové ujednání, ale i o vnitřní moment, kdy ses musel rozhodnout, jak se k něčemu postavíš. Tato karta naznačuje, že vše proběhlo spravedlivě – co bylo zaseto, to přineslo odpovídající plody. Nic z toho není náhoda, a tyto základy teď nesou to, na čem stojíš dnes."
+    },
+    {
+      "title": "Přítomnost",
+      "text": "Svět je jedna z nejvýznamnějších karet celého tarotu a v přítomnosti hovoří o dokončení důležité etapy. V práci to znamená, že právě teď uzavíráš nějaký cyklus – projekt, fázi spolupráce, nebo určitý způsob fungování. Je možné, že cítíš uspokojení z toho, co se podařilo, ale zároveň i lehkou nejistotu z toho, co přijde dál. Svět říká: dotáhls to. Teď je čas se nadechnout a uvědomit si, co všechno máš v rukou."
+    },
+    {
+      "title": "Blízkých 30 dní",
+      "text": "Mág jako karta nadcházejícího období je velmi příznivé znamení. Po dokončení cyklu přichází čas, kdy budeš mít k dispozici nástroje, energii i příležitost k tomu, aby ses v práci posunul. Mág nejedná náhodně – jedná vědomě, cíleně a s rozmyslem. V nadcházejících dnech se může ukázat nová příležitost, projekt nebo výzva, kde budeš moci uplatnit to nejlepší, co v sobě máš. Klíč je v tom nepromeškat tento okamžik a jednat, až přijde správná chvíle. Není čas na čekání – je čas na aktivní přítomnost."
+    },
+    {
+      "title": "Varování",
+      "text": "Mág je mocná energie, ale nese s sebou i jemné upozornění: síla jednat neznamená unáhlenost. Ujisti se, že jakékoli rozhodnutí, které v práci v nadcházejících dnech učiníš, vychází z vědomého záměru, ne jen z touhy po změně nebo z pocitu, že \"musíš něco dělat\". Přechod mezi dokončeným cyklem a novým začátkem může být zrádný – kdo ho podcení, může přehlédnout důležité detaily."
+    },
+    {
+      "title": "Skrytý význam",
+      "text": "Trojice Spravedlnost, Svět a Mág tvoří v tomto pořadí velmi vzácnou linii: rovnováha vedla k dokončení, dokončení otevírá novou sílu. Skrytý vzkaz karet je, že vše, co se zdálo jako překážka nebo zpomalení v minulosti, tě ve skutečnosti připravovalo právě na toto období. Jsi lépe připraven, než si možná myslíš. Karty naznačují, že tvé pracovní schopnosti a zkušenosti budou v nadcházejících dnech vidět – a oceněny, ať už druhými, nebo tebou samotným."
+    },
+    {
+      "title": "Doporučení",
+      "text": "Dovol si přijmout, že jsi něco dokončil, a nebagatelizuj to. Zároveň buď v následujících dnech pozorný – příležitosti nemusí přijít hlasitě, ale tiše a přesně. Mág je karta vědomé akce: věz, proč děláš to, co děláš, a do čeho investuješ svou energii. V práci má smysl být v tomto období aktivní, přítomný a otevřený novým možnostem, které se mohou ukázat. Důvěřuj tomu, co umíš."
+    }
+  ]
+}
