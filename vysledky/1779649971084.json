@@ -1,0 +1,46 @@
+{
+  "title": "Výklad na otázku: Bude mi ještě někdy stát?",
+  "intro": "Otázka, která přišla, je upřímná a nese v sobě víc než jen slova. Za humorem cítím skutečnou pochybnost – zda ještě přijde někdo, s kým to bude mít smysl, nebo zda to vůbec ještě funguje. Karty odpovídají taky upřímně.",
+  "cards": [
+    {
+      "position": "Kořen otázky",
+      "symbol": "✦",
+      "name": "Velekněz (obrácený)",
+      "meaning": "závazek, který se zvrtl nebo zklamal"
+    },
+    {
+      "position": "Co se ukazuje",
+      "symbol": "☽",
+      "name": "Hvězda",
+      "meaning": "naděje v lásce, tiché světlo uvnitř"
+    },
+    {
+      "position": "Možný směr",
+      "symbol": "◆",
+      "name": "Viselec",
+      "meaning": "čekání, odstup, jiný úhel pohledu"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Odpověď k otázce",
+      "text": "Karty říkají ano – ale ne hned a ne tak, jak možná čekáš. Hvězda je jedna z nejjasnějších karet v tarotovém balíčku a její přítomnost v centru výkladu není náhoda. Naděje tady není jen prázdné slovo. Něco v tobě stále hoří, i když si to možná nepřiznáváš. Otázkou není jestli, ale za jakých podmínek a s kým."
+    },
+    {
+      "title": "Co situaci ovlivňuje",
+      "text": "Obrácený Velekněz v kořeni říká, že v minulosti byl nějaký závazek – vztah, slib nebo očekávání – který nesplnil to, co měl. Možná to byl někdo, kdo vypadal jako ten pravý, ale nefungovalo to. Nebo jsi sám hrál roli, do které ses netlačil. Tato zkušenost ti dala do rukou skepsi, která tě teď brzdí víc, než si uvědomuješ."
+    },
+    {
+      "title": "Co může být skryté",
+      "text": "Hvězda je karta, která svítí tiše. Nepřichází s fanfárami. Skrytý vzkaz tady zní: to, po čem toužíš, je přítomno jako možnost – ale ty možná záměrně koukáš jinam, protože se bojíš dalšího zklamání. Ironie a humor jsou dobrý štít, ale karty vidí, co je za ním."
+    },
+    {
+      "title": "Na co si dát pozor",
+      "text": "Viselec jako možný směr není špatná karta – ale varuje před pasivitou, která se tváří jako moudrost. Čekání a odstup mají svůj čas, ale pokud se stanou trvalým stavem, přijdeš o okamžiky, které by mohly být jiné. Pauza je v pořádku. Uzavření se navždy – to by byla škoda."
+    },
+    {
+      "title": "Doporučení",
+      "text": "Nech Hvězdu dělat svou práci. Nemusíš aktivně hledat ani nic tlačit. Ale stojí za to zkusit být o trochu otevřenější – třeba jen vůči sobě. Co by muselo být jinak, aby sis dovolil věřit, že to ještě přijde? Tarot tady není pro jistoty. Je tu proto, aby se tahle otázka nepřestala ptát."
+    }
+  ]
+}
