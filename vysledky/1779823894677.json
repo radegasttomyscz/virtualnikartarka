@@ -1,36 +1,46 @@
 {
-  "status": "ready",
-  "v": 7,
-  "t": 1779823894677,
-  "m": "otazka",
-  "typ": "Výklad na otázku",
-  "price": 49,
-  "rem": 1,
-  "n": "ANDREA",
-  "c": "Láska",
-  "q": "Najdou si synové nevěsty?",
-  "k": [
+  "title": "Výklad na otázku: Najdou si synové nevěsty?",
+  "intro": "Před námi je otázka, která v sobě nese mateřskou starost, přání dobra a také určitou nejistotu, zda se synům otevře cesta k vážnému vztahu a rodinnému naplnění. Karty Viselec, Věž a Spravedlnost ukazují, že téma vztahů u nich není uzavřené, ale cesta nepůsobí jako rychlá ani vynucená. Spíše jde o proces dozrávání, změny pohledu a následného jasnějšího rozhodnutí.",
+  "cards": [
     {
-      "p": "Minulost",
-      "n": "Viselec",
-      "s": "čekání a odstup",
-      "r": "XII"
+      "position": "Minulost",
+      "symbol": "✦",
+      "name": "Viselec",
+      "meaning": "čekání a odstup"
     },
     {
-      "p": "Přítomnost",
-      "n": "Věž",
-      "s": "náhlé odhalení",
-      "r": "XVI"
+      "position": "Přítomnost",
+      "symbol": "☽",
+      "name": "Věž",
+      "meaning": "náhlé odhalení"
     },
     {
-      "p": "Blízkých 30 dní",
-      "n": "Spravedlnost",
-      "s": "upřímné vyjasnění",
-      "r": "XI"
+      "position": "Blízkých 30 dní",
+      "symbol": "◆",
+      "name": "Spravedlnost",
+      "meaning": "upřímné vyjasnění"
     }
   ],
-  "readingHtml": "<h2>Výklad pro Andreu</h2><p><strong>Otázka:</strong> Najdou si synové nevěsty?</p><p>Dobrý den, Andreo, děkuji za Vaši otázku. Ptáte se na velmi citlivé a lidské téma — zda si Vaši synové najdou nevěsty, tedy zda se v jejich životě otevře cesta k vážnému vztahu, partnerství a rodinnému naplnění. Karty zde neukazují jednoduchou odpověď typu „ano hned“ nebo „ne nikdy“. Spíše ukazují, že kolem této otázky je delší období čekání, určité vnitřní bloky, ale také možnost důležitého obratu a vyjasnění.</p><p>Celková energie výkladu říká: <strong>ano, cesta k partnerství zde je, ale nebude dobré na ni tlačit silou.</strong> U synů je vidět, že se některé věci musí nejdříve vnitřně poskládat. Nejde jen o to, zda „potkají nevěstu“, ale zda budou opravdu připraveni vztah přijmout, otevřít se mu a nést za něj odpovědnost.</p><h3>Minulost — Viselec</h3><p>Karta Viselec v minulosti ukazuje období stagnace, čekání a určitého odložení. U Vaší otázky to působí tak, že téma vztahů u synů buď dlouho stálo na místě, nebo se neposouvalo tak, jak byste si přála. Mohla jste mít pocit, že čas běží, ale nic zásadního se neděje.</p><p>Viselec často mluví o člověku, který sice touží po změně, ale zároveň ji úplně neuchopí. Může zde být opatrnost, pohodlnost, obava ze závazku nebo jednoduše období, kdy vztahy nebyly hlavní prioritou. Tato karta také ukazuje, že někteří lidé potřebují dozrát vlastním tempem. Když se na ně tlačí, spíše se stáhnou.</p><p>U synů tedy minulost naznačuje, že vztahová oblast nebyla úplně zavřená, ale byla pozastavená. Mohly zde být nenaplněné známosti, nejasné vztahy, čekání na správný okamžik nebo situace, kdy se něco mohlo rozvinout, ale nakonec se to zastavilo.</p><h3>Přítomnost — Věž</h3><p>Karta Věž v přítomnosti je silná. Ukazuje náhlé prozření, změnu pohledu nebo situaci, která naruší dosavadní klid. Věž v lásce často znamená, že něco starého už nemůže pokračovat stejným způsobem. Může jít o probuzení, uvědomění, rozpad iluzí nebo pochopení, že dosavadní přístup nevede tam, kam by měl.</p><p>Ve Vaší otázce to může znamenat, že se u synů začíná něco lámat. Nemusí to být okamžitě viditelné jako svatba, zásnuby nebo vážná známost. Spíše jde o vnitřní posun: uvědomění, že samota, nezávaznost nebo odkládání vztahů nemusí být dlouhodobě naplňující.</p><p>Věž ale zároveň varuje před tlakem zvenčí. Pokud by okolí příliš tlačilo na téma „kdy už bude svatba“, „kdy si někoho najdeš“ nebo „kdy bude rodina“, mohlo by to vyvolat odpor. Karta Věž je výbušná. Umí přinést změnu, ale také konflikt, pokud se s ní zachází necitlivě.</p><p>Tato karta může naznačovat, že některý ze synů si projde nebo právě prochází silnějším uvědoměním v oblasti vztahů. Mohla zde být zkušenost, která mu otevřela oči. Něco, co nevyšlo, něco, co ho zklamalo, nebo naopak setkání, které narušilo jeho dosavadní jistoty. Věž říká: starý postoj se bortí, ale právě tím se může uvolnit prostor pro něco pravdivějšího.</p><h3>Blízkých 30 dní — Spravedlnost</h3><p>Karta Spravedlnost pro nejbližších 30 dní ukazuje vyjasnění, pravdivý pohled a návrat k realitě. Není to karta rychlé romantické pohádky. Je to karta upřímnosti, rozhodnutí a vyrovnání.</p><p>V praxi to znamená, že v nejbližší době se kolem tématu vztahů může více ukázat, jak věci skutečně jsou. Může přijít rozhovor, jasnější informace, rozhodnutí nebo situace, která Vám pomůže pochopit, co se u synů opravdu děje. Spravedlnost neukazuje plané sliby. Ukazuje realitu bez příkras.</p><p>Na otázku, zda si synové najdou nevěsty, tato karta odpovídá: <strong>ano, ale bude záležet na jejich zralosti, rozhodnutí a ochotě jednat poctivě vůči sobě i vůči druhému člověku.</strong> Nevypadá to jako něco, co by se mělo stát jen náhodou bez jejich vnitřního nastavení. Partnerství zde není vyloučené, ale karty ukazují, že musí stát na pravdě, odpovědnosti a jasném postoji.</p><h3>Celková odpověď</h3><p>Celkově výklad říká, že téma nevěst a vážných vztahů u synů není uzavřené. Nevidím zde kartu úplného odmítnutí partnerství. Vidím ale cestu, která nejde přes tlak, urychlování nebo očekávání okolí.</p><p>Minulost ukazuje čekání. Přítomnost ukazuje otřes nebo změnu pohledu. Blízká budoucnost ukazuje vyjasnění a rozhodování. To znamená, že se něco může začít posouvat, ale ne nutně tak rychle, jak byste si přála.</p><p>Věž uprostřed výkladu říká, že změna může přijít nečekaně. Někdy právě člověk, u kterého už okolí přestává doufat, najednou udělá životní obrat. Ale tento obrat musí vyjít z něj, ne z přání rodiny.</p><h3>Doporučení pro Vás</h3><p>Vaše role zde není tlačit, ale být klidným opěrným bodem. Můžete dát najevo, že jim přejete lásku a dobrý vztah, ale bez výčitek, nátlaku nebo připomínání času. Karty naznačují, že nejlepší bude nechat prostor, ale zároveň být otevřená, pokud budou chtít o vztazích mluvit.</p><p>Nejsilnější rada z výkladu zní: <strong>nechte pravdu vyplavat sama.</strong> Pokud mají v sobě nejistotu, neochotu nebo obavy, tlak je jen posílí. Pokud už v jejich životě někdo je nebo se někdo objeví, přílišné zasahování by mohlo narušit přirozený vývoj.</p><h3>Shrnutí</h3><p>Ano, možnost, že si synové najdou vážné partnerky a jednou i nevěsty, zde je. Nepůsobí to ale jako okamžitá nebo jednoduchá cesta. Výklad ukazuje delší čekání, následné probuzení a potom potřebu poctivého rozhodnutí.</p><p>Karty říkají, že nejdůležitější nebude rychlost, ale zralost. Až budou připraveni jednat opravdově, vztahová cesta se jim může otevřít mnohem lépe než dříve.</p><p><em>Berme tento výklad jako symbolický pohled na energii situace, ne jako pevně daný osud. Budoucnost se vždy skládá i z rozhodnutí, odvahy a ochoty člověka otevřít se druhému.</em></p>",
-  "html": "<h2>Výklad pro Andreu</h2><p><strong>Otázka:</strong> Najdou si synové nevěsty?</p><p>Dobrý den, Andreo, děkuji za Vaši otázku. Ptáte se na velmi citlivé a lidské téma — zda si Vaši synové najdou nevěsty, tedy zda se v jejich životě otevře cesta k vážnému vztahu, partnerství a rodinnému naplnění. Karty zde neukazují jednoduchou odpověď typu „ano hned“ nebo „ne nikdy“. Spíše ukazují, že kolem této otázky je delší období čekání, určité vnitřní bloky, ale také možnost důležitého obratu a vyjasnění.</p><p>Celková energie výkladu říká: <strong>ano, cesta k partnerství zde je, ale nebude dobré na ni tlačit silou.</strong> U synů je vidět, že se některé věci musí nejdříve vnitřně poskládat. Nejde jen o to, zda „potkají nevěstu“, ale zda budou opravdu připraveni vztah přijmout, otevřít se mu a nést za něj odpovědnost.</p><h3>Minulost — Viselec</h3><p>Karta Viselec v minulosti ukazuje období stagnace, čekání a určitého odložení. U Vaší otázky to působí tak, že téma vztahů u synů buď dlouho stálo na místě, nebo se neposouvalo tak, jak byste si přála. Mohla jste mít pocit, že čas běží, ale nic zásadního se neděje.</p><p>Viselec často mluví o člověku, který sice touží po změně, ale zároveň ji úplně neuchopí. Může zde být opatrnost, pohodlnost, obava ze závazku nebo jednoduše období, kdy vztahy nebyly hlavní prioritou. Tato karta také ukazuje, že někteří lidé potřebují dozrát vlastním tempem. Když se na ně tlačí, spíše se stáhnou.</p><h3>Přítomnost — Věž</h3><p>Karta Věž v přítomnosti je silná. Ukazuje náhlé prozření, změnu pohledu nebo situaci, která naruší dosavadní klid. Věž v lásce často znamená, že něco starého už nemůže pokračovat stejným způsobem. Může jít o probuzení, uvědomění, rozpad iluzí nebo pochopení, že dosavadní přístup nevede tam, kam by měl.</p><p>Ve Vaší otázce to může znamenat, že se u synů začíná něco lámat. Nemusí to být okamžitě viditelné jako svatba, zásnuby nebo vážná známost. Spíše jde o vnitřní posun: uvědomění, že samota, nezávaznost nebo odkládání vztahů nemusí být dlouhodobě naplňující.</p><h3>Blízkých 30 dní — Spravedlnost</h3><p>Karta Spravedlnost pro nejbližších 30 dní ukazuje vyjasnění, pravdivý pohled a návrat k realitě. Není to karta rychlé romantické pohádky. Je to karta upřímnosti, rozhodnutí a vyrovnání.</p><p>Na otázku, zda si synové najdou nevěsty, tato karta odpovídá: <strong>ano, ale bude záležet na jejich zralosti, rozhodnutí a ochotě jednat poctivě vůči sobě i vůči druhému člověku.</strong> Partnerství zde není vyloučené, ale karty ukazují, že musí stát na pravdě, odpovědnosti a jasném postoji.</p><h3>Shrnutí</h3><p>Ano, možnost, že si synové najdou vážné partnerky a jednou i nevěsty, zde je. Nepůsobí to ale jako okamžitá nebo jednoduchá cesta. Výklad ukazuje delší čekání, následné probuzení a potom potřebu poctivého rozhodnutí.</p><p>Karty říkají, že nejdůležitější nebude rychlost, ale zralost. Až budou připraveni jednat opravdově, vztahová cesta se jim může otevřít mnohem lépe než dříve.</p><p><em>Berme tento výklad jako symbolický pohled na energii situace, ne jako pevně daný osud.</em></p>",
-  "vykladHtml": "<h2>Výklad pro Andreu</h2><p><strong>Otázka:</strong> Najdou si synové nevěsty?</p><p>Ano, možnost, že si synové najdou vážné partnerky a jednou i nevěsty, zde je. Nepůsobí to ale jako okamžitá nebo jednoduchá cesta. Výklad ukazuje delší čekání, následné probuzení a potom potřebu poctivého rozhodnutí.</p>",
-  "readingText": "Dobrý den, Andreo, děkuji za Vaši otázku. Ptáte se na velmi citlivé a lidské téma — zda si Vaši synové najdou nevěsty, tedy zda se v jejich životě otevře cesta k vážnému vztahu, partnerství a rodinnému naplnění. Karty zde neukazují jednoduchou odpověď typu ano hned nebo ne nikdy. Spíše ukazují, že kolem této otázky je delší období čekání, určité vnitřní bloky, ale také možnost důležitého obratu a vyjasnění. Celková energie výkladu říká: ano, cesta k partnerství zde je, ale nebude dobré na ni tlačit silou. Minulost — Viselec: období čekání, odstupu a pozastaveného vývoje. Přítomnost — Věž: změna pohledu, probuzení, narušení starého postoje. Blízkých 30 dní — Spravedlnost: vyjasnění, pravdivost, odpovědnost a rozhodnutí. Celkově možnost vážných vztahů a budoucích nevěst existuje, ale nejde o cestu přes tlak okolí. Nejdůležitější bude zralost, pravdivost a ochota synů otevřít se vztahu."
+  "sections": [
+    {
+      "title": "Odpověď k otázce",
+      "text": "Karty neukazují zavřené dveře k partnerství nebo manželství. Spíše naznačují, že u synů je vztahová oblast dlouhodobě pomalejší, opatrnější nebo určitým způsobem pozastavená. Viselec v minulosti mluví o čekání, odstupu a o tom, že věci se neposouvaly tak rychle, jak byste si možná přála. Přítomná Věž ale říká, že tento stav nemusí trvat donekonečna. Něco se může začít lámat, měnit nebo vnitřně probouzet. Spravedlnost jako karta blízkého období ukazuje, že důležitá bude pravdivost, zralost a jasné rozhodnutí. Odpověď tedy zní: ano, možnost vážných vztahů a budoucích nevěst zde je, ale nebude dobré na tuto oblast tlačit silou."
+    },
+    {
+      "title": "Co situaci ovlivňuje",
+      "text": "Celý výklad působí tak, že u synů nejde pouze o otázku, zda někoho potkají. Důležitější je, zda budou vnitřně připraveni vztah přijmout, udržet a nést za něj odpovědnost. Viselec ukazuje, že v minulosti mohlo docházet k odkládání, pasivitě nebo čekání na správný okamžik. Někdy tato karta značí člověka, který sice po změně touží, ale zároveň se k ní neumí úplně rozhoupat. Věž do toho přináší silnější energii změny. Může ukazovat událost, rozhovor, zklamání, poznání nebo vnitřní otřes, který naruší starý způsob přemýšlení. Díky tomu se může otevřít prostor pro něco pravdivějšího."
+    },
+    {
+      "title": "Co může být skryté",
+      "text": "Skrytá rovina výkladu naznačuje, že každý ze synů může mít své vlastní tempo a své vlastní důvody, proč se vztahová oblast zatím nevyvíjela přímočaře. U někoho může jít o opatrnost, u jiného o neochotu ke kompromisu, obavu ze závazku nebo zkušenost, která ho v minulosti zabrzdila. Věž ukazuje, že některé staré představy o vztazích mohou být otřeseny. To nemusí být špatně. Někdy člověk potřebuje nejdříve pochopit, co mu nefunguje, aby byl schopný přijmout něco skutečně hodnotného. Spravedlnost pak ukazuje, že budoucí vztah by neměl stát na iluzi, ale na upřímnosti, rovnováze a odpovědnosti."
+    },
+    {
+      "title": "Na co si dát pozor",
+      "text": "Největší varování výkladu je tlak okolí. Věž je karta, která špatně snáší nátlak, výčitky nebo příliš přímé zásahy do citlivých témat. Pokud by se na syny příliš tlačilo otázkami typu kdy už bude svatba, kdy si někoho najdou nebo proč jsou stále sami, mohlo by to vyvolat spíše odpor než otevření. Viselec připomíná, že některé věci nejdou uspíšit. Spravedlnost zároveň říká, že pravda se bude ukazovat postupně a že každý z nich si k ní musí dojít sám. Pozor tedy na domýšlení, srovnávání nebo snahu řídit jejich vztahový život za ně."
+    },
+    {
+      "title": "Doporučení",
+      "text": "Nejlepší postoj z Vaší strany je klidná podpora bez tlaku. Dejte jim pocit, že jim přejete lásku a spokojený vztah, ale zároveň že jejich životní cesta patří jim. Karty naznačují, že změna může přijít nečekaně, ale bude potřebovat prostor. Pokud se některý ze synů začne o vztazích více otevírat nebo pokud se v jeho životě objeví žena, bude důležité nezasahovat příliš rychle a nechat věci přirozeně růst. Spravedlnost radí držet se upřímnosti, klidu a respektu. Budoucnost zde není uzavřená. Jen nepůsobí jako něco, co se dá vynutit. Až přijde správný čas a vnitřní zralost, cesta k vážnému vztahu se může otevřít mnohem přirozeněji."
+    }
+  ]
 }
