@@ -1,4 +1,5 @@
 (() => {
+  const VK_UPGRADE_NOTICE_ACTIVE = true;
   const path = location.pathname.replace(/\/$/, '') || '/';
   const page = document.body.dataset.page || '';
   const is = (key) => page === key ? ' is-active' : '';
@@ -17,6 +18,20 @@
           </nav>
         </div>
       </header>`;
+    if (VK_UPGRADE_NOTICE_ACTIVE && !document.querySelector('.vk-upgrade-notice')) {
+      document.body.classList.add('vk-has-upgrade-notice');
+      header.insertAdjacentHTML('afterend', `
+        <div class="vk-upgrade-notice" role="status" aria-live="polite">
+          <div class="container vk-upgrade-notice__inner">
+            <span class="vk-upgrade-notice__icon" aria-hidden="true">✦</span>
+            <div>
+              <strong>Virtuální kartářka přechází na vylepšený režim výkladů.</strong>
+              <span>Nové objednávky mohou být dočasně pozastavené. Jakmile hláška zmizí, výklady opět běží naplno.</span>
+            </div>
+          </div>
+        </div>`);
+    }
+
     const btn = header.querySelector('.menu-btn');
     const nav = header.querySelector('#siteNav');
     btn?.addEventListener('click', () => {
@@ -40,7 +55,7 @@
                 <a href="/tarot.html">Zahájit výklad</a>
                 <a href="/blog.html">Magazín</a>
                 <a href="/#faq">FAQ</a>
-                <a href="/kontakt.html">Kontakt</a>
+                <a href="mailto:info@tomys.cz">Kontakt</a>
               </div>
             </div>
             <div>
@@ -52,39 +67,8 @@
               </div>
             </div>
           </div>
-          <div class="footer-small"><span>© ${new Date().getFullYear()} Virtuální kartářka · Tomáš Čaňa · IČO 14090759</span><span>Symbolický vhled, ne odborné doporučení.</span></div>
+          <div class="footer-small"><span>© ${new Date().getFullYear()} Virtuální kartářka</span><span>Symbolický vhled, ne odborné doporučení.</span></div>
         </div>
       </footer>`;
   }
-
-  // Cookie banner — informativní, jen pro nezbytně nutné cookies/úložiště.
-  // Pokud se v budoucnu přidá analytika/marketing, je potřeba toto rozšířit o opt-in volbu.
-  (() => {
-    const CONSENT_KEY = 'vk_cookie_consent_v1';
-    let alreadyAccepted = false;
-    try {
-      alreadyAccepted = !!localStorage.getItem(CONSENT_KEY);
-    } catch (_) {
-      // localStorage zablokovaný — banner stejně zobrazíme, jen ho nepůjde "zapamatovat"
-    }
-    if (alreadyAccepted) return;
-
-    const banner = document.createElement('div');
-    banner.className = 'cookie-banner';
-    banner.setAttribute('role', 'region');
-    banner.setAttribute('aria-label', 'Informace o cookies');
-    banner.innerHTML = `
-      <div class="cookie-banner__inner">
-        <p>Tento web používá pouze technicky nezbytné cookies a úložiště prohlížeče pro funkci objednávky a předání údajů k výkladu. <a href="/cookies.html">Více o cookies</a>.</p>
-        <button class="cookie-banner__btn" type="button" data-cookie-accept>Rozumím</button>
-      </div>`;
-    document.body.appendChild(banner);
-    banner.querySelector('[data-cookie-accept]').addEventListener('click', () => {
-      try {
-        localStorage.setItem(CONSENT_KEY, JSON.stringify({ accepted: true, date: new Date().toISOString() }));
-      } catch (_) {}
-      banner.hidden = true;
-      setTimeout(() => banner.remove(), 100);
-    });
-  })();
 })();

@@ -61,3 +61,62 @@ radial-gradient(ellipse at 50% 100%,rgba(157,99,255,.24),transparent 38rem)}.her
 .hero .container::after{right:max(-40px,7vw);transform:translateY(-45%) rotate(13deg);}
 .site-nav .nav-button,.site-nav a.nav-button,.site-nav a.nav-button:visited,.site-nav a.nav-button:hover,.site-nav a.nav-button.is-active{color:#120719!important;font-weight:900!important;text-shadow:none!important;}
 @media(max-width:760px){.hero{min-height:auto;padding-top:92px}.hero .container::before,.hero .container::after{display:none}}
+
+
+/* Dočasná informační lišta při přechodu na vylepšený režim výkladů */
+.vk-upgrade-notice{
+  position:fixed;
+  top:72px;
+  left:0;
+  right:0;
+  z-index:79;
+  border-bottom:1px solid rgba(255,224,138,.22);
+  background:linear-gradient(90deg,rgba(28,13,46,.98),rgba(67,37,96,.98),rgba(28,13,46,.98));
+  color:var(--text);
+  box-shadow:0 14px 46px rgba(0,0,0,.34);
+  backdrop-filter:blur(14px);
+}
+.vk-upgrade-notice__inner{
+  min-height:58px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  text-align:center;
+  padding:10px 0;
+}
+.vk-upgrade-notice__icon{
+  flex:0 0 auto;
+  width:34px;
+  height:34px;
+  display:grid;
+  place-items:center;
+  border-radius:999px;
+  border:1px solid rgba(255,224,138,.36);
+  color:var(--gold2);
+  background:rgba(255,224,138,.08);
+  box-shadow:0 0 28px rgba(255,224,138,.12);
+}
+.vk-upgrade-notice strong{
+  display:block;
+  font-family:Cinzel,serif;
+  font-size:13px;
+  line-height:1.35;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--gold2);
+}
+.vk-upgrade-notice span:not(.vk-upgrade-notice__icon){
+  display:block;
+  color:var(--text2);
+  font-size:16px;
+  line-height:1.35;
+}
+body.vk-has-upgrade-notice .site-main{padding-top:58px;}
+@media(max-width:760px){
+  .vk-upgrade-notice{top:72px;}
+  .vk-upgrade-notice__inner{min-height:76px;align-items:flex-start;text-align:left;}
+  .vk-upgrade-notice strong{font-size:11px;}
+  .vk-upgrade-notice span:not(.vk-upgrade-notice__icon){font-size:15px;}
+  body.vk-has-upgrade-notice .site-main{padding-top:76px;}
+}

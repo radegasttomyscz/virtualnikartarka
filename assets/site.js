@@ -1,4 +1,5 @@
 (() => {
+  const VK_UPGRADE_NOTICE_ACTIVE = true;
   const path = location.pathname.replace(/\/$/, '') || '/';
   const page = document.body.dataset.page || '';
   const is = (key) => page === key ? ' is-active' : '';
@@ -17,6 +18,20 @@
           </nav>
         </div>
       </header>`;
+    if (VK_UPGRADE_NOTICE_ACTIVE && !document.querySelector('.vk-upgrade-notice')) {
+      document.body.classList.add('vk-has-upgrade-notice');
+      header.insertAdjacentHTML('afterend', `
+        <div class="vk-upgrade-notice" role="status" aria-live="polite">
+          <div class="container vk-upgrade-notice__inner">
+            <span class="vk-upgrade-notice__icon" aria-hidden="true">✦</span>
+            <div>
+              <strong>Virtuální kartářka přechází na vylepšený režim výkladů.</strong>
+              <span>Nové objednávky mohou být dočasně pozastavené. Jakmile hláška zmizí, výklady opět běží naplno.</span>
+            </div>
+          </div>
+        </div>`);
+    }
+
     const btn = header.querySelector('.menu-btn');
     const nav = header.querySelector('#siteNav');
     btn?.addEventListener('click', () => {
