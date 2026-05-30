@@ -53,10 +53,14 @@
 
 <script>
 (() => {
-  const id = new URLSearchParams(location.search).get('id') || 'demo';
+  const params = new URLSearchParams(location.search);
+  const privateToken = params.get('t');
+  const id = params.get('id') || privateToken || 'demo';
   const panel = document.getElementById('resultPanel');
   const toast = document.getElementById('copyToast');
   const siteUrl = 'https://virtualnikartarka.cz/';
+  const supportEmail = 'info@tomys.cz';
+  const resultWebhookUrl = 'https://hook.eu1.make.com/3r9n4w5e2kpbruvnwen9t89q14t8qtvq';
 
   const esc = (v) => String(v ?? '').replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
   const showToast = (msg) => { toast.textContent = msg; toast.classList.add('is-visible'); setTimeout(() => toast.classList.remove('is-visible'), 2300); };
@@ -87,6 +91,34 @@
   }
 
   async function loadReading() {
+    // Nové soukromé výklady používají parametr ?t=cm_...
+    // Frontend ho pošle do Make jako doc_id=cm_..., protože Make webhook už pole doc_id zná.
+    if (privateToken) {
+      try {
+        const url = `${resultWebhookUrl}?doc_id=${encodeURIComponent(privateToken)}&cb=${Date.now()}`;
+        const data = await fetchJson(url);
+
+        if (!data || !data.title || !Array.isArray(data.cards) || !Array.isArray(data.sections)) {
+          throw new Error('Neplatný formát výkladu.');
+        }
+
+        renderResult(data);
+        return;
+      } catch (e) {
+        panel.className = 'missing-panel';
+        panel.innerHTML = `
+          <span class="eyebrow">Karty mlčí</span>
+          <h1 class="page-title">Výklad se nepodařilo načíst</h1>
+          <p class="lead">Výklad existuje pod neveřejným odkazem, ale stránka ho právě nedokázala načíst. Napiš prosím na podporu a pošli tento identifikátor: <strong>${esc(privateToken)}</strong>.</p>
+          <div class="actions">
+            <button class="btn btn-primary" type="button" onclick="location.reload()">Zkusit načíst znovu</button>
+            <a class="btn btn-ghost" href="mailto:${supportEmail}?subject=V%C3%BDklad%20se%20nepoda%C5%99ilo%20na%C4%8D%C3%ADst&body=Pros%C3%ADm%20o%20kontrolu%20v%C3%BDkladu%20ID%3A%20${encodeURIComponent(privateToken)}">Napsat podporu</a>
+          </div>`;
+        return;
+      }
+    }
+
+    // Staré veřejné výklady přes ?id=... zůstávají funkční.
     const attempts = [0, 1800, 4200, 8000];
     for (let i = 0; i < attempts.length; i++) {
       if (attempts[i]) {
@@ -120,7 +152,7 @@
       <p class="lead">Odkaz je správný, ale výklad se nepodařilo načíst. Zkus stránku za chvíli obnovit, nebo nám napiš.</p>
       <div class="actions">
         <button class="btn btn-primary" type="button" onclick="location.reload()">Zkusit načíst znovu</button>
-        <a class="btn btn-ghost" href="mailto:info@tomys.cz?subject=V%C3%BDklad%20nebyl%20nalezen&body=Pros%C3%ADm%20o%20kontrolu%20v%C3%BDkladu%20ID%3A%20${encodeURIComponent(id)}">Napsat podporu</a>
+        <a class="btn btn-ghost" href="mailto:${supportEmail}?subject=V%C3%BDklad%20nebyl%20nalezen&body=Pros%C3%ADm%20o%20kontrolu%20v%C3%BDkladu%20ID%3A%20${encodeURIComponent(id)}">Napsat podporu</a>
       </div>`;
   }
 
