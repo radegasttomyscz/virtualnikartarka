@@ -109,7 +109,7 @@
         panel.innerHTML = `
           <span class="eyebrow">Karty mlčí</span>
           <h1 class="page-title">Výklad se nepodařilo načíst</h1>
-          <p class="lead">Výklad existuje pod neveřejným odkazem, ale stránka ho právě nedokázala načíst. Napiš prosím na podporu a pošli tento identifikátor: <strong>${esc(privateToken)}</strong>.</p>
+          <p class="lead">Výklad se právě nepodařilo načíst. Může jít o dočasnou technickou chybu, neplatný odkaz nebo problém při zpracování objednávky. Napiš prosím na podporu a pošli tento identifikátor: <strong>${esc(privateToken)}</strong>.</p>
           <div class="actions">
             <button class="btn btn-primary" type="button" onclick="location.reload()">Zkusit načíst znovu</button>
             <a class="btn btn-ghost" href="mailto:${supportEmail}?subject=V%C3%BDklad%20se%20nepoda%C5%99ilo%20na%C4%8D%C3%ADst&body=Pros%C3%ADm%20o%20kontrolu%20v%C3%BDkladu%20ID%3A%20${encodeURIComponent(privateToken)}">Napsat podporu</a>

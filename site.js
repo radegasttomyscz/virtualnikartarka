@@ -1,5 +1,5 @@
 (() => {
-  const VK_UPGRADE_NOTICE_ACTIVE = true;
+  const VK_UPGRADE_NOTICE_ACTIVE = false;
   const path = location.pathname.replace(/\/$/, '') || '/';
   const page = document.body.dataset.page || '';
   const is = (key) => page === key ? ' is-active' : '';
