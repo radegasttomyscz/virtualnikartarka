@@ -25,6 +25,11 @@ Důležité SEO články:
 - https://virtualnikartarka.cz/blog/nejlepsi-otazky-na-tarot.html — nejlepší otázky na tarot, otázky na lásku, vztahy, rozhodování a budoucnost
 - https://virtualnikartarka.cz/blog/ano-nebo-ne-tarot.html — ano nebo ne tarot, otázky na jistotu, přeformulování otázek pro hlubší výklad
 - https://virtualnikartarka.cz/blog/jak-se-rozhodnout-tarot.html — jak se rozhodnout pomocí tarotu, životní křižovatka, energie možností
+- https://virtualnikartarka.cz/blog/predpoved-budoucnosti-tarot.html — předpověď budoucnosti, tarot budoucnost, blízká budoucnost, výklad na 30 dní
+- https://virtualnikartarka.cz/blog/kartarka-online.html — kartářka online, online výklad karet, tarot online, výklad na dálku
+- https://virtualnikartarka.cz/blog/intuice-a-tarot.html — intuice a tarot, vnitřní hlas, strach, karta Měsíc, sebereflexe
+- https://virtualnikartarka.cz/blog/cikanske-karty-a-tarot.html — cikánské karty a tarot, rozdíl ve výkladu karet, kartářská tradice
+- https://virtualnikartarka.cz/blog/historie-kartarek.html — historie kartářek, věštění z karet, kartářská tradice, online výklad
 - https://virtualnikartarka.cz/blog/tri-karty-minulost-pritomnost-budoucnost.html — tři karty, výklad ze tří karet, minulost, přítomnost, směr dalších 30 dní
 - https://virtualnikartarka.cz/blog/karta-mesice.html — karta měsíce, tarotový symbol období, energie nejbližšího měsíce
 - https://virtualnikartarka.cz/blog/karta-milenci-v-tarotu.html — karta Milenci v tarotu, láska, volba, hodnoty a pravda srdce
@@ -36,6 +41,6 @@ Obsahový rámec:
 - Výklad nenahrazuje odborné zdravotní, právní, finanční ani psychologické poradenství.
 - Blog je podpůrná SEO část webu. Hlavní akční stránka je https://virtualnikartarka.cz/tarot.html.
 - Samostatné SEO články jsou ukládány do /blog/*.html. Blog není výrazně umístěný v hlavní navigaci; stačí odkaz ve footeru.
-- Důležité tematické clustery: výklad na 30 dní, tarot na lásku, otázky na tarot, návrat bývalé lásky, city druhého člověka, rozhodování, ano/ne otázky, tři karty, karta měsíce, význam tarotových karet.
+- Důležité tematické clustery: výklad na 30 dní, tarot na lásku, otázky na tarot, návrat bývalé lásky, city druhého člověka, rozhodování, předpověď budoucnosti, kartářka online, historie kartářek, intuice, cikánské karty, tři karty, karta měsíce, význam tarotových karet.
 
 Aktualizováno: 2026-05-20
