@@ -16,15 +16,20 @@ Služba:
 - výsledek: soukromá stránka s výkladem a odkaz doručený e-mailem
 
 Důležité SEO články:
+- https://virtualnikartarka.cz/blog/vyklad-karet-online.html — výklad karet online, tarot online, online výklad, soukromý výklad na dálku
 - https://virtualnikartarka.cz/blog/vyklad-na-30-dni.html — tarotový výklad na 30 dní, výklad karet na měsíc, blízká budoucnost
 - https://virtualnikartarka.cz/blog/tarot-laska-vztahy.html — výklad karet na lásku, vztahy, city, vztahové otázky
+- https://virtualnikartarka.cz/blog/prijde-mi-zprava-tarot.html — přijde mi zpráva, napíše mi, tarot komunikace, vztahové ticho
+- https://virtualnikartarka.cz/blog/ma-o-me-zajem-tarot.html — má o mě zájem, tarot na zájem, vztahové signály, nejistota v lásce
 - https://virtualnikartarka.cz/blog/mysli-na-me-tarot.html — myslí na mě, tarot na tiché otázky lásky, vzpomínky a vztahové ticho
 - https://virtualnikartarka.cz/blog/co-ke-mne-citi-tarot.html — co ke mně cítí, tarot na city, skryté emoce, vztahová nejistota
 - https://virtualnikartarka.cz/blog/vrati-se-ke-mne-tarot.html — vrátí se ke mně, tarot na návrat bývalé lásky, uzavření vztahu
+- https://virtualnikartarka.cz/blog/osudova-laska-tarot.html — osudová láska, karmická láska, tarot na hluboké pouto, vztahová iluze
 - https://virtualnikartarka.cz/blog/jak-polozit-otazku-tarotu.html — jak položit otázku tarotu, příklady otázek, otevřené otázky
 - https://virtualnikartarka.cz/blog/nejlepsi-otazky-na-tarot.html — nejlepší otázky na tarot, otázky na lásku, vztahy, rozhodování a budoucnost
 - https://virtualnikartarka.cz/blog/ano-nebo-ne-tarot.html — ano nebo ne tarot, otázky na jistotu, přeformulování otázek pro hlubší výklad
 - https://virtualnikartarka.cz/blog/jak-se-rozhodnout-tarot.html — jak se rozhodnout pomocí tarotu, životní křižovatka, energie možností
+- https://virtualnikartarka.cz/blog/tarot-prace-penize.html — tarot na práci, tarot na peníze, pracovní změna, finanční nejistota, symbolický pohled
 - https://virtualnikartarka.cz/blog/predpoved-budoucnosti-tarot.html — předpověď budoucnosti, tarot budoucnost, blízká budoucnost, výklad na 30 dní
 - https://virtualnikartarka.cz/blog/kartarka-online.html — kartářka online, online výklad karet, tarot online, výklad na dálku
 - https://virtualnikartarka.cz/blog/intuice-a-tarot.html — intuice a tarot, vnitřní hlas, strach, karta Měsíc, sebereflexe
@@ -41,6 +46,6 @@ Obsahový rámec:
 - Výklad nenahrazuje odborné zdravotní, právní, finanční ani psychologické poradenství.
 - Blog je podpůrná SEO část webu. Hlavní akční stránka je https://virtualnikartarka.cz/tarot.html.
 - Samostatné SEO články jsou ukládány do /blog/*.html. Blog není výrazně umístěný v hlavní navigaci; stačí odkaz ve footeru.
-- Důležité tematické clustery: výklad na 30 dní, tarot na lásku, otázky na tarot, návrat bývalé lásky, city druhého člověka, rozhodování, předpověď budoucnosti, kartářka online, historie kartářek, intuice, cikánské karty, tři karty, karta měsíce, význam tarotových karet.
+- Důležité tematické clustery: výklad karet online, výklad na 30 dní, tarot na lásku, otázky na tarot, návrat bývalé lásky, city druhého člověka, čekání na zprávu, osudová láska, rozhodování, práce a peníze, předpověď budoucnosti, kartářka online, historie kartářek, intuice, cikánské karty, tři karty, karta měsíce, význam tarotových karet.
 
 Aktualizováno: 2026-05-20
