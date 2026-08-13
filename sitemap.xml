@@ -79,6 +79,12 @@
     <priority>0.75</priority>
   </url>
   <url>
+    <loc>https://virtualnikartarka.cz/blog/podvadi-me-tarot.html</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.78</priority>
+  </url>
+  <url>
     <loc>https://virtualnikartarka.cz/blog/vrati-se-ke-mne-tarot.html</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
@@ -119,6 +125,12 @@
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://virtualnikartarka.cz/blog/zmena-prace-tarot.html</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.74</priority>
   </url>
   <url>
     <loc>https://virtualnikartarka.cz/blog/predpoved-budoucnosti-tarot.html</loc>
