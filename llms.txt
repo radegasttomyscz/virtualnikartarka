@@ -25,7 +25,9 @@ Důležité SEO články:
 - https://virtualnikartarka.cz/blog/co-ke-mne-citi-tarot.html — co ke mně cítí, tarot na city, skryté emoce, vztahová nejistota
 - https://virtualnikartarka.cz/blog/podvadi-me-tarot.html — podvádí mě, tarot nevěra, podezření na nevěru, důvěra ve vztahu, intuice a strach
 - https://virtualnikartarka.cz/blog/vrati-se-ke-mne-tarot.html — vrátí se ke mně, tarot na návrat bývalé lásky, uzavření vztahu
+- https://virtualnikartarka.cz/blog/rozchod-tarot.html — rozchod tarot, tarot po rozchodu, čekat nebo jít dál, uzavření vztahu
 - https://virtualnikartarka.cz/blog/osudova-laska-tarot.html — osudová láska, karmická láska, tarot na hluboké pouto, vztahová iluze
+- https://virtualnikartarka.cz/blog/ceka-me-nova-laska-tarot.html — čeká mě nová láska, nová láska tarot, otevření srdce, vztahová budoucnost
 - https://virtualnikartarka.cz/blog/jak-polozit-otazku-tarotu.html — jak položit otázku tarotu, příklady otázek, otevřené otázky
 - https://virtualnikartarka.cz/blog/nejlepsi-otazky-na-tarot.html — nejlepší otázky na tarot, otázky na lásku, vztahy, rozhodování a budoucnost
 - https://virtualnikartarka.cz/blog/ano-nebo-ne-tarot.html — ano nebo ne tarot, otázky na jistotu, přeformulování otázek pro hlubší výklad
@@ -48,6 +50,6 @@ Obsahový rámec:
 - Výklad nenahrazuje odborné zdravotní, právní, finanční ani psychologické poradenství.
 - Blog je podpůrná SEO část webu. Hlavní akční stránka je https://virtualnikartarka.cz/tarot.html.
 - Samostatné SEO články jsou ukládány do /blog/*.html. Blog není výrazně umístěný v hlavní navigaci; stačí odkaz ve footeru.
-- Důležité tematické clustery: výklad karet online, výklad na 30 dní, tarot na lásku, otázky na tarot, návrat bývalé lásky, city druhého člověka, čekání na zprávu, podezření na nevěru, osudová láska, rozhodování, práce, peníze, změna práce, předpověď budoucnosti, kartářka online, historie kartářek, intuice, cikánské karty, tři karty, karta měsíce, význam tarotových karet.
+- Důležité tematické clustery: výklad karet online, výklad na 30 dní, tarot na lásku, otázky na tarot, návrat bývalé lásky, city druhého člověka, čekání na zprávu, podezření na nevěru, rozchod, nová láska, osudová láska, rozhodování, práce, peníze, změna práce, předpověď budoucnosti, kartářka online, historie kartářek, intuice, cikánské karty, tři karty, karta měsíce, význam tarotových karet.
 
 Aktualizováno: 2026-05-20
