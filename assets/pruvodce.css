@@ -1,0 +1,99 @@
+/* Styles scoped to the homepage guides and the two updated articles. */
+.home-guides .guide-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  transition: border-color .2s ease, transform .2s ease;
+}
+.home-guides .guide-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+}
+.home-guides .guide-card h3 { font-size: 25px; line-height: 1.35; margin: 14px 0; }
+.home-guides .guide-card p { color: var(--text2); margin-bottom: 20px; }
+.home-guides .guide-link { color: var(--gold2); margin-top: auto; }
+.home-guides .guide-more { margin: 28px 0 0; text-align: center; }
+.home-guides .guide-more a,
+.practical-guide a { text-underline-offset: .2em; }
+.home-guides a:focus-visible,
+.practical-guide a:focus-visible,
+.practical-guide .article-table-wrap:focus-visible {
+  outline: 2px solid var(--gold2);
+  outline-offset: 5px;
+}
+.practical-guide h2[id] { scroll-margin-top: 100px; }
+.practical-guide .article-body h3 { font-size: 24px; line-height: 1.4; margin: 26px 0 10px; }
+.practical-guide .article-body ul,
+.practical-guide .article-body ol { padding-left: 26px; margin: 16px 0 24px; color: var(--text2); }
+.practical-guide .article-body li + li { margin-top: 12px; }
+.practical-guide .article-toc,
+.practical-guide .article-example {
+  padding: 24px;
+  margin: 28px 0;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(216,169,71,.055);
+}
+.practical-guide .article-toc strong { color: var(--gold2); }
+.practical-guide .article-toc ul { margin-bottom: 0; }
+.practical-guide .article-toc li + li { margin-top: 6px; }
+.practical-guide .article-example h3 { margin-top: 0; color: var(--gold2); }
+.practical-guide .article-example p:last-child { margin-bottom: 0; }
+.practical-guide .reading-example { list-style: none; padding-left: 0; }
+.practical-guide .reading-example li {
+  padding: 22px 24px;
+  border-left: 2px solid var(--gold);
+  border-radius: 0 14px 14px 0;
+  background: rgba(255,255,255,.035);
+}
+.practical-guide .reading-position {
+  font-family: Cinzel, serif;
+  font-size: 13px;
+  letter-spacing: .07em;
+  color: var(--gold2);
+}
+.practical-guide .reading-example h3 { margin-top: 8px; }
+.practical-guide .reading-example p { margin-bottom: 0; }
+.practical-guide .article-table-wrap {
+  overflow-x: auto;
+  margin: 24px 0;
+  border: 1px solid var(--line2);
+  border-radius: 14px;
+}
+.practical-guide .article-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  text-align: left;
+  color: var(--text2);
+  font-size: 18px;
+  line-height: 1.55;
+}
+.practical-guide .article-table caption {
+  text-align: left;
+  padding: 15px 18px;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--gold2);
+}
+.practical-guide .article-table th,
+.practical-guide .article-table td { padding: 14px 18px; vertical-align: top; border-top: 1px solid var(--line2); }
+.practical-guide .article-table thead { background: rgba(216,169,71,.08); color: var(--gold2); }
+.practical-guide .article-table tbody th { width: 25%; color: var(--text); }
+.practical-guide .article-table tbody tr:nth-child(even) { background: rgba(255,255,255,.025); }
+.practical-guide .article-source { margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line2); }
+.practical-guide .article-source p { font-size: 17px; color: var(--muted); }
+.practical-guide .article-meta time { white-space: nowrap; }
+@media (max-width: 560px) {
+  .practical-guide .article-toc,
+  .practical-guide .article-example,
+  .practical-guide .reading-example li { padding: 20px 18px; }
+  .practical-guide .article-body h2 { font-size: 27px; line-height: 1.25; }
+  .practical-guide .article-body h3 { font-size: 22px; }
+  .practical-guide .article-meta { font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-guides .guide-card { transition: none; }
+  .home-guides .guide-card:hover { transform: none; }
+}
