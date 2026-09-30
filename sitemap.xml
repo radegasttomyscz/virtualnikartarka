@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://virtualnikartarka.cz/</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://virtualnikartarka.cz/blog.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -55,6 +55,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://virtualnikartarka.cz/blog/budeme-spolu-tarot.html</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.79</priority>
+  </url>
+  <url>
+    <loc>https://virtualnikartarka.cz/blog/je-to-ten-pravy-tarot.html</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.78</priority>
+  </url>
+  <url>
     <loc>https://virtualnikartarka.cz/blog/prijde-mi-zprava-tarot.html</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
@@ -74,7 +86,7 @@
   </url>
   <url>
     <loc>https://virtualnikartarka.cz/blog/co-ke-mne-citi-tarot.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -110,7 +122,7 @@
   </url>
   <url>
     <loc>https://virtualnikartarka.cz/blog/ano-nebo-ne-tarot.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

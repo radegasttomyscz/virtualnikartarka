@@ -19,6 +19,8 @@ Důležité SEO články:
 - https://virtualnikartarka.cz/blog/vyklad-karet-online.html — výklad karet online, tarot online, online výklad, soukromý výklad na dálku
 - https://virtualnikartarka.cz/blog/vyklad-na-30-dni.html — tarotový výklad na 30 dní, výklad karet na měsíc, blízká budoucnost
 - https://virtualnikartarka.cz/blog/tarot-laska-vztahy.html — výklad karet na lásku, vztahy, city, vztahové otázky
+- https://virtualnikartarka.cz/blog/je-to-ten-pravy-tarot.html — je to ten pravý, je to ta pravá, tarot na vztah, vztahový potenciál, chemie a klid
+- https://virtualnikartarka.cz/blog/budeme-spolu-tarot.html — budeme spolu, tarot budoucnost vztahu, vztahový potenciál, sbližování, překážky ve vztahu
 - https://virtualnikartarka.cz/blog/prijde-mi-zprava-tarot.html — přijde mi zpráva, napíše mi, tarot komunikace, vztahové ticho
 - https://virtualnikartarka.cz/blog/ma-o-me-zajem-tarot.html — má o mě zájem, tarot na zájem, vztahové signály, nejistota v lásce
 - https://virtualnikartarka.cz/blog/mysli-na-me-tarot.html — myslí na mě, tarot na tiché otázky lásky, vzpomínky a vztahové ticho
@@ -50,6 +52,6 @@ Obsahový rámec:
 - Výklad nenahrazuje odborné zdravotní, právní, finanční ani psychologické poradenství.
 - Blog je podpůrná SEO část webu. Hlavní akční stránka je https://virtualnikartarka.cz/tarot.html.
 - Samostatné SEO články jsou ukládány do /blog/*.html. Blog není výrazně umístěný v hlavní navigaci; stačí odkaz ve footeru.
-- Důležité tematické clustery: výklad karet online, výklad na 30 dní, tarot na lásku, otázky na tarot, návrat bývalé lásky, city druhého člověka, čekání na zprávu, podezření na nevěru, rozchod, nová láska, osudová láska, rozhodování, práce, peníze, změna práce, předpověď budoucnosti, kartářka online, historie kartářek, intuice, cikánské karty, tři karty, karta měsíce, význam tarotových karet.
+- Důležité tematické clustery: výklad karet online, výklad na 30 dní, tarot na lásku, otázky na tarot, budoucnost vztahu, vztahový potenciál, ten pravý / ta pravá, návrat bývalé lásky, city druhého člověka, čekání na zprávu, podezření na nevěru, rozchod, nová láska, osudová láska, rozhodování, práce, peníze, změna práce, předpověď budoucnosti, kartářka online, historie kartářek, intuice, cikánské karty, tři karty, karta měsíce, význam tarotových karet.
 
 Aktualizováno: 2026-05-20
