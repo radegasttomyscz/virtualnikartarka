@@ -19,6 +19,34 @@
     }
   }
 
+  // Do not let incomplete or malformed ritual data enter a paid order.
+  function isValidPayload(payload, data){
+    return Boolean(payload && payload.length <= 500 && data &&
+      (data.m === '30dni' || data.m === 'otazka') &&
+      typeof data.q === 'string' && data.q.trim().length >= 8 &&
+      Array.isArray(data.k) && data.k.length === 3 &&
+      data.k.every(function(card){ return card && typeof card.n === 'string' && card.n.length > 0; }));
+  }
+
+  function showPayloadError(){
+    if (document.getElementById('vk-checkout-error')) return;
+    var box = document.createElement('div');
+    box.id = 'vk-checkout-error';
+    box.setAttribute('role','alert');
+    box.style.cssText = 'padding:16px;margin:16px auto;max-width:720px;color:#721c24;background:#fff0f0;border:2px solid #bb3333;border-radius:8px;font:16px/1.5 sans-serif;position:relative;z-index:99999';
+    box.textContent = 'Nelze načíst úplné údaje výkladu. Objednávku prosím neplaťte. Vraťte se na virtualnikartarka.cz/tarot.html a výběr opakujte.';
+    (document.body || document.documentElement).prepend(box);
+  }
+
+  document.addEventListener('submit', function(event){
+    var payload = getPayload();
+    if (!isValidPayload(payload, parsePayload())) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      showPayloadError();
+    }
+  }, true);
+
   function findField(){
     return document.querySelector('textarea[name="' + FIELD_NAME + '"]') ||
       document.querySelector('textarea[name*="iv8jj9oo"][name*="value"]') ||
@@ -143,12 +171,16 @@
     var field = findField();
     var payload = getPayload();
     var data = parsePayload();
+    if (!isValidPayload(payload, data)) {
+      showPayloadError();
+      return false;
+    }
     var variantOk = selectVariantByPayload(data);
 
     if (field) {
       hideField(field);
       if (payload) {
-        field.value = payload.slice(0, 500);
+        field.value = payload;
         field.dispatchEvent(new Event('input', { bubbles: true }));
         field.dispatchEvent(new Event('change', { bubbles: true }));
         var hiddenName = document.querySelector('input[name="' + FIELD_LABEL_NAME + '"]');

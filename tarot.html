@@ -97,7 +97,7 @@
         </section>
         <section class="phase" id="phase-shuffle"><div class="panel center"><span class="eyebrow">Míchání karet</span><h2>Nech karty chvíli <em>bloudit tmou.</em></h2><p class="lead" id="shuffleLead">Dobrý výklad se nedá uspěchat. Balíček se nejdřív musí uklidnit, promíchat poslední stopy dne a najít tři karty, které budou mluvit k tvé otázce.</p><div class="shuffle-area" id="shuffleArea"></div><div class="bar"><div class="bar-fill" id="barFill"></div></div><p class="small" id="shuffleText">Karty se míchají… nech je chvíli hledat správnou cestu.</p></div></section>
         <section class="phase" id="phase-pick"><div class="panel center"><span class="eyebrow">Výběr tří karet</span><h2>Vyber tři karty. <em>Ty, které tě volají.</em></h2><p class="lead">Uvidíš pouze názvy vybraných karet. Jejich osobní význam se otevře až v soukromém výkladu.</p><div class="spread" id="spread"></div><div class="actions"><button class="btn btn-primary" id="confirmPick" disabled type="button">Uzamknout karty</button><button class="btn btn-ghost" id="reshuffle" type="button">Zamíchat znovu</button></div></div></section>
-        <section class="phase" id="phase-ready"><div class="panel center"><span class="eyebrow">Karty jsou uzamčené</span><h2>Tvoje tři karty čekají <em>na otevření.</em></h2><p class="lead" id="readyLead">Rituál je hotový. Tři karty už znáš — jejich skutečný význam se otevře až v osobním výkladu.</p><div class="reveal-row" id="revealRow"></div><div class="locked"><strong style="color:var(--gold2);font-family:Cinzel,serif;letter-spacing:.08em;text-transform:uppercase">Otevři celý výklad</strong><br><span id="readyText">Dokonči objednávku a dostaneš soukromou stránku s výkladem i odkaz do e-mailu.</span></div><div class="autofill-status" id="autofillStatus" aria-live="polite"></div><div class="actions"><button class="btn btn-primary" id="orderBtn" type="button">Pokračovat k objednávce</button><button class="btn btn-ghost" id="restart" type="button">Začít znovu</button></div><p class="direct-order-note">Výklad se otevře po uhrazení objednávky.</p></div></section>
+        <section class="phase" id="phase-ready"><div class="panel center"><span class="eyebrow">Karty jsou uzamčené</span><h2>Tvoje tři karty čekají <em>na otevření.</em></h2><p class="lead" id="readyLead">Rituál je hotový. Tři karty už znáš — jejich skutečný význam se otevře až v osobním výkladu.</p><div class="reveal-row" id="revealRow"></div><div class="locked"><strong style="color:var(--gold2);font-family:Cinzel,serif;letter-spacing:.08em;text-transform:uppercase">Otevři celý výklad</strong><br><span id="readyText">Dokonči objednávku a dostaneš soukromou stránku s výkladem i odkaz do e-mailu.</span></div><div class="autofill-status" id="autofillStatus" aria-live="polite"></div><div class="actions"><button class="btn btn-primary" id="orderBtn" type="button">Pokračovat k objednávce</button><button class="btn btn-ghost" id="editInput" type="button" style="display:none">Upravit zadání</button><button class="btn btn-ghost" id="restart" type="button">Začít znovu</button></div><p class="direct-order-note">Výklad se otevře po uhrazení objednávky.</p></div></section>
       </div>
     </section>
 
@@ -198,10 +198,41 @@
   function preparePick(){assignedCards=shuffleCopy(DECK).slice(0,12).map(adaptCard);picked=[];const spread=document.getElementById('spread');spread.innerHTML='';assignedCards.forEach((card,i)=>{const el=document.createElement('button');el.className='pick-card';el.type='button';el.dataset.index=i;el.addEventListener('click',()=>pickCard(el,i));spread.appendChild(el)});document.getElementById('confirmPick').disabled=true;show('phase-pick')}
   function pickCard(el,i){if(el.classList.contains('selected')){picked=picked.filter(x=>x!==i);el.classList.remove('selected');el.removeAttribute('data-order')}else{if(picked.length>=3)return;picked.push(i);el.classList.add('selected');el.dataset.order=picked.length}document.querySelectorAll('.pick-card.selected').forEach(x=>{x.dataset.order=picked.indexOf(Number(x.dataset.index))+1});document.getElementById('confirmPick').disabled=picked.length!==3}
   document.getElementById('reshuffle').addEventListener('click',startShuffle);document.getElementById('confirmPick').addEventListener('click',ready);document.getElementById('restart').addEventListener('click',()=>location.href='/tarot.html');
-  function compactPayload(){const name=document.getElementById('name').value.trim().slice(0,40);const question=document.getElementById('question').value.trim().slice(0,250);const cards=picked.map((idx,i)=>({p:POSITIONS[i],n:assignedCards[idx].name,s:assignedCards[idx].sub,r:assignedCards[idx].num}));const label=selectedType==='30dni'?'Výklad na 30 dní':'Výklad na otázku';const price=selectedType==='30dni'?99:49;const rem=document.getElementById('reminderConsent')?.checked?1:0;let base={v:7,t:Date.now(),m:selectedType,typ:label,price:price,rem:rem,n:name,c:selectedCategory,q:question,k:cards};let payload=JSON.stringify(base);if(payload.length>495){const allowed=Math.max(60,250-(payload.length-495)-5);base.q=question.slice(0,allowed);payload=JSON.stringify(base);}return payload.slice(0,500)}
+  // SimpleShop's "hodnoty" field has a 500-character capacity in our integration.
+  // Never truncate serialized JSON or the customer's question: either send a valid,
+  // complete payload, or stop the checkout before payment.
+  function compactPayload(){
+    const name=document.getElementById('name').value.trim();
+    const question=document.getElementById('question').value.trim();
+    // Claude derives positions from "m"; titles, prices, positions and card hints
+    // do not need to be duplicated in the checkout field.
+    const cards=picked.map(idx=>({n:assignedCards[idx].name}));
+    const rem=document.getElementById('reminderConsent')?.checked?1:0;
+    const base={v:8,t:Date.now(),m:selectedType,rem:rem,n:name,c:selectedCategory,q:question,k:cards};
+    const payload=JSON.stringify(base);
+    if(cards.length!==3 || question.length<8 || !['30dni','otazka'].includes(selectedType)){
+      throw new Error('Vyber typ výkladu, zadej otázku a uzamkni přesně tři karty.');
+    }
+    if(payload.length>500){
+      throw new Error('Zadání se nevejde do objednávkového formuláře ('+payload.length+'/500 znaků). Uprav prosím otázku nebo oslovení, aby se vše zachovalo beze ztráty.');
+    }
+    // Defense in depth: also check round-trip and all expected fields.
+    const parsed=JSON.parse(payload);
+    if(parsed.q!==question || parsed.k.length!==3 || !parsed.k.every(card=>card.n)){
+      throw new Error('Nepodařilo se bezpečně připravit zadání. Objednávka nebyla spuštěna.');
+    }
+    return payload;
+  }
   function orderUrl(){const enc=encodeURIComponent(currentPayload);return 'https://form.simpleshop.cz/oPWle/buy/?vk='+enc+'#vk='+enc}
-  function ready(){const row=document.getElementById('revealRow');row.innerHTML='';picked.forEach((idx,i)=>{const card=assignedCards[idx];row.innerHTML+=`<div class="result-card"><div class="pos">${POSITIONS[i]}</div><div class="sym">${card.sym}</div><strong>${card.name}</strong><small>${card.sub}</small></div>`});const lead=document.getElementById('readyLead');const text=document.getElementById('readyText');if(selectedType==='30dni'){lead.textContent='Rituál je hotový. Tři karty už znáš — jejich širší poselství se otevře v obsáhlejším výkladu na následujících 30 dní.';text.textContent='Dokonči objednávku varianty Výklad na 30 dní a dostaneš soukromou stránku s výkladem i odkaz do e-mailu.';}else{lead.textContent='Rituál je hotový. Tři karty už znáš — jejich odpověď na tvoji otázku se otevře v soukromém výkladu.';text.textContent='Dokonči objednávku varianty Výklad na otázku a dostaneš soukromou stránku s výkladem i odkaz do e-mailu.';}currentPayload=compactPayload();window.VK_RITUAL_PAYLOAD=currentPayload;try{sessionStorage.setItem('VK_RITUAL_PAYLOAD',currentPayload)}catch(e){}show('phase-ready')}
-  document.getElementById('orderBtn').addEventListener('click',()=>{document.getElementById('autofillStatus').textContent='';window.location.href=orderUrl();});
+  function ready(){const row=document.getElementById('revealRow');row.innerHTML='';picked.forEach((idx,i)=>{const card=assignedCards[idx];row.innerHTML+=`<div class="result-card"><div class="pos">${POSITIONS[i]}</div><div class="sym">${card.sym}</div><strong>${card.name}</strong><small>${card.sub}</small></div>`});const lead=document.getElementById('readyLead');const text=document.getElementById('readyText');if(selectedType==='30dni'){lead.textContent='Rituál je hotový. Tři karty už znáš — jejich širší poselství se otevře v obsáhlejším výkladu na následujících 30 dní.';text.textContent='Dokonči objednávku varianty Výklad na 30 dní a dostaneš soukromou stránku s výkladem i odkaz do e-mailu.';}else{lead.textContent='Rituál je hotový. Tři karty už znáš — jejich odpověď na tvoji otázku se otevře v soukromém výkladu.';text.textContent='Dokonči objednávku varianty Výklad na otázku a dostaneš soukromou stránku s výkladem i odkaz do e-mailu.';}const status=document.getElementById('autofillStatus');const orderBtn=document.getElementById('orderBtn');const editBtn=document.getElementById('editInput');currentPayload='';status.textContent='';orderBtn.disabled=true;editBtn.style.display='none';try{currentPayload=compactPayload();orderBtn.disabled=false;window.VK_RITUAL_PAYLOAD=currentPayload;try{sessionStorage.setItem('VK_RITUAL_PAYLOAD',currentPayload)}catch(e){}}catch(e){status.textContent=e.message;status.setAttribute('role','alert');editBtn.style.display='inline-flex';try{sessionStorage.removeItem('VK_RITUAL_PAYLOAD')}catch(err){}}show('phase-ready')}
+  document.getElementById('editInput').addEventListener('click',()=>show('phase-start'));
+  document.getElementById('orderBtn').addEventListener('click',()=>{
+    if(!currentPayload || currentPayload.length>500){
+      document.getElementById('autofillStatus').textContent='Zadání není připravené. Vrať se prosím k úpravě otázky.';
+      return;
+    }
+    window.location.href=orderUrl();
+  });
   </script>
 
 </body>
